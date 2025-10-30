@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON格式化工具</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+</head>
+<body>
+    <header>
+        <h1>JSON格式化工具</h1>
+    </header>
+    
+    <main class="container">
+        <div class="input-section">
+            <h2>输入JSON</h2>
+            <div class="button-group">
+                <button id="format-btn">格式化</button>
+                <button id="clear-btn">清空</button>
+                <button id="sample-btn">示例</button>
+            </div>
+            <textarea id="json-input" placeholder="请在此处粘贴您的JSON数据..."></textarea>
+        </div>
+        
+        <div class="output-section">
+            <h2>格式化结果</h2>
+            <div class="button-group">
+                <button id="copy-btn">复制</button>
+            </div>
+            <pre><code id="json-output" class="json"></code></pre>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2023 JSON格式化工具 | <a href="https://github.com/yourusername/jsonformat" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
