@@ -20,7 +20,7 @@
 
 1. 克隆仓库
    ```
-   git clone https://github.com/yourusername/jsonformat.git
+   git clone https://github.com/Rodert/jsonformat.git
    ```
 
 2. 进入项目目录
