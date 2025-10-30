@@ -14,7 +14,7 @@
 
 ## 在线体验
 
-访问 [GitHub Pages](https://yourusername.github.io/jsonformat/) 即可在线使用该工具。
+访问 [GitHub Pages](https://Rodert.github.io/jsonformat/) 即可在线使用该工具。
 
 ## 本地运行
 
@@ -32,12 +32,28 @@
 
 ## 部署到GitHub Pages
 
+### 自动部署（推荐）
+
+本项目已配置GitHub Actions自动部署功能，只需以下步骤：
+
 1. Fork 本仓库
 2. 进入仓库设置 (Settings)
 3. 在左侧菜单找到 "Pages"
-4. 在 "Source" 部分，选择 "main" 分支
-5. 点击 "Save" 按钮
-6. 等待几分钟后，您的网站将在 `https://yourusername.github.io/jsonformat/` 上线
+4. 在 "Source" 部分，选择 "GitHub Actions"
+5. 完成后，每次推送到main分支时，将自动部署到GitHub Pages
+6. 部署完成后，您的网站将在 `https://Rodert.github.io/jsonformat/` 上线
+
+### 手动部署
+
+如果您不想使用自动部署，也可以手动部署：
+
+1. Fork 本仓库
+2. 进入仓库设置 (Settings)
+3. 在左侧菜单找到 "Pages"
+4. 在 "Source" 部分，选择 "Deploy from a branch"
+5. 选择 "main" 分支和 "/ (root)" 文件夹
+6. 点击 "Save" 按钮
+7. 等待几分钟后，您的网站将在 `https://Rodert.github.io/jsonformat/` 上线
 
 ## 技术栈
 
