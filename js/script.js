@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "author": {
             "name": "开发者",
-            "website": "https://github.com/yourusername"
+            "website": "https://github.com/Rodert/jsonformat"
         },
         "isOpenSource": true,
         "stars": 42
