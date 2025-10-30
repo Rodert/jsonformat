@@ -16,6 +16,8 @@
 
 访问 [GitHub Pages](https://Rodert.github.io/jsonformat/) 即可在线使用该工具。
 
+![JSON格式化工具截图](img/image.png)
+
 ## 本地运行
 
 1. 克隆仓库
