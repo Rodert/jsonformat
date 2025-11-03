@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线加密解密工具</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>在线加密解密工具</h1>
+        <a href="https://github.com/Rodert/jsonformat" target="_blank" class="github-link">
+            <svg height="24" width="24" viewBox="0 0 16 16" version="1.1">
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+            GitHub
+        </a>
+    </header>
+
+    <div class="container">
+        <nav class="nav-tabs">
+            <a href="index.html">JSON格式化</a>
+            <a href="crypto.html" class="active">加密解密</a>
+            <a href="diff.html">代码对比</a>
+        </nav>
+
+        <main>
+            <!-- Base64 编码/解码 -->
+            <div class="tool-section">
+                <h2>Base64 编码/解码</h2>
+                <p>Base64是一种用64个字符来表示任意二进制数据的方法，常用于在HTTP环境下传递较长的标识信息。</p>
+                
+                <div class="input-group">
+                    <label for="base64-input">输入文本：</label>
+                    <textarea id="base64-input" placeholder="请输入要编码或解码的文本..."></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button class="primary" onclick="base64Encode()">Base64 编码</button>
+                    <button class="primary" onclick="base64Decode()">Base64 解码</button>
+                    <button class="secondary" onclick="clearBase64()">清空</button>
+                </div>
+                
+                <div class="input-group">
+                    <label>输出结果：</label>
+                    <div id="base64-output" class="output-box"></div>
+                </div>
+            </div>
+
+            <!-- MD5 哈希 -->
+            <div class="tool-section">
+                <h2>MD5 哈希</h2>
+                <p>MD5是一种广泛使用的密码散列函数，可以产生出一个128位（16字节）的散列值。注意：MD5已不安全，不建议用于密码存储。</p>
+                
+                <div class="input-group">
+                    <label for="md5-input">输入文本：</label>
+                    <textarea id="md5-input" placeholder="请输入要生成MD5哈希的文本..."></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button class="primary" onclick="generateMD5()">生成 MD5</button>
+                    <button class="secondary" onclick="clearMD5()">清空</button>
+                </div>
+                
+                <div class="input-group">
+                    <label>MD5 哈希值：</label>
+                    <div id="md5-output" class="output-box"></div>
+                </div>
+            </div>
+
+            <!-- SHA-256 哈希 -->
+            <div class="tool-section">
+                <h2>SHA-256 哈希</h2>
+                <p>SHA-256是SHA-2系列的一种，产生256位（32字节）的哈希值，安全性更高，适用于现代加密需求。</p>
+                
+                <div class="input-group">
+                    <label for="sha256-input">输入文本：</label>
+                    <textarea id="sha256-input" placeholder="请输入要生成SHA-256哈希的文本..."></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button class="primary" onclick="generateSHA256()">生成 SHA-256</button>
+                    <button class="secondary" onclick="clearSHA256()">清空</button>
+                </div>
+                
+                <div class="input-group">
+                    <label>SHA-256 哈希值：</label>
+                    <div id="sha256-output" class="output-box"></div>
+                </div>
+            </div>
+
+            <!-- AES 加密/解密 -->
+            <div class="tool-section">
+                <h2>AES 加密/解密</h2>
+                <p>AES（高级加密标准）是一种对称加密算法，使用相同的密钥进行加密和解密，安全性高，速度快。</p>
+                
+                <div class="input-group">
+                    <label for="aes-input">输入文本：</label>
+                    <textarea id="aes-input" placeholder="请输入要加密或解密的文本..."></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="aes-key">密钥（至少8个字符）：</label>
+                    <input type="password" id="aes-key" placeholder="请输入加密密钥...">
+                </div>
+                
+                <div class="button-group">
+                    <button class="primary" onclick="aesEncrypt()">AES 加密</button>
+                    <button class="primary" onclick="aesDecrypt()">AES 解密</button>
+                    <button class="secondary" onclick="clearAES()">清空</button>
+                </div>
+                
+                <div class="input-group">
+                    <label>输出结果：</label>
+                    <div id="aes-output" class="output-box"></div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <strong>提示：</strong>请妥善保管您的密钥。使用相同的密钥才能解密加密后的内容。
+                </div>
+            </div>
+
+            <!-- URL 编码/解码 -->
+            <div class="tool-section">
+                <h2>URL 编码/解码</h2>
+                <p>URL编码是一种浏览器用来打包表单输入的格式，也称为百分号编码，用于在URL中传递参数。</p>
+                
+                <div class="input-group">
+                    <label for="url-input">输入文本：</label>
+                    <textarea id="url-input" placeholder="请输入要编码或解码的URL或文本..."></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button class="primary" onclick="urlEncode()">URL 编码</button>
+                    <button class="primary" onclick="urlDecode()">URL 解码</button>
+                    <button class="secondary" onclick="clearURL()">清空</button>
+                </div>
+                
+                <div class="input-group">
+                    <label>输出结果：</label>
+                    <div id="url-output" class="output-box"></div>
+                </div>
+            </div>
+
+            <!-- 使用说明 -->
+            <div class="alert alert-info">
+                <strong>安全提示：</strong>本工具所有加密解密操作均在您的浏览器本地完成，不会上传到服务器，请放心使用。
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2023 在线工具集 | <a href="https://github.com/Rodert/jsonformat" target="_blank">GitHub</a></p>
+        <p class="author-info">作者：王仕宇 - 软件开发工程师 | 社媒账号：<a href="https://github.com/Rodert" target="_blank">JavaPub</a></p>
+    </footer>
+
+    <script src="js/crypto.js"></script>
+</body>
+</html>
+
