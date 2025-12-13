@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人民币大写转换器</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>人民币大写转换器</h1>
+        <a href="https://github.com/Rodert/jsonformat" target="_blank" class="github-link">
+            <svg height="24" width="24" viewBox="0 0 16 16" version="1.1">
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+            GitHub
+        </a>
+    </header>
+
+    <div class="container">
+        <nav class="nav-tabs">
+            <a href="index.html">JSON格式化</a>
+            <a href="crypto.html">加密解密</a>
+            <a href="diff.html">代码对比</a>
+            <a href="money.html" class="active">人民币大写</a>
+        </nav>
+
+        <main>
+            <div class="tool-section">
+                <h2>人民币金额转大写</h2>
+                <p>将数字金额转换为人民币大写形式，适用于发票、合同等正式文档。支持小数点后两位（角、分）。</p>
+                
+                <div class="input-group">
+                    <label for="money-input">输入金额：</label>
+                    <input type="text" id="money-input" placeholder="请输入金额，例如：12345.67" autocomplete="off">
+                </div>
+                
+                <div class="button-group">
+                    <button class="primary" onclick="convertMoney()">转换为大写</button>
+                    <button class="secondary" onclick="clearMoney()">清空</button>
+                    <button class="secondary" onclick="copyResult()">复制结果</button>
+                </div>
+                
+                <div class="input-group">
+                    <label>大写结果：</label>
+                    <div id="money-output" class="output-box" style="font-size: 18px; font-weight: 500; padding: 20px; text-align: center; color: #2E7D32; background: #E8F5E9; min-height: 60px; display: flex; align-items: center; justify-content: center;">
+                        请输入金额后点击转换
+                    </div>
+                </div>
+
+                <div class="alert alert-info" style="margin-top: 20px;">
+                    <strong>使用说明：</strong>
+                    <ul style="margin: 10px 0 0 20px; padding: 0;">
+                        <li>支持输入整数和小数（最多两位小数）</li>
+                        <li>最大支持到亿的单位</li>
+                        <li>金额范围：0.01 到 999999999999.99</li>
+                        <li>例如：123.45 → 壹佰贰拾叁元肆角伍分</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 参考表格 -->
+            <div class="tool-section">
+                <h2>阿拉伯数字与中文大写数字对应表</h2>
+                <p>以下是对照表，方便您参考和核对转换结果。</p>
+                
+                <div class="alert alert-info" style="margin-top: 20px; margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 12px; color: #1565C0; font-size: 16px;">中文大写数字历史渊源</h3>
+                    <p style="margin-bottom: 12px; line-height: 1.8;">
+                        中文大写数字的使用始于明朝。明太祖朱元璋因为当时的一件重大贪污案"郭桓案"而发布法令，其中明确要求记账的数字必须由"一、二、三、四、五、六、七、八、九、十、百、千"改为"壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰（陌）、仟（阡）"等复杂的汉字，用以增加涂改帐册的难度。后来"陌"和"阡"被改写成"佰、仟"，并一直使用到现在。
+                    </p>
+                    <p style="margin-bottom: 12px; line-height: 1.8;">
+                        <strong>使用规范：</strong>中文大写金额数字应用正楷或行书填写，如壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿、元、角、分、零、整(正)等字样。不得用一、二(两)、三、四、五、六、七、八、九、十、念、毛、另(或0)填写，不得自造简化字。
+                    </p>
+                    <p style="margin-bottom: 0; line-height: 1.8;">
+                        <strong>重要规则：</strong>中文大写金额数字到"元"为止的，在"元"之后应写"整"(或"正")字；在"角"之后可以不写"整"字；大写金额数字有"分"的，"分"后面不写"整"字。阿拉伯数字中间有"0"时，中文大写要写"零"字；连续几个"0"时，可以只写一个"零"字。
+                    </p>
+                </div>
+                
+                <div style="overflow-x: auto; margin-top: 20px;">
+                    <table class="reference-table" style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <thead>
+                            <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                <th style="padding: 12px; text-align: center; font-weight: 600;">阿拉伯数字</th>
+                                <th style="padding: 12px; text-align: center; font-weight: 600;">大写形式</th>
+                                <th style="padding: 12px; text-align: center; font-weight: 600;">小写形式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">1</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">壹</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">一</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">2</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">贰</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">二</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">3</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">叁</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">三</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">4</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">肆</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">四</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">5</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">伍</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">五</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">6</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">陆</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">六</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">7</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">柒</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">七</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">8</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">捌</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">八</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">9</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">玖</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">九</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">0</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">零</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">零</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">10</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">拾</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">十</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">100</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">佰</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">百</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; font-weight: 600; color: #333;">1000</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #667eea; font-weight: 500;">仟</td>
+                                <td style="padding: 12px; text-align: center; font-size: 18px; color: #666;">千</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-info" style="margin-top: 20px;">
+                    <strong>说明：</strong>
+                    <ul style="margin: 10px 0 0 20px; padding: 0;">
+                        <li>人民币大写使用大写形式（壹、贰、叁等）</li>
+                        <li>大写形式用于正式文档，如发票、合同、支票等</li>
+                        <li>小写形式（一、二、三等）用于日常书写</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2023 在线工具集 | <a href="https://github.com/Rodert/jsonformat" target="_blank">GitHub</a></p>
+        <p class="author-info">作者：王仕宇 - 软件开发工程师 | 社媒账号：<a href="https://github.com/Rodert" target="_blank">JavaPub</a></p>
+    </footer>
+
+    <script src="js/money.js"></script>
+</body>
+</html>
