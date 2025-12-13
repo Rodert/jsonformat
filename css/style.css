@@ -6,48 +6,61 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #f5f5f5;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    padding: 20px;
+    padding: 0;
     color: #333;
+    line-height: 1.6;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 header {
-    background: #fff;
-    padding: 16px 24px;
-    border-radius: 4px;
-    border: 1px solid #e0e0e0;
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 24px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 header h1 {
-    color: #333;
-    font-size: 20px;
-    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .github-link {
     display: flex;
     align-items: center;
-    gap: 6px;
-    color: #555;
+    gap: 8px;
+    color: #667eea;
     text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background 0.2s;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
     font-size: 14px;
+    font-weight: 500;
+    background: rgba(102, 126, 234, 0.1);
 }
 
 .github-link:hover {
-    background: #f0f0f0;
+    background: rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .github-link svg {
@@ -55,62 +68,78 @@ header h1 {
 }
 
 .nav-tabs {
-    background: #fff;
-    padding: 12px 20px;
-    border-radius: 4px;
-    border: 1px solid #e0e0e0;
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .nav-tabs a {
-    color: #555;
+    color: #666;
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: all 0.2s;
-    font-weight: 400;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
     font-size: 14px;
+    position: relative;
 }
 
 .nav-tabs a:hover {
-    background: #f0f0f0;
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    transform: translateY(-2px);
 }
 
 .nav-tabs a.active {
-    background: #2196F3;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
 main {
-    background: #fff;
-    padding: 24px;
-    border-radius: 4px;
-    border: 1px solid #e0e0e0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .tool-section {
-    margin-bottom: 20px;
-    padding: 16px;
-    background: #fafafa;
-    border-radius: 4px;
-    border-left: 3px solid #2196F3;
+    margin-bottom: 24px;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .tool-section h2 {
     color: #333;
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
 
 .tool-section p {
     color: #666;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
 .input-group {
@@ -119,9 +148,9 @@ main {
 
 .input-group label {
     display: block;
-    color: #555;
-    margin-bottom: 6px;
-    font-weight: 500;
+    color: #444;
+    margin-bottom: 10px;
+    font-weight: 600;
     font-size: 14px;
 }
 
@@ -130,13 +159,14 @@ main {
 .input-group input[type="password"],
 .input-group select {
     width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #d0d0d0;
-    border-radius: 4px;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     font-size: 14px;
     font-family: 'Courier New', monospace;
-    transition: border-color 0.2s;
+    transition: all 0.3s ease;
     resize: vertical;
+    background: white;
 }
 
 .input-group textarea {
@@ -147,175 +177,225 @@ main {
 .input-group input:focus,
 .input-group select:focus {
     outline: none;
-    border-color: #2196F3;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .button-group {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-top: 12px;
+    margin-top: 16px;
 }
 
 button {
-    padding: 8px 16px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
     color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 button.primary {
-    background: #2196F3;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 button.primary:hover {
-    background: #1976D2;
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
 }
 
 button.secondary {
-    background: #757575;
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
 }
 
 button.secondary:hover {
-    background: #616161;
+    background: linear-gradient(135deg, #839496 0%, #6c7a7b 100%);
 }
 
 button.success {
-    background: #4CAF50;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
 
 button.success:hover {
-    background: #45a049;
+    background: linear-gradient(135deg, #0f8579 0%, #2fd469 100%);
 }
 
 .output-box {
-    background: white;
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #d0d0d0;
+    background: #1e1e2e;
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px solid #2d2d44;
     min-height: 100px;
     word-break: break-all;
     font-family: 'Courier New', monospace;
     font-size: 14px;
-    color: #333;
+    color: #a6e3a1;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .alert {
-    padding: 12px;
-    border-radius: 4px;
-    margin-top: 12px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-top: 16px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.7;
+    border-left: 4px solid;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .alert-info {
-    background: #E3F2FD;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
     color: #1565C0;
-    border-left: 3px solid #2196F3;
+    border-left-color: #667eea;
 }
 
 .alert-warning {
-    background: #FFF8E1;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
     color: #F57F17;
-    border-left: 3px solid #FFC107;
+    border-left-color: #FFC107;
 }
 
 .alert-success {
-    background: #E8F5E9;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(56, 142, 60, 0.1) 100%);
     color: #2E7D32;
-    border-left: 3px solid #4CAF50;
+    border-left-color: #4CAF50;
 }
 
 .alert-error {
-    background: #FFEBEE;
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1) 0%, rgba(198, 40, 40, 0.1) 100%);
     color: #C62828;
-    border-left: 3px solid #F44336;
+    border-left-color: #F44336;
 }
 
 footer {
-    background: #fff;
-    padding: 16px;
-    border-radius: 4px;
-    border: 1px solid #e0e0e0;
-    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin: 24px auto 0;
+    max-width: 1200px;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 footer p {
     color: #666;
-    margin: 4px 0;
-    font-size: 13px;
+    margin: 6px 0;
+    font-size: 14px;
 }
 
 footer a {
-    color: #2196F3;
+    color: #667eea;
     text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 footer a:hover {
+    color: #764ba2;
     text-decoration: underline;
 }
 
 /* JSON格式化页面特定样式 */
 .input-section,
 .output-section {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 .input-section h2,
 .output-section h2 {
     color: #333;
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
 
 #json-input {
     width: 100%;
     min-height: 300px;
-    padding: 12px;
-    border: 1px solid #d0d0d0;
-    border-radius: 4px;
+    padding: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     font-family: 'Courier New', monospace;
     font-size: 14px;
     resize: vertical;
+    background: white;
+    transition: all 0.3s ease;
 }
 
 #json-input:focus {
     outline: none;
-    border-color: #2196F3;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 pre {
-    background: #282c34;
-    padding: 16px;
-    border-radius: 4px;
+    background: #1e1e2e;
+    padding: 20px;
+    border-radius: 8px;
     overflow-x: auto;
-    margin-top: 12px;
-    border: 1px solid #1e2229;
+    margin-top: 16px;
+    border: 2px solid #2d2d44;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 pre code {
     color: #abb2bf;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', Monaco, Consolas, monospace;
     font-size: 14px;
+    line-height: 1.6;
 }
 
 /* 代码对比页面特定样式 */
 .diff-controls {
-    background: #fafafa;
-    padding: 16px;
-    border-radius: 4px;
-    margin-bottom: 16px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
     align-items: center;
-    border: 1px solid #e8e8e8;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .control-group {
@@ -333,18 +413,20 @@ pre code {
 }
 
 .control-group select {
-    padding: 6px 10px;
-    border: 1px solid #d0d0d0;
-    border-radius: 4px;
+    padding: 10px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     font-size: 14px;
     background: white;
     cursor: pointer;
     min-width: 140px;
+    transition: all 0.3s ease;
 }
 
 .control-group select:focus {
     outline: none;
-    border-color: #2196F3;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .control-group input[type="checkbox"] {
@@ -354,14 +436,16 @@ pre code {
 }
 
 .diff-stats {
-    background: #fafafa;
-    padding: 12px 16px;
-    border-radius: 4px;
-    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
     display: flex;
-    gap: 20px;
+    gap: 24px;
     flex-wrap: wrap;
-    border: 1px solid #e8e8e8;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .stat-item {
@@ -412,21 +496,29 @@ pre code {
 
 .diff-panel {
     background: white;
-    border: 1px solid #d0d0d0;
-    border-radius: 4px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 500px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diff-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .panel-header {
-    background: #2196F3;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 10px 16px;
+    padding: 14px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .panel-header h3 {
@@ -439,16 +531,18 @@ pre code {
     background: rgba(255, 255, 255, 0.15);
     border: none;
     color: white;
-    padding: 4px 8px;
-    border-radius: 3px;
+    padding: 8px 12px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    transition: background 0.2s;
-    margin-left: 6px;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+    backdrop-filter: blur(10px);
 }
 
 .panel-header button:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
 }
 
 .upload-btn {
@@ -476,28 +570,30 @@ pre code {
     width: 100%;
     height: 100%;
     min-height: 500px;
-    padding: 12px;
+    padding: 16px;
     border: none;
     resize: none;
     font-family: 'Courier New', Monaco, Consolas, monospace;
     font-size: 13px;
-    line-height: 1.5;
-    background: #282c34;
+    line-height: 1.6;
+    background: #1e1e2e;
     color: #abb2bf;
+    transition: background 0.3s ease;
 }
 
 .code-input:focus {
     outline: none;
+    background: #252536;
 }
 
 .diff-viewer {
     display: none;
     height: 100%;
     overflow: auto;
-    background: #282c34;
+    background: #1e1e2e;
     font-family: 'Courier New', Monaco, Consolas, monospace;
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .diff-viewer pre {
@@ -513,33 +609,34 @@ pre code {
 
 .diff-line {
     display: flex;
-    padding: 2px 12px;
-    min-height: 20px;
+    padding: 4px 16px;
+    min-height: 24px;
     align-items: center;
-    border-left: 3px solid transparent;
+    border-left: 4px solid transparent;
+    transition: background 0.2s ease;
 }
 
 .diff-line.diff-empty {
-    background: #2a2e36;
+    background: #252536;
 }
 
 .diff-line.diff-equal {
-    background: #282c34;
+    background: #1e1e2e;
     border-left-color: transparent;
 }
 
 .diff-line.diff-added {
-    background: rgba(46, 125, 50, 0.12);
+    background: rgba(76, 175, 80, 0.15);
     border-left-color: #4CAF50;
 }
 
 .diff-line.diff-removed {
-    background: rgba(198, 40, 40, 0.12);
+    background: rgba(244, 67, 54, 0.15);
     border-left-color: #F44336;
 }
 
 .diff-line.diff-changed {
-    background: rgba(245, 127, 23, 0.12);
+    background: rgba(255, 193, 7, 0.15);
     border-left-color: #FFC107;
 }
 
@@ -567,35 +664,44 @@ pre code {
 
 @media (max-width: 768px) {
     body {
+        padding: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .container {
         padding: 12px;
     }
 
     header {
+        margin-left: 12px;
+        margin-right: 12px;
         flex-direction: column;
         gap: 12px;
         text-align: center;
-        padding: 12px 16px;
+        padding: 16px 20px;
     }
 
     header h1 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .nav-tabs {
         justify-content: center;
-        padding: 10px 16px;
+        padding: 8px;
     }
 
     main {
-        padding: 16px;
+        padding: 20px;
     }
 
     .button-group {
         flex-direction: column;
+        gap: 10px;
     }
 
     button {
         width: 100%;
+        padding: 14px 24px;
     }
 
     .diff-container {
@@ -625,6 +731,10 @@ pre code {
 
     .stat-item {
         justify-content: space-between;
+    }
+
+    footer {
+        margin: 24px 12px 0 12px;
     }
 }
 
