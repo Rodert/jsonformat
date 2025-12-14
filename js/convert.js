@@ -686,3 +686,5 @@ function copyResult() {
         document.body.removeChild(textarea);
     }
 }
+
+
