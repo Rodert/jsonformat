@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线JSON格式化工具，支持JSON美化、压缩、校验、复制、下载、树形查看、JSON转YAML、JSON转XML、JSON转TypeScript、JSON转Go Struct，所有数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JSON格式化,JSON美化,JSON压缩,JSON校验,JSON转YAML,JSON转XML,JSON转TypeScript,JSON转Go Struct">
+    <title>JSON格式化工具 - 在线JSON美化、压缩、校验工具</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body class="tool-page json-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>JSON格式化工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html" class="active">JSON</a>
+            <a href="crypto.html">加密</a>
+            <a href="diff.html">代码对比</a>
+            <a href="convert.html">JSON转换</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">数据格式类工具</p>
+                <h1>JSON格式化工具</h1>
+                <p>支持 JSON 美化、压缩、校验、复制、下载、树形查看、JSON 转 YAML/XML/TypeScript/Go Struct。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="json-workbench" aria-label="JSON格式化工作台">
+            <div class="json-toolbar">
+                <button id="format-btn" class="primary">格式化</button>
+                <button id="compress-btn" class="secondary">压缩</button>
+                <button id="validate-btn" class="secondary">校验</button>
+                <button id="escape-btn" class="secondary">转义</button>
+                <button id="unescape-btn" class="secondary">去转义</button>
+                <button id="copy-btn" class="secondary">复制结果</button>
+                <button id="download-btn" class="secondary">下载 JSON</button>
+                <button id="sample-btn" class="secondary">示例</button>
+                <button id="clear-btn" class="secondary">清空</button>
+                <button id="fullscreen-btn" class="secondary">全屏</button>
+            </div>
+
+            <div class="json-layout">
+                <section class="editor-panel">
+                    <div class="editor-header">
+                        <h2>输入JSON</h2>
+                        <span id="input-stats">0 字符</span>
+                    </div>
+                    <textarea id="json-input" spellcheck="false" placeholder="请在此处粘贴 JSON 数据..."></textarea>
+                </section>
+
+                <section class="editor-panel">
+                    <div class="editor-header">
+                        <h2>格式化结果</h2>
+                        <select id="output-mode" aria-label="选择输出模式">
+                            <option value="json">JSON</option>
+                            <option value="tree">树形查看</option>
+                            <option value="yaml">转 YAML</option>
+                            <option value="xml">转 XML</option>
+                            <option value="typescript">转 TypeScript</option>
+                            <option value="go">转 Go Struct</option>
+                        </select>
+                    </div>
+                    <pre id="output-pre"><code id="json-output" class="json"></code></pre>
+                </section>
+            </div>
+
+            <div class="status-panel">
+                <div id="json-message" class="json-message">等待输入 JSON 数据。</div>
+                <div class="json-stats">
+                    <span id="stat-size">大小：0 B</span>
+                    <span id="stat-lines">行数：0</span>
+                    <span id="stat-depth">层级：0</span>
+                    <span id="stat-keys">键数：0</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>在线 JSON 美化、压缩、校验工具</h2>
+            <p>这个 JSON 工具适合接口调试、日志排查、配置文件整理和数据结构查看。输入内容不会上传到服务器，所有解析、转换和复制操作都在当前浏览器内完成。</p>
+            <div class="related-tools">
+                <a href="convert.html">JSON 转多语言实体</a>
+                <a href="diff.html">JSON/代码对比</a>
+                <a href="crypto.html">Base64 与 URL 编码</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>更多 AI 开发教程与 API 接入服务可访问相关站点。</p>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/Rodert" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://docs.chongplus.plus" target="_blank" rel="noopener">docs.chongplus.plus</a>
+            <a href="https://api.chongplus.plus" target="_blank" rel="noopener">api.chongplus.plus</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
