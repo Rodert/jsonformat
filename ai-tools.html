@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线AI调试工具，支持Prompt格式化、OpenAI请求体格式化、Claude请求体格式化、Token估算、API错误码解释和模型价格换算，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="AI工具,Prompt格式化,OpenAI请求体,Claude请求体,Token估算,API错误码,模型价格换算">
+    <title>AI调试工具 - Prompt格式化、Token估算、API价格换算</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>AI调试工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html">JSON</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="jwt.html">JWT解析</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">AI 工具</p>
+                <h1>AI调试工具</h1>
+                <p>Prompt 格式化、OpenAI / Claude 请求体生成、Token 粗估、API 错误码解释和模型价格换算。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>Prompt 格式化</h2>
+                    <label for="prompt-role">角色</label>
+                    <input type="text" id="prompt-role" placeholder="例如：资深 Java 后端工程师">
+                    <label for="prompt-task">任务</label>
+                    <textarea id="prompt-task" class="utility-textarea small-output" spellcheck="false" placeholder="描述你希望模型完成的任务..."></textarea>
+                    <label for="prompt-context">上下文</label>
+                    <textarea id="prompt-context" class="utility-textarea small-output" spellcheck="false" placeholder="补充项目背景、输入数据、限制条件..."></textarea>
+                    <label for="prompt-output">输出要求</label>
+                    <input type="text" id="prompt-output" placeholder="例如：用中文输出，给出步骤和代码块">
+                    <div class="button-group compact">
+                        <button id="prompt-format-btn" class="primary">生成 Prompt</button>
+                        <button id="prompt-sample-btn" class="secondary">示例</button>
+                        <button id="prompt-clear-btn" class="secondary">清空</button>
+                        <button class="secondary" data-copy="prompt-result">复制</button>
+                    </div>
+                    <textarea id="prompt-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>OpenAI 请求体格式化</h2>
+                    <label for="openai-model">模型</label>
+                    <select id="openai-model">
+                        <option value="gpt-5.2">gpt-5.2</option>
+                        <option value="gpt-5-mini">gpt-5-mini</option>
+                        <option value="gpt-4.1">gpt-4.1</option>
+                        <option value="gpt-4.1-mini" selected>gpt-4.1-mini</option>
+                    </select>
+                    <label for="openai-system">System 指令</label>
+                    <textarea id="openai-system" class="utility-textarea small-output" spellcheck="false" placeholder="例如：你是一个严谨的开发助手。"></textarea>
+                    <label for="openai-user">User 消息</label>
+                    <textarea id="openai-user" class="utility-textarea" spellcheck="false" placeholder="输入用户消息..."></textarea>
+                    <div class="option-row">
+                        <label for="openai-temperature">temperature</label>
+                        <input type="number" id="openai-temperature" value="0.2" min="0" max="2" step="0.1">
+                        <label for="openai-max-output">max_output_tokens</label>
+                        <input type="number" id="openai-max-output" value="2048" min="1" step="1">
+                    </div>
+                    <div class="button-group compact">
+                        <button id="openai-responses-btn" class="primary">Responses API</button>
+                        <button id="openai-chat-btn" class="secondary">Chat Completions</button>
+                        <button class="secondary" data-copy="openai-result">复制</button>
+                    </div>
+                    <textarea id="openai-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>Claude 请求体格式化</h2>
+                    <label for="claude-model">模型</label>
+                    <select id="claude-model">
+                        <option value="claude-opus-4-1">claude-opus-4-1</option>
+                        <option value="claude-sonnet-4" selected>claude-sonnet-4</option>
+                        <option value="claude-3-5-haiku-latest">claude-3-5-haiku-latest</option>
+                    </select>
+                    <label for="claude-system">System 指令</label>
+                    <textarea id="claude-system" class="utility-textarea small-output" spellcheck="false" placeholder="例如：你是一个专注代码审查的助手。"></textarea>
+                    <label for="claude-user">User 消息</label>
+                    <textarea id="claude-user" class="utility-textarea" spellcheck="false" placeholder="输入用户消息..."></textarea>
+                    <div class="option-row">
+                        <label for="claude-max-tokens">max_tokens</label>
+                        <input type="number" id="claude-max-tokens" value="2048" min="1" step="1">
+                    </div>
+                    <div class="button-group compact">
+                        <button id="claude-generate-btn" class="primary">生成请求体</button>
+                        <button class="secondary" data-copy="claude-result">复制</button>
+                    </div>
+                    <textarea id="claude-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>Token 粗估</h2>
+                    <textarea id="token-input" class="utility-textarea" spellcheck="false" placeholder="粘贴 Prompt、接口消息或长文本..."></textarea>
+                    <div class="button-group compact">
+                        <button id="token-estimate-btn" class="primary">估算 Token</button>
+                        <button id="token-clear-btn" class="secondary">清空</button>
+                    </div>
+                    <div id="token-stats" class="result-list"></div>
+                    <p class="muted">这是离线粗估，不等同于官方 tokenizer。中英文混合、代码、JSON 和特殊符号会有偏差，计费以供应商返回 usage 为准。</p>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>API 错误码解释</h2>
+                    <label for="error-query">状态码或错误关键词</label>
+                    <input type="text" id="error-query" placeholder="例如：401、429、rate_limit、context_length">
+                    <div class="button-group compact">
+                        <button id="error-search-btn" class="primary">查询</button>
+                        <button id="error-list-btn" class="secondary">常见错误</button>
+                    </div>
+                    <div id="error-result" class="result-list"></div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>模型价格换算</h2>
+                    <label for="price-model">模型预设</label>
+                    <select id="price-model"></select>
+                    <div class="option-row">
+                        <label for="price-input-rate">输入 $/1M</label>
+                        <input type="number" id="price-input-rate" min="0" step="0.001">
+                        <label for="price-output-rate">输出 $/1M</label>
+                        <input type="number" id="price-output-rate" min="0" step="0.001">
+                    </div>
+                    <div class="option-row">
+                        <label for="price-input-tokens">输入 tokens</label>
+                        <input type="number" id="price-input-tokens" value="10000" min="0" step="1">
+                        <label for="price-output-tokens">输出 tokens</label>
+                        <input type="number" id="price-output-tokens" value="2000" min="0" step="1">
+                    </div>
+                    <div class="option-row">
+                        <label for="price-exchange-rate">美元兑人民币</label>
+                        <input type="number" id="price-exchange-rate" value="7.20" min="0" step="0.01">
+                    </div>
+                    <div class="button-group compact">
+                        <button id="price-calc-btn" class="primary">计算费用</button>
+                    </div>
+                    <div id="price-result" class="result-list"></div>
+                    <p class="muted">内置价格仅用于估算，单价可手动修改。实际账单以官方控制台和供应商最新价格为准。</p>
+                </article>
+            </div>
+            <div id="ai-message" class="json-message">等待输入内容。</div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>在线 AI API 调试和成本估算</h2>
+            <p>这个工具页面向 AI 应用开发和接口调试场景，帮助整理 Prompt、生成 OpenAI / Claude 请求体、快速估算 token 和调用成本。所有文本处理均在浏览器本地完成。</p>
+            <div class="related-tools">
+                <a href="json-format.html">JSON格式化</a>
+                <a href="jwt.html">JWT解析</a>
+                <a href="crypto.html">编码加密</a>
+                <a href="https://docs.chongplus.plus" target="_blank" rel="noopener">AI 开发教程</a>
+                <a href="https://api.chongplus.plus" target="_blank" rel="noopener">API 接入服务</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合 Prompt 整理、AI API 调试和模型成本预估。</p>
+        </div>
+        <div class="footer-links">
+            <a href="https://platform.openai.com/docs/pricing" target="_blank" rel="noopener">OpenAI价格</a>
+            <a href="https://docs.anthropic.com/en/docs/about-claude/pricing" target="_blank" rel="noopener">Claude价格</a>
+            <a href="json-format.html">JSON格式化</a>
+        </div>
+    </footer>
+
+    <script src="js/ai-tools.js"></script>
+</body>
+</html>
