@@ -36,7 +36,7 @@
 
 ## 桌面离线版
 
-本项目已加入 Electron 桌面离线版配置，可通过 GitHub Actions 自动构建 Windows 和 macOS 安装包，并上传到 GitHub Releases。
+本项目已加入 Electron 桌面离线版配置，可通过 GitHub Actions 自动构建 Windows 安装包，并上传到 GitHub Releases。
 
 ### 触发 Release 构建
 
@@ -77,7 +77,6 @@ git push origin v1.0.0
 
 - Windows x64 安装版：`JavaPub Tools-日期.commit-windows-x64-setup.exe`
 - Windows x64 便携版：`JavaPub Tools-日期.commit-windows-x64-portable.exe`
-- macOS x64 / arm64：`.dmg` 和 `.zip`
 
 桌面版会直接加载仓库内的静态页面，工具逻辑仍然在本地浏览器内核中运行，不上传服务器。
 
@@ -92,10 +91,9 @@ npm run start
 
 ```bash
 npm run dist:win
-npm run dist:mac
 ```
 
-macOS 包建议在 macOS 或 GitHub Actions macOS runner 上构建。未签名包在 Windows/macOS 上可能出现安全提示，正式分发时可再配置代码签名和 macOS notarization。
+当前自动发布仅构建 Windows x64 包。未签名包在 Windows 上可能出现 SmartScreen 安全提示，正式分发时可再配置代码签名。
 
 ## 部署到GitHub Pages
 

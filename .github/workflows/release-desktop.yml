@@ -57,9 +57,6 @@ jobs:
           - name: Windows x64
             os: windows-latest
             command: npm run dist:win
-          - name: macOS x64 arm64
-            os: macos-13
-            command: npm run dist:mac
 
     steps:
       - name: Checkout
@@ -88,8 +85,6 @@ jobs:
           name: javapub-tools-${{ matrix.name }}
           path: |
             release/*.exe
-            release/*.dmg
-            release/*.zip
             release/*.blockmap
           if-no-files-found: error
 
@@ -120,8 +115,6 @@ jobs:
             Version: `${{ needs.metadata.outputs.release_version }}`
           files: |
             release-artifacts/**/*.exe
-            release-artifacts/**/*.dmg
-            release-artifacts/**/*.zip
             release-artifacts/**/*.blockmap
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

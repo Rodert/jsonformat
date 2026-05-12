@@ -9,8 +9,7 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder --publish never",
-    "dist:win": "electron-builder --win --x64 --publish never",
-    "dist:mac": "electron-builder --mac --x64 --arm64 --publish never"
+    "dist:win": "electron-builder --win --x64 --publish never"
   },
   "devDependencies": {
     "electron": "31.7.7",
@@ -58,28 +57,6 @@
     },
     "portable": {
       "artifactName": "${productName}-${version}-windows-${arch}-portable.${ext}"
-    },
-    "mac": {
-      "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        },
-        {
-          "target": "zip",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        }
-      ],
-      "category": "public.app-category.developer-tools"
-    },
-    "dmg": {
-      "artifactName": "${productName}-${version}-macos-${arch}.${ext}"
     }
   }
 }
