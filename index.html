@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON转CSV、YAML转JSON、XML转JSON、Base64编码解码、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询、Markdown预览等常用工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转CSV,YAML转JSON,XML转JSON,Base64,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写,AI工具">
-    <title>JavaPub 开发者在线工具箱 - JSON格式化、编码加密、代码对比、AI调试工具</title>
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base64编码解码、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询、Markdown预览等常用工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,Base64,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JavaPub 开发者在线工具箱">
+    <meta property="og:description" content="JSON格式化、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具，数据仅在浏览器本地处理。">
+    <meta property="og:url" content="https://rodert.github.io/jsonformat/">
+    <link rel="canonical" href="https://rodert.github.io/jsonformat/">
+    <title>JavaPub 开发者在线工具箱 - JSON格式化、编码加密、代码对比工具</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "JavaPub Tools",
+        "url": "https://rodert.github.io/jsonformat/",
+        "description": "JavaPub 开发者在线工具箱，提供 JSON格式化、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具。",
+        "inLanguage": "zh-CN",
+        "publisher": {
+            "@type": "Person",
+            "name": "王仕宇"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://rodert.github.io/jsonformat/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 </head>
 <body class="home-page">
     <header class="site-header">
@@ -32,7 +56,7 @@
             <div class="hero-copy">
                 <p class="eyebrow">JavaPub 在线工具箱</p>
                 <h1 id="hero-title">开发者常用在线工具箱</h1>
-                <p class="hero-desc">JSON格式化、JSON转CSV、YAML转JSON、XML转JSON、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询等工具，打开即用，本地处理，安全高效。</p>
+                <p class="hero-desc">JSON格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询等工具，打开即用，本地处理，安全高效。</p>
             </div>
             <div class="tool-search" role="search">
                 <label for="tool-search-input">搜索工具</label>
@@ -152,6 +176,11 @@
                     <h3>JSON转CSV</h3>
                     <p>对象数组转 CSV，支持嵌套字段扁平化。</p>
                 </a>
+                <a class="tool-card is-live" href="csv-json.html" data-tool-card data-keywords="csv json 转换 表格 excel tsv">
+                    <span class="tool-badge">数据格式</span>
+                    <h3>CSV转JSON</h3>
+                    <p>CSV、TSV 或分号表格转格式化 JSON。</p>
+                </a>
                 <a class="tool-card is-live" href="yaml-json.html" data-tool-card data-keywords="yaml yml json 转换 配置">
                     <span class="tool-badge">数据格式</span>
                     <h3>YAML转JSON</h3>
@@ -186,6 +215,7 @@
                         <a href="json-format.html">JSON转YAML</a>
                         <a href="json-format.html">JSON转XML</a>
                         <a href="json-csv.html">JSON转CSV</a>
+                        <a href="csv-json.html">CSV转JSON</a>
                         <a href="yaml-json.html">YAML转JSON</a>
                         <a href="xml-json.html">XML转JSON</a>
                     </div>
@@ -199,7 +229,7 @@
                         <a href="crypto.html">MD5加密</a>
                         <a href="crypto.html">SHA1/SHA256加密</a>
                         <a href="crypto.html">AES加密解密</a>
-                        <span>RSA加密解密</span>
+                        <a href="crypto.html">RSA加密解密</a>
                         <a href="jwt.html">JWT解析</a>
                     </div>
                 </article>

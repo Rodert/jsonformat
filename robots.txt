@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rodert.github.io/jsonformat/sitemap.xml

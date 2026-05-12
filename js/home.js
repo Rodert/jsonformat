@@ -31,5 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
             : '输入关键词快速定位工具';
     }
 
+    const query = new URLSearchParams(window.location.search).get('q');
+    if (query) {
+        searchInput.value = query;
+    }
+
     searchInput.addEventListener('input', filterTools);
+    filterTools();
 });

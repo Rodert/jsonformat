@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线CSV转JSON工具，支持逗号、分号、Tab分隔符，支持表头行、字段去空格、复制和下载JSON，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="CSV转JSON,在线CSV转JSON,CSV解析,表格转JSON,数据格式转换">
+    <title>CSV转JSON工具 - 在线将CSV表格转换为JSON</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>CSV转JSON</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html">JSON格式化</a>
+            <a href="json-csv.html">JSON转CSV</a>
+            <a href="yaml-json.html">YAML转JSON</a>
+            <a href="xml-json.html">XML转JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">数据格式类工具</p>
+                <h1>CSV转JSON工具</h1>
+                <p>将 CSV、TSV 或分号分隔表格转换为 JSON，适合处理 Excel 导出、运营表格和接口批量数据。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入 CSV</h2>
+                    <textarea id="csv-json-input" class="utility-textarea" spellcheck="false" placeholder="粘贴 CSV 内容，例如：&#10;id,name,city&#10;1,JavaPub,北京"></textarea>
+                    <div class="option-row">
+                        <label for="csv-json-delimiter">分隔符</label>
+                        <select id="csv-json-delimiter">
+                            <option value=",">逗号 ,</option>
+                            <option value=";">分号 ;</option>
+                            <option value="tab">Tab</option>
+                        </select>
+                        <label><input id="csv-json-header" type="checkbox" checked> 第一行为表头</label>
+                        <label><input id="csv-json-trim" type="checkbox" checked> 去除字段首尾空格</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="csv-json-convert-btn" class="primary">转换 JSON</button>
+                        <button id="csv-json-sample-btn" class="secondary">示例</button>
+                        <button id="csv-json-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+                <article class="utility-panel">
+                    <h2>JSON 结果</h2>
+                    <textarea id="csv-json-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="csv-json-copy-btn" class="secondary">复制结果</button>
+                        <button id="csv-json-download-btn" class="secondary">下载 JSON</button>
+                    </div>
+                    <div id="csv-json-stats" class="result-list"></div>
+                </article>
+            </div>
+            <div id="csv-json-message" class="json-message">等待输入 CSV。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合将表格数据、运营清单和批量配置转换为接口友好的 JSON。</p>
+        </div>
+        <div class="footer-links">
+            <a href="json-csv.html">JSON转CSV</a>
+            <a href="json-format.html">JSON格式化</a>
+            <a href="yaml-json.html">YAML转JSON</a>
+        </div>
+    </footer>
+
+    <script src="js/csv-json.js"></script>
+</body>
+</html>

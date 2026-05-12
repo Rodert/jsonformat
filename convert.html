@@ -3,87 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON转换工具 - 多语言支持</title>
+    <meta name="description" content="免费在线JSON转换工具，支持将JSON转换为Java实体、Go Struct、C#实体、Rust Struct、Ruby类、XML和YAML，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JSON转换,JSON转Java,JSON转Go Struct,JSON转C#,JSON转Rust,JSON转Ruby,JSON转XML,JSON转YAML">
+    <title>JSON转换工具 - 在线生成Java、Go、C#、Rust实体</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="vendor/highlight/atom-one-dark.min.css">
 </head>
-<body>
-    <header>
-        <h1>JSON转换工具</h1>
-        <a href="https://github.com/Rodert/jsonformat" target="_blank" class="github-link">
-            <svg height="24" width="24" viewBox="0 0 16 16" version="1.1">
-                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-            </svg>
-            GitHub
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>JSON转换工具</small>
+            </span>
         </a>
-    </header>
-
-    <div class="container">
-        <nav class="nav-tabs">
+        <nav class="top-nav" aria-label="主导航">
             <a href="index.html">首页</a>
             <a href="json-format.html">JSON格式化</a>
-            <a href="crypto.html">加密解密</a>
+            <a href="json-csv.html">JSON转CSV</a>
+            <a href="csv-json.html">CSV转JSON</a>
             <a href="diff.html">代码对比</a>
-            <a href="money.html">人民币大写</a>
-            <a href="convert.html" class="active">JSON转换</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
         </nav>
+    </header>
 
-        <main>
-            <div class="tool-section">
-                <h2>JSON数据转换</h2>
-                <p>将JSON数据转换为各种编程语言的实体类、结构体或数据格式。支持Java、Golang、Ruby、XML、YAML、C#、Rust等多种格式。</p>
-                
-                <div class="input-group">
-                    <label for="json-input">输入JSON数据：</label>
-                    <textarea id="json-input" placeholder="请在此处粘贴您的JSON数据..." style="min-height: 200px;"></textarea>
-                </div>
-
-                <div class="input-group" style="margin-top: 16px;">
-                    <label for="class-name">类名/结构体名（可选）：</label>
-                    <input type="text" id="class-name" placeholder="例如：User、Product等，留空将自动生成" style="width: 100%;">
-                </div>
-
-                <div class="input-group" style="margin-top: 16px;">
-                    <label for="package-name">包名/命名空间（可选，仅Java/C#）：</label>
-                    <input type="text" id="package-name" placeholder="例如：com.example.model" style="width: 100%;">
-                </div>
-
-                <div class="button-group" style="margin-top: 20px;">
-                    <button class="primary" onclick="convertToJava()">转Java实体</button>
-                    <button class="primary" onclick="convertToGolang()">转Golang结构体</button>
-                    <button class="primary" onclick="convertToRuby()">转Ruby</button>
-                    <button class="primary" onclick="convertToCSharp()">转C#实体</button>
-                    <button class="primary" onclick="convertToRust()">转Rust</button>
-                    <button class="primary" onclick="convertToXML()">转XML</button>
-                    <button class="primary" onclick="convertToYAML()">转YAML</button>
-                    <button class="secondary" onclick="clearAll()">清空</button>
-                    <button class="secondary" onclick="loadSample()">示例数据</button>
-                </div>
-
-                <div class="input-group" style="margin-top: 24px;">
-                    <label>转换结果：</label>
-                    <div class="button-group" style="margin-bottom: 12px;">
-                        <button class="secondary" onclick="copyResult()" style="padding: 8px 16px; font-size: 13px;">复制结果</button>
-                    </div>
-                    <pre><code id="output-result" class="language-java"></code></pre>
-                </div>
-
-                <div class="alert alert-info" style="margin-top: 20px;">
-                    <strong>使用说明：</strong>
-                    <ul style="margin: 10px 0 0 20px; padding: 0;">
-                        <li>支持嵌套对象、数组等复杂JSON结构</li>
-                        <li>自动识别数据类型并生成对应的类型声明</li>
-                        <li>类名和包名可自定义，留空将使用默认值</li>
-                        <li>所有转换均在浏览器本地完成，数据安全有保障</li>
-                    </ul>
-                </div>
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">数据格式类工具</p>
+                <h1>JSON转换工具</h1>
+                <p>将 JSON 转换为 Java、Go、C#、Rust、Ruby、XML 和 YAML，适合接口字段建模和临时数据结构生成。</p>
             </div>
-        </main>
-    </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
 
-    <footer>
-        <p>© 2023 JSON转换工具 | <a href="https://github.com/Rodert/jsonformat" target="_blank">GitHub</a></p>
-        <p class="author-info">作者：王仕宇 - 软件开发工程师 | 社媒账号：<a href="https://github.com/Rodert" target="_blank">JavaPub</a></p>
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入 JSON</h2>
+                    <textarea id="json-input" class="utility-textarea" spellcheck="false" placeholder="请在此处粘贴 JSON 数据..."></textarea>
+                    <label for="class-name">类名/结构体名（可选）</label>
+                    <input type="text" id="class-name" placeholder="例如：User、Product，留空使用 Root">
+                    <label for="package-name">包名/命名空间（可选，仅 Java/C#）</label>
+                    <input type="text" id="package-name" placeholder="例如：com.example.model">
+                    <div class="button-group compact">
+                        <button class="primary" onclick="convertToJava()">Java实体</button>
+                        <button class="secondary" onclick="convertToGolang()">Go Struct</button>
+                        <button class="secondary" onclick="convertToCSharp()">C#实体</button>
+                        <button class="secondary" onclick="convertToRust()">Rust Struct</button>
+                        <button class="secondary" onclick="convertToRuby()">Ruby类</button>
+                        <button class="secondary" onclick="convertToXML()">XML</button>
+                        <button class="secondary" onclick="convertToYAML()">YAML</button>
+                        <button class="secondary" onclick="loadSample()">示例</button>
+                        <button class="secondary" onclick="clearAll()">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <div class="button-group compact">
+                        <button class="secondary" onclick="copyResult()">复制结果</button>
+                    </div>
+                    <pre class="utility-code"><code id="output-result" class="language-java"></code></pre>
+                    <p class="muted">自动识别字符串、数字、布尔、数组和嵌套对象。生成结果建议结合项目规范再做命名和类型调整。</p>
+                </article>
+            </div>
+            <div class="json-message">支持复杂 JSON 结构转换，所有生成过程均在当前浏览器内完成。</div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>在线 JSON 转实体类和结构体</h2>
+            <p>JSON 转换工具可以快速把接口响应、配置样例和调试数据转换成常见语言的数据结构，减少手写字段和类型声明的重复工作。</p>
+            <div class="related-tools">
+                <a href="json-format.html">JSON格式化</a>
+                <a href="json-csv.html">JSON转CSV</a>
+                <a href="csv-json.html">CSV转JSON</a>
+                <a href="diff.html">代码对比</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合接口调试、代码生成和数据格式转换场景。</p>
+        </div>
+        <div class="footer-links">
+            <a href="json-format.html">JSON格式化</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="diff.html">代码对比</a>
+        </div>
     </footer>
 
     <script src="vendor/highlight/highlight.min.js"></script>

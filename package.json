@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
+    "check:site": "node scripts/check-site.mjs",
     "dist": "electron-builder --publish never",
     "dist:win": "electron-builder --win --x64 --publish never"
   },
@@ -30,6 +31,8 @@
       "img/**/*",
       "vendor/**/*",
       "electron/**/*",
+      "robots.txt",
+      "sitemap.xml",
       "LICENSE",
       "README.md"
     ],

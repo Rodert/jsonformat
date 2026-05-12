@@ -1311,7 +1311,9 @@ body.tool-page {
 
 .utility-panel input[type="text"],
 .utility-panel input[type="number"],
-.utility-panel input[type="datetime-local"] {
+.utility-panel input[type="datetime-local"],
+.utility-panel input[type="password"],
+.utility-panel select {
     width: 100%;
     min-height: 42px;
     padding: 9px 11px;
@@ -1323,6 +1325,7 @@ body.tool-page {
 }
 
 .utility-panel input:focus,
+.utility-panel select:focus,
 .utility-textarea:focus {
     outline: none;
     border-color: #2563eb;
@@ -1347,6 +1350,14 @@ body.tool-page {
     min-height: 330px;
     background: #101828;
     color: #d0d5dd;
+}
+
+.utility-textarea.small-output {
+    min-height: 120px;
+}
+
+.utility-textarea.key-area {
+    min-height: 110px;
 }
 
 .button-group.compact {
@@ -1449,6 +1460,11 @@ body.tool-page {
     margin: 0;
     color: #344054;
     font-weight: 600;
+}
+
+.option-row select {
+    width: auto;
+    min-width: 110px;
 }
 
 .regex-input-row {
