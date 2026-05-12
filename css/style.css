@@ -1528,6 +1528,158 @@ body.tool-page {
     margin: 0 0 8px;
 }
 
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.metric-card {
+    min-height: 86px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #e6eaf2;
+}
+
+.metric-card span {
+    color: #667085;
+    font-size: 13px;
+}
+
+.metric-card strong {
+    color: #101828;
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.status-card {
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #e6eaf2;
+}
+
+.status-card strong {
+    color: #175cd3;
+    font-size: 26px;
+    line-height: 1;
+}
+
+.status-card h3 {
+    margin: 8px 0 4px;
+    color: #101828;
+    font-size: 15px;
+}
+
+.status-card span {
+    color: #344054;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.status-card p {
+    margin: 8px 0 0;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.markdown-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.markdown-editor,
+.markdown-preview {
+    min-height: 520px;
+}
+
+.markdown-preview {
+    overflow: auto;
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #e6eaf2;
+    color: #101828;
+    line-height: 1.75;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3 {
+    margin: 0 0 12px;
+    color: #101828;
+}
+
+.markdown-preview p,
+.markdown-preview ul,
+.markdown-preview blockquote,
+.markdown-preview table,
+.markdown-preview pre {
+    margin: 0 0 14px;
+}
+
+.markdown-preview ul {
+    padding-left: 22px;
+}
+
+.markdown-preview blockquote {
+    padding: 10px 14px;
+    border-left: 4px solid #2563eb;
+    background: #eff6ff;
+    color: #344054;
+}
+
+.markdown-preview code {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #f2f4f7;
+    color: #101828;
+}
+
+.markdown-preview pre {
+    padding: 14px;
+    border-radius: 8px;
+    background: #101828;
+    overflow: auto;
+}
+
+.markdown-preview pre code {
+    padding: 0;
+    background: transparent;
+    color: #d0d5dd;
+}
+
+.markdown-preview table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.markdown-preview th,
+.markdown-preview td {
+    padding: 8px 10px;
+    border: 1px solid #e6eaf2;
+    text-align: left;
+}
+
+.markdown-preview th {
+    background: #f8fafc;
+}
+
 @media (max-width: 980px) {
     .hero-panel,
     .tool-hero,
@@ -1605,6 +1757,15 @@ body.tool-page {
     }
 
     .result-row {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-grid,
+    .markdown-layout {
         grid-template-columns: 1fr;
     }
 }

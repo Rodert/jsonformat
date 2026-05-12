@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线文本去重工具，支持按行去重、忽略大小写、去除空行、排序、统计重复行，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="文本去重,在线去重,按行去重,去除重复行,文本处理工具">
+    <title>文本去重工具 - 在线按行去除重复文本</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>文本去重工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="case-convert.html">大小写</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="html-entity.html">HTML实体</a>
+            <a href="regex.html">正则测试</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>文本去重工具</h1>
+                <p>按行去除重复文本，支持忽略大小写、去空行、排序和重复次数统计。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>原始文本</h2>
+                    <textarea id="dedupe-input" class="utility-textarea" spellcheck="false" placeholder="每行一条文本，粘贴后点击去重..."></textarea>
+                    <div class="option-row">
+                        <label><input id="dedupe-trim" type="checkbox" checked> 去除首尾空格</label>
+                        <label><input id="dedupe-ignore-case" type="checkbox"> 忽略大小写</label>
+                        <label><input id="dedupe-remove-empty" type="checkbox" checked> 移除空行</label>
+                        <label><input id="dedupe-sort" type="checkbox"> 排序结果</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="dedupe-btn" class="primary">去重</button>
+                        <button id="sample-dedupe-btn" class="secondary">示例</button>
+                        <button id="clear-dedupe-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>去重结果</h2>
+                    <textarea id="dedupe-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="copy-dedupe-btn" class="secondary">复制结果</button>
+                    </div>
+                    <div id="dedupe-stats" class="result-list"></div>
+                </article>
+            </div>
+            <div id="dedupe-message" class="json-message">等待输入文本。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合处理日志、ID 列表、邮箱列表、关键词列表和临时数据。</p>
+        </div>
+        <div class="footer-links">
+            <a href="case-convert.html">大小写转换</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="regex.html">正则测试</a>
+        </div>
+    </footer>
+
+    <script src="js/text-dedupe.js"></script>
+</body>
+</html>

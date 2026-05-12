@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Markdown预览工具，支持标题、列表、引用、代码块、链接、表格的实时预览和HTML复制，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Markdown预览,Markdown在线编辑,Markdown转HTML,MD预览工具">
+    <title>Markdown预览工具 - 在线Markdown转HTML预览</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Markdown预览</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="html-entity.html">HTML实体</a>
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="json-format.html">JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>Markdown预览工具</h1>
+                <p>左右双栏编辑和预览 Markdown，支持常用语法、表格、代码块和 HTML 复制。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="button-group compact">
+                <button id="sample-md-btn" class="secondary">示例</button>
+                <button id="copy-md-html-btn" class="secondary">复制 HTML</button>
+                <button id="clear-md-btn" class="secondary">清空</button>
+            </div>
+            <div class="markdown-layout">
+                <article class="utility-panel">
+                    <h2>Markdown</h2>
+                    <textarea id="markdown-input" class="utility-textarea markdown-editor" spellcheck="false" placeholder="输入 Markdown 内容..."></textarea>
+                </article>
+                <article class="utility-panel">
+                    <h2>预览</h2>
+                    <div id="markdown-preview" class="markdown-preview"></div>
+                </article>
+            </div>
+            <div id="markdown-message" class="json-message">输入 Markdown 后自动预览。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>预览渲染为轻量本地实现，适合日常文档草稿和 README 片段检查。</p>
+        </div>
+        <div class="footer-links">
+            <a href="word-count.html">字数统计</a>
+            <a href="html-entity.html">HTML实体转义</a>
+            <a href="json-format.html">JSON格式化</a>
+        </div>
+    </footer>
+
+    <script src="js/markdown-preview.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线HTML实体转义工具，支持HTML特殊字符转义、反转义、数字实体编码，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="HTML实体转义,HTML反转义,HTML Escape,HTML Unescape,特殊字符转义">
+    <title>HTML实体转义工具 - 在线HTML Escape和Unescape</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>HTML实体转义</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="unicode.html">Unicode</a>
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="json-format.html">JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>HTML实体转义工具</h1>
+                <p>快速处理 HTML 特殊字符转义、反转义和数字实体编码，适合前端模板、文档和日志处理。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="html-entity-input" class="utility-textarea" spellcheck="false" placeholder="输入 HTML 或普通文本..."></textarea>
+                    <div class="option-row">
+                        <label><input id="encode-quotes" type="checkbox" checked> 转义引号</label>
+                        <label><input id="encode-linebreaks" type="checkbox"> 换行转 &lt;br&gt;</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="html-escape-btn" class="primary">HTML 转义</button>
+                        <button id="html-unescape-btn" class="secondary">HTML 反转义</button>
+                        <button id="html-numeric-btn" class="secondary">转数字实体</button>
+                        <button id="sample-html-btn" class="secondary">示例</button>
+                        <button id="clear-html-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="html-entity-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="copy-html-btn" class="secondary">复制结果</button>
+                        <button id="swap-html-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="html-entity-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>用于展示 HTML 代码片段时，先转义再输出可以避免标签被浏览器解析。</p>
+        </div>
+        <div class="footer-links">
+            <a href="unicode.html">Unicode编码</a>
+            <a href="case-convert.html">大小写转换</a>
+            <a href="json-format.html">JSON格式化</a>
+        </div>
+    </footer>
+
+    <script src="js/html-entity.js"></script>
+</body>
+</html>

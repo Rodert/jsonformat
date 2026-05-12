@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线字数统计工具，支持字符数、中文字符数、英文单词数、行数、段落数、空格数、阅读时长统计，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="字数统计,字符统计,单词统计,行数统计,在线文本统计,阅读时长">
+    <title>字数统计工具 - 在线字符数、单词数和行数统计</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>字数统计工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="case-convert.html">大小写</a>
+            <a href="html-entity.html">HTML实体</a>
+            <a href="regex.html">正则测试</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>字数统计工具</h1>
+                <p>统计字符数、中文字符、英文单词、行数、段落、空格和大致阅读时长。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入文本</h2>
+                    <textarea id="word-count-input" class="utility-textarea" spellcheck="false" placeholder="粘贴文章、日志、提示词或任意文本..."></textarea>
+                    <div class="button-group compact">
+                        <button id="sample-word-btn" class="secondary">示例</button>
+                        <button id="clear-word-btn" class="secondary">清空</button>
+                        <button id="copy-word-stats-btn" class="secondary">复制统计</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>统计结果</h2>
+                    <div id="word-count-stats" class="metric-grid"></div>
+                </article>
+            </div>
+            <div id="word-count-message" class="json-message">输入文本后自动统计。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合文章长度检查、Prompt 长度初筛、文案统计和日志文本分析。</p>
+        </div>
+        <div class="footer-links">
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="case-convert.html">大小写转换</a>
+            <a href="regex.html">正则测试</a>
+        </div>
+    </footer>
+
+    <script src="js/word-count.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Unicode编码转换工具，支持中文与Unicode \\uXXXX、码点 U+XXXX、HTML实体互转，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Unicode编码转换,中文转Unicode,Unicode转中文,码点转换,HTML实体转换">
+    <title>Unicode编码转换工具 - 中文与Unicode互转</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Unicode编码转换</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="html-entity.html">HTML实体</a>
+            <a href="case-convert.html">大小写</a>
+            <a href="json-format.html">JSON</a>
+            <a href="crypto.html">加密</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">编码加密类工具</p>
+                <h1>Unicode编码转换工具</h1>
+                <p>支持普通文本、Unicode 转义、码点和 HTML 数字实体之间快速转换。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入文本</h2>
+                    <textarea id="unicode-input" class="utility-textarea" spellcheck="false" placeholder="输入中文、英文、Emoji 或 Unicode 转义..."></textarea>
+                    <div class="button-group compact">
+                        <button id="unicode-escape-btn" class="primary">转 Unicode</button>
+                        <button id="unicode-unescape-btn" class="secondary">Unicode 转文本</button>
+                        <button id="codepoint-btn" class="secondary">转码点</button>
+                        <button id="html-number-btn" class="secondary">转数字实体</button>
+                        <button id="sample-unicode-btn" class="secondary">示例</button>
+                        <button id="clear-unicode-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="unicode-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="copy-unicode-btn" class="secondary">复制结果</button>
+                        <button id="swap-unicode-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="unicode-message" class="json-message">等待输入文本。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合处理接口返回、前端转义、日志排查和多语言文本调试。</p>
+        </div>
+        <div class="footer-links">
+            <a href="html-entity.html">HTML实体转义</a>
+            <a href="json-format.html">JSON格式化</a>
+            <a href="crypto.html">URL编码</a>
+        </div>
+    </footer>
+
+    <script src="js/unicode.js"></script>
+</body>
+</html>

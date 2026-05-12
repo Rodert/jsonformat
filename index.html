@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、Base64编码解码、加密解密、代码对比、时间戳转换、JWT解析、UUID生成、正则测试、人民币大写等常用工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,Base64,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,人民币大写,AI工具">
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、Base64编码解码、加密解密、代码对比、时间戳转换、JWT解析、UUID生成、正则测试、HTTP状态码、Cron解析、User-Agent解析、Markdown预览、文本去重等常用工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,Base64,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写,AI工具">
     <title>JavaPub 开发者在线工具箱 - JSON格式化、编码加密、代码对比、AI调试工具</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,11 +32,11 @@
             <div class="hero-copy">
                 <p class="eyebrow">JavaPub 在线工具箱</p>
                 <h1 id="hero-title">开发者常用在线工具箱</h1>
-                <p class="hero-desc">JSON格式化、加密解密、代码对比、时间戳转换、JWT解析、UUID生成、正则测试等工具，打开即用，本地处理，安全高效。</p>
+                <p class="hero-desc">JSON格式化、加密解密、代码对比、时间戳转换、JWT解析、UUID生成、正则测试、HTTP状态码、Cron解析、Markdown预览等工具，打开即用，本地处理，安全高效。</p>
             </div>
             <div class="tool-search" role="search">
                 <label for="tool-search-input">搜索工具</label>
-                <input id="tool-search-input" type="search" placeholder="搜索工具，例如：json、base64、jwt、时间戳">
+                <input id="tool-search-input" type="search" placeholder="搜索工具，例如：json、base64、jwt、cron、markdown">
                 <p id="search-count" class="search-count">输入关键词快速定位工具</p>
             </div>
         </section>
@@ -107,8 +107,48 @@
                     <h3>正则表达式测试</h3>
                     <p>匹配高亮、捕获组查看和替换预览。</p>
                 </a>
+                <a class="tool-card is-live" href="unicode.html" data-tool-card data-keywords="unicode 编码 转换 中文 码点 实体">
+                    <span class="tool-badge">编码加密</span>
+                    <h3>Unicode编码转换</h3>
+                    <p>中文、Unicode 转义、码点和数字实体互转。</p>
+                </a>
+                <a class="tool-card is-live" href="text-dedupe.html" data-tool-card data-keywords="文本 去重 重复 行 dedupe">
+                    <span class="tool-badge">文本处理</span>
+                    <h3>文本去重</h3>
+                    <p>按行去重，支持忽略大小写、去空行和排序。</p>
+                </a>
+                <a class="tool-card is-live" href="word-count.html" data-tool-card data-keywords="字数 统计 字符 单词 行数 段落">
+                    <span class="tool-badge">文本处理</span>
+                    <h3>字数统计</h3>
+                    <p>统计字符、单词、行数、段落和阅读时长。</p>
+                </a>
+                <a class="tool-card is-live" href="html-entity.html" data-tool-card data-keywords="html 实体 转义 反转义 escape unescape">
+                    <span class="tool-badge">文本处理</span>
+                    <h3>HTML实体转义</h3>
+                    <p>HTML 特殊字符转义、反转义和数字实体。</p>
+                </a>
+                <a class="tool-card is-live" href="http-status.html" data-tool-card data-keywords="http 状态码 status code 404 500 接口">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>HTTP状态码查询</h3>
+                    <p>查询 1xx 到 5xx 常见状态码含义。</p>
+                </a>
+                <a class="tool-card is-live" href="cron.html" data-tool-card data-keywords="cron crontab 表达式 定时 任务 解析">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>Cron表达式解析</h3>
+                    <p>解析 5 段 Cron 并预览未来执行时间。</p>
+                </a>
+                <a class="tool-card is-live" href="user-agent.html" data-tool-card data-keywords="user-agent ua 浏览器 系统 设备 解析">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>User-Agent解析</h3>
+                    <p>识别浏览器、系统、设备类型和渲染引擎。</p>
+                </a>
+                <a class="tool-card is-live" href="markdown-preview.html" data-tool-card data-keywords="markdown md 预览 html 文档 readme">
+                    <span class="tool-badge">文本处理</span>
+                    <h3>Markdown预览</h3>
+                    <p>左右双栏编辑预览，支持复制 HTML。</p>
+                </a>
             </div>
-            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、base64、jwt、时间戳、uuid、正则。</div>
+            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、base64、jwt、cron、markdown、去重。</div>
         </section>
 
         <section class="section-block" aria-labelledby="category-title">
@@ -135,7 +175,7 @@
                     <div class="link-list">
                         <a href="crypto.html">Base64编码解码</a>
                         <a href="crypto.html">URL编码解码</a>
-                        <span>Unicode编码转换</span>
+                        <a href="unicode.html">Unicode编码转换</a>
                         <a href="crypto.html">MD5加密</a>
                         <a href="crypto.html">SHA1/SHA256加密</a>
                         <a href="crypto.html">AES加密解密</a>
@@ -150,21 +190,21 @@
                         <a href="uuid.html">UUID生成</a>
                         <a href="regex.html">正则表达式测试</a>
                         <a href="diff.html">代码对比</a>
-                        <span>HTTP状态码查询</span>
-                        <span>Cron表达式解析</span>
-                        <span>User-Agent解析</span>
+                        <a href="http-status.html">HTTP状态码查询</a>
+                        <a href="cron.html">Cron表达式解析</a>
+                        <a href="user-agent.html">User-Agent解析</a>
                         <span>IP信息查询</span>
                     </div>
                 </article>
                 <article class="category-panel" id="text-tools">
                     <h3>文本处理</h3>
                     <div class="link-list">
-                        <span>文本去重</span>
-                        <span>大小写转换</span>
-                        <span>字数统计</span>
+                        <a href="text-dedupe.html">文本去重</a>
+                        <a href="case-convert.html">大小写转换</a>
+                        <a href="word-count.html">字数统计</a>
                         <a href="money.html">人民币大写</a>
-                        <span>Markdown预览</span>
-                        <span>HTML实体转义</span>
+                        <a href="markdown-preview.html">Markdown预览</a>
+                        <a href="html-entity.html">HTML实体转义</a>
                     </div>
                 </article>
                 <article class="category-panel" id="ai-tools">

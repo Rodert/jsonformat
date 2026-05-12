@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线大小写转换工具，支持大写、小写、首字母大写、camelCase、PascalCase、snake_case、kebab-case、CONSTANT_CASE 转换。">
+    <meta name="keywords" content="大小写转换,camelCase,PascalCase,snake_case,kebab-case,变量命名转换">
+    <title>大小写转换工具 - 在线变量命名格式转换</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>大小写转换工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="unicode.html">Unicode</a>
+            <a href="json-format.html">JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>大小写转换工具</h1>
+                <p>普通文本大小写转换，以及开发常用变量命名格式转换。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入文本</h2>
+                    <textarea id="case-input" class="utility-textarea" spellcheck="false" placeholder="输入文本或变量名，例如：user profile name"></textarea>
+                    <div class="button-group compact">
+                        <button data-case-mode="upper" class="secondary">大写</button>
+                        <button data-case-mode="lower" class="secondary">小写</button>
+                        <button data-case-mode="title" class="secondary">标题格式</button>
+                        <button data-case-mode="camel" class="primary">camelCase</button>
+                        <button data-case-mode="pascal" class="secondary">PascalCase</button>
+                        <button data-case-mode="snake" class="secondary">snake_case</button>
+                        <button data-case-mode="kebab" class="secondary">kebab-case</button>
+                        <button data-case-mode="constant" class="secondary">CONSTANT_CASE</button>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="sample-case-btn" class="secondary">示例</button>
+                        <button id="clear-case-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="case-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="copy-case-btn" class="secondary">复制结果</button>
+                        <button id="swap-case-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="case-message" class="json-message">等待输入文本。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合 API 字段、数据库字段、前后端变量命名快速转换。</p>
+        </div>
+        <div class="footer-links">
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="regex.html">正则测试</a>
+        </div>
+    </footer>
+
+    <script src="js/case-convert.js"></script>
+</body>
+</html>

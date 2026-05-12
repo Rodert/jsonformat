@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线User-Agent解析工具，支持识别浏览器、操作系统、设备类型、渲染引擎和常见机器人，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="User-Agent解析,UA解析,浏览器识别,设备识别,爬虫识别">
+    <title>User-Agent解析工具 - 在线识别浏览器、系统和设备</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>User-Agent解析</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="regex.html">正则测试</a>
+            <a href="json-format.html">JSON</a>
+            <a href="timestamp.html">时间戳</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>User-Agent解析工具</h1>
+                <p>解析浏览器、操作系统、设备类型、渲染引擎和常见机器人，辅助日志分析和兼容性排查。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入 User-Agent</h2>
+                    <textarea id="ua-input" class="utility-textarea" spellcheck="false" placeholder="粘贴 User-Agent 字符串..."></textarea>
+                    <div class="button-group compact">
+                        <button id="parse-ua-btn" class="primary">解析</button>
+                        <button id="current-ua-btn" class="secondary">使用当前浏览器 UA</button>
+                        <button id="sample-ua-btn" class="secondary">示例</button>
+                        <button id="clear-ua-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+                <article class="utility-panel">
+                    <h2>解析结果</h2>
+                    <div id="ua-result" class="result-list"></div>
+                </article>
+            </div>
+            <div id="ua-message" class="json-message">等待输入 User-Agent。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>本工具使用轻量本地规则，复杂 UA 的精确识别仍建议以专业日志分析系统为准。</p>
+        </div>
+        <div class="footer-links">
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="regex.html">正则测试</a>
+            <a href="json-format.html">JSON格式化</a>
+        </div>
+    </footer>
+
+    <script src="js/user-agent.js"></script>
+</body>
+</html>

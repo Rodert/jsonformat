@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Cron表达式解析工具，支持5段Cron表达式字段解释、常见示例、未来执行时间预览，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Cron表达式解析,Cron在线工具,定时任务表达式,Linux Cron,Crontab">
+    <title>Cron表达式解析工具 - 在线预览定时任务执行时间</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Cron表达式解析</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="timestamp.html">时间戳</a>
+            <a href="regex.html">正则测试</a>
+            <a href="json-format.html">JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>Cron表达式解析工具</h1>
+                <p>解析常见 5 段 Cron 表达式，展示字段含义并预览未来执行时间。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>表达式</h2>
+                    <input id="cron-input" type="text" value="*/5 * * * *" placeholder="例如：*/5 * * * *">
+                    <div class="button-group compact">
+                        <button id="parse-cron-btn" class="primary">解析</button>
+                        <button data-cron-sample="*/5 * * * *" class="secondary">每5分钟</button>
+                        <button data-cron-sample="0 9 * * 1-5" class="secondary">工作日9点</button>
+                        <button data-cron-sample="30 2 1 * *" class="secondary">每月1日2:30</button>
+                    </div>
+                    <p class="muted">当前支持 Linux crontab 常见 5 段格式：分钟 小时 日期 月份 星期。</p>
+                    <div id="cron-fields" class="result-list"></div>
+                </article>
+                <article class="utility-panel">
+                    <h2>未来执行时间</h2>
+                    <div id="cron-next" class="result-list"></div>
+                </article>
+            </div>
+            <div id="cron-message" class="json-message">等待解析 Cron 表达式。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>不同调度系统对秒、年、问号等扩展字段支持不同，本工具聚焦通用 5 段格式。</p>
+        </div>
+        <div class="footer-links">
+            <a href="timestamp.html">时间戳转换</a>
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="regex.html">正则测试</a>
+        </div>
+    </footer>
+
+    <script src="js/cron.js"></script>
+</body>
+</html>
