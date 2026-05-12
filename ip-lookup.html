@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线IP信息查询工具，支持IPv4和IPv6格式校验、私有地址、回环地址、链路本地、多播地址识别，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="IP查询,IP格式校验,IPv4,IPv6,私有IP,内网IP,IP地址工具">
+    <title>IP信息查询工具 - 在线校验IPv4和IPv6地址类型</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>IP信息查询</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="user-agent.html">UA解析</a>
+            <a href="regex.html">正则测试</a>
+            <a href="timestamp.html">时间戳</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>IP信息查询工具</h1>
+                <p>本地校验 IPv4/IPv6 地址，识别私有地址、回环地址、链路本地、多播地址等类型。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入 IP</h2>
+                    <input id="ip-input" type="text" placeholder="例如：192.168.1.1 或 2001:db8::1">
+                    <div class="button-group compact">
+                        <button id="ip-lookup-btn" class="primary">查询</button>
+                        <button data-ip-sample="192.168.1.1" class="secondary">私有 IPv4</button>
+                        <button data-ip-sample="8.8.8.8" class="secondary">公网 IPv4</button>
+                        <button data-ip-sample="::1" class="secondary">IPv6 回环</button>
+                        <button id="ip-clear-btn" class="secondary">清空</button>
+                    </div>
+                    <p class="muted">本工具不联网查询地理位置，只做本地格式和地址类型判断。</p>
+                </article>
+                <article class="utility-panel">
+                    <h2>查询结果</h2>
+                    <div id="ip-result" class="result-list"></div>
+                </article>
+            </div>
+            <div id="ip-message" class="json-message">等待输入 IP 地址。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>如果需要公网归属地查询，后续可接入独立 API；当前版本保持完全离线可用。</p>
+        </div>
+        <div class="footer-links">
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="user-agent.html">User-Agent解析</a>
+            <a href="regex.html">正则测试</a>
+        </div>
+    </footer>
+
+    <script src="js/ip-lookup.js"></script>
+</body>
+</html>

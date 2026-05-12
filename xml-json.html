@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线XML转JSON工具，支持XML节点、属性、文本内容转换为格式化JSON，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="XML转JSON,在线XML转换,XML解析,JSON转换,数据格式转换">
+    <title>XML转JSON工具 - 在线将XML转换为JSON</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="vendor/highlight/atom-one-dark.min.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>XML转JSON</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html">JSON格式化</a>
+            <a href="json-csv.html">JSON转CSV</a>
+            <a href="yaml-json.html">YAML转JSON</a>
+            <a href="convert.html">JSON转换</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">数据格式类工具</p>
+                <h1>XML转JSON工具</h1>
+                <p>解析 XML 节点、属性和文本内容，转换为结构化 JSON。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入 XML</h2>
+                    <textarea id="xml-json-input" class="utility-textarea" spellcheck="false" placeholder="粘贴 XML 内容..."></textarea>
+                    <div class="option-row">
+                        <label><input id="xml-attrs" type="checkbox" checked> 保留属性</label>
+                        <label><input id="xml-root" type="checkbox" checked> 保留根节点</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="xml-json-convert-btn" class="primary">转换 JSON</button>
+                        <button id="xml-json-sample-btn" class="secondary">示例</button>
+                        <button id="xml-json-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+                <article class="utility-panel">
+                    <h2>JSON 结果</h2>
+                    <pre class="utility-code"><code id="xml-json-output" class="json"></code></pre>
+                    <div class="button-group compact">
+                        <button id="xml-json-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                </article>
+            </div>
+            <div id="xml-json-message" class="json-message">等待输入 XML。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>XML 转换结果会用 `@attributes` 表示属性，用 `#text` 表示混合内容中的文本。</p>
+        </div>
+        <div class="footer-links">
+            <a href="json-format.html">JSON格式化</a>
+            <a href="yaml-json.html">YAML转JSON</a>
+            <a href="json-csv.html">JSON转CSV</a>
+        </div>
+    </footer>
+
+    <script src="vendor/highlight/highlight.min.js"></script>
+    <script src="js/xml-json.js"></script>
+</body>
+</html>

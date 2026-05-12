@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、Base64编码解码、加密解密、代码对比、时间戳转换、JWT解析、UUID生成、正则测试、HTTP状态码、Cron解析、User-Agent解析、Markdown预览、文本去重等常用工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,Base64,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写,AI工具">
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON转CSV、YAML转JSON、XML转JSON、Base64编码解码、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询、Markdown预览等常用工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转CSV,YAML转JSON,XML转JSON,Base64,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写,AI工具">
     <title>JavaPub 开发者在线工具箱 - JSON格式化、编码加密、代码对比、AI调试工具</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,11 +32,11 @@
             <div class="hero-copy">
                 <p class="eyebrow">JavaPub 在线工具箱</p>
                 <h1 id="hero-title">开发者常用在线工具箱</h1>
-                <p class="hero-desc">JSON格式化、加密解密、代码对比、时间戳转换、JWT解析、UUID生成、正则测试、HTTP状态码、Cron解析、Markdown预览等工具，打开即用，本地处理，安全高效。</p>
+                <p class="hero-desc">JSON格式化、JSON转CSV、YAML转JSON、XML转JSON、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询等工具，打开即用，本地处理，安全高效。</p>
             </div>
             <div class="tool-search" role="search">
                 <label for="tool-search-input">搜索工具</label>
-                <input id="tool-search-input" type="search" placeholder="搜索工具，例如：json、base64、jwt、cron、markdown">
+                <input id="tool-search-input" type="search" placeholder="搜索工具，例如：json、csv、yaml、ip、jwt">
                 <p id="search-count" class="search-count">输入关键词快速定位工具</p>
             </div>
         </section>
@@ -147,8 +147,28 @@
                     <h3>Markdown预览</h3>
                     <p>左右双栏编辑预览，支持复制 HTML。</p>
                 </a>
+                <a class="tool-card is-live" href="json-csv.html" data-tool-card data-keywords="json csv 转换 表格 导出 excel">
+                    <span class="tool-badge">数据格式</span>
+                    <h3>JSON转CSV</h3>
+                    <p>对象数组转 CSV，支持嵌套字段扁平化。</p>
+                </a>
+                <a class="tool-card is-live" href="yaml-json.html" data-tool-card data-keywords="yaml yml json 转换 配置">
+                    <span class="tool-badge">数据格式</span>
+                    <h3>YAML转JSON</h3>
+                    <p>常见 YAML 配置片段转格式化 JSON。</p>
+                </a>
+                <a class="tool-card is-live" href="xml-json.html" data-tool-card data-keywords="xml json 转换 节点 属性">
+                    <span class="tool-badge">数据格式</span>
+                    <h3>XML转JSON</h3>
+                    <p>XML 节点、属性和文本内容转 JSON。</p>
+                </a>
+                <a class="tool-card is-live" href="ip-lookup.html" data-tool-card data-keywords="ip ipv4 ipv6 查询 内网 私有 回环">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>IP信息查询</h3>
+                    <p>校验 IPv4/IPv6 并识别常见地址类型。</p>
+                </a>
             </div>
-            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、base64、jwt、cron、markdown、去重。</div>
+            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、csv、yaml、ip、jwt、cron。</div>
         </section>
 
         <section class="section-block" aria-labelledby="category-title">
@@ -165,9 +185,9 @@
                         <a href="json-format.html">JSON校验</a>
                         <a href="json-format.html">JSON转YAML</a>
                         <a href="json-format.html">JSON转XML</a>
-                        <span>JSON转CSV</span>
-                        <span>YAML转JSON</span>
-                        <span>XML转JSON</span>
+                        <a href="json-csv.html">JSON转CSV</a>
+                        <a href="yaml-json.html">YAML转JSON</a>
+                        <a href="xml-json.html">XML转JSON</a>
                     </div>
                 </article>
                 <article class="category-panel" id="encoding-crypto">
@@ -193,7 +213,7 @@
                         <a href="http-status.html">HTTP状态码查询</a>
                         <a href="cron.html">Cron表达式解析</a>
                         <a href="user-agent.html">User-Agent解析</a>
-                        <span>IP信息查询</span>
+                        <a href="ip-lookup.html">IP信息查询</a>
                     </div>
                 </article>
                 <article class="category-panel" id="text-tools">

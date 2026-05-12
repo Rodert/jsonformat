@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线JSON转CSV工具，支持JSON数组、对象数组、嵌套字段扁平化、复制和下载CSV，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JSON转CSV,在线JSON转CSV,JSON数组转CSV,CSV导出,数据格式转换">
+    <title>JSON转CSV工具 - 在线将JSON数组转换为CSV</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>JSON转CSV</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html">JSON格式化</a>
+            <a href="yaml-json.html">YAML转JSON</a>
+            <a href="xml-json.html">XML转JSON</a>
+            <a href="convert.html">JSON转换</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">数据格式类工具</p>
+                <h1>JSON转CSV工具</h1>
+                <p>将 JSON 数组或对象数组转换为 CSV，支持嵌套字段扁平化和本地下载。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入 JSON</h2>
+                    <textarea id="json-csv-input" class="utility-textarea" spellcheck="false" placeholder="粘贴 JSON 数组或对象数组..."></textarea>
+                    <div class="option-row">
+                        <label><input id="csv-flatten" type="checkbox" checked> 扁平化嵌套对象</label>
+                        <label><input id="csv-bom" type="checkbox" checked> 添加 UTF-8 BOM</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="json-csv-convert-btn" class="primary">转换 CSV</button>
+                        <button id="json-csv-sample-btn" class="secondary">示例</button>
+                        <button id="json-csv-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+                <article class="utility-panel">
+                    <h2>CSV 结果</h2>
+                    <textarea id="json-csv-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="json-csv-copy-btn" class="secondary">复制结果</button>
+                        <button id="json-csv-download-btn" class="secondary">下载 CSV</button>
+                    </div>
+                    <div id="json-csv-stats" class="result-list"></div>
+                </article>
+            </div>
+            <div id="json-csv-message" class="json-message">等待输入 JSON。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合将接口响应、配置数据和临时数据导出到 Excel 或表格工具。</p>
+        </div>
+        <div class="footer-links">
+            <a href="json-format.html">JSON格式化</a>
+            <a href="yaml-json.html">YAML转JSON</a>
+            <a href="xml-json.html">XML转JSON</a>
+        </div>
+    </footer>
+
+    <script src="js/json-csv.js"></script>
+</body>
+</html>

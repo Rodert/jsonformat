@@ -1557,6 +1557,68 @@ body.tool-page {
     line-height: 1.1;
 }
 
+.money-result {
+    min-height: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    border-radius: 10px;
+    color: #344054;
+    background: #f8fafc;
+    border: 1px solid #e6eaf2;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+.money-result.success {
+    color: #047857;
+    background: #ecfdf3;
+    border-color: #abefc6;
+}
+
+.money-result.error {
+    color: #b42318;
+    background: #fef3f2;
+    border-color: #fecdca;
+}
+
+.money-reference-wrap {
+    overflow-x: auto;
+    margin-top: 16px;
+}
+
+.money-reference-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #e6eaf2;
+}
+
+.money-reference-table th,
+.money-reference-table td {
+    padding: 11px 12px;
+    border-bottom: 1px solid #e6eaf2;
+    text-align: center;
+}
+
+.money-reference-table th {
+    color: #fff;
+    background: #2563eb;
+    font-weight: 700;
+}
+
+.money-reference-table td:nth-child(2) {
+    color: #175cd3;
+    font-weight: 800;
+}
+
 .status-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));

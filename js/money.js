@@ -9,8 +9,13 @@ const chineseBigUnits = ['', '万', '亿'];
  * @returns {string} 人民币大写字符串
  */
 function convertToChineseMoney(amount) {
+    const normalizedAmount = String(amount).trim();
+    if (!/^\d+(\.\d{1,2})?$/.test(normalizedAmount)) {
+        throw new Error('请输入有效金额，最多保留两位小数');
+    }
+
     // 将输入转换为数字
-    const num = parseFloat(amount);
+    const num = Number(normalizedAmount);
     
     // 验证输入
     if (isNaN(num)) {
@@ -38,9 +43,7 @@ function convertToChineseMoney(amount) {
     // 转换整数部分
     let result = '';
     
-    if (integerPart === '0') {
-        result = '零';
-    } else {
+    if (integerPart !== '0') {
         // 将整数部分转换为字符串并反转，便于处理
         const integerStr = integerPart;
         
@@ -74,7 +77,7 @@ function convertToChineseMoney(amount) {
     
     // 处理小数部分（角、分）
     if (decimalPart === '00') {
-        result += '整';
+        result = result ? result + '整' : '零元整';
     } else {
         const jiao = parseInt(decimalPart[0]);
         const fen = parseInt(decimalPart[1]);
@@ -84,6 +87,9 @@ function convertToChineseMoney(amount) {
         }
         
         if (fen !== 0) {
+            if (jiao === 0 && result.endsWith('元')) {
+                result += '零';
+            }
             result += chineseNumbers[fen] + '分';
         } else if (jiao !== 0) {
             result += '整';
@@ -150,24 +156,34 @@ function convertGroup(group) {
 function convertMoney() {
     const input = document.getElementById('money-input');
     const output = document.getElementById('money-output');
+    const message = document.getElementById('money-message');
     const amount = input.value.trim();
     
     if (!amount) {
-        output.style.color = '#C62828';
-        output.style.background = '#FFEBEE';
+        output.className = 'money-result error';
         output.textContent = '请输入金额';
+        if (message) {
+            message.textContent = '请输入金额。';
+            message.className = 'json-message error';
+        }
         return;
     }
     
     try {
         const result = convertToChineseMoney(amount);
-        output.style.color = '#2E7D32';
-        output.style.background = '#E8F5E9';
+        output.className = 'money-result success';
         output.textContent = result;
+        if (message) {
+            message.textContent = '金额转换完成。';
+            message.className = 'json-message success';
+        }
     } catch (error) {
-        output.style.color = '#C62828';
-        output.style.background = '#FFEBEE';
+        output.className = 'money-result error';
         output.textContent = '错误：' + error.message;
+        if (message) {
+            message.textContent = '错误：' + error.message;
+            message.className = 'json-message error';
+        }
     }
 }
 
@@ -177,9 +193,13 @@ function convertMoney() {
 function clearMoney() {
     document.getElementById('money-input').value = '';
     const output = document.getElementById('money-output');
-    output.style.color = '#666';
-    output.style.background = '#f5f5f5';
+    const message = document.getElementById('money-message');
+    output.className = 'money-result';
     output.textContent = '请输入金额后点击转换';
+    if (message) {
+        message.textContent = '等待输入金额。';
+        message.className = 'json-message';
+    }
 }
 
 /**
@@ -197,7 +217,12 @@ function copyResult() {
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
             const originalText = output.textContent;
+            const message = document.getElementById('money-message');
             output.textContent = '已复制到剪贴板！';
+            if (message) {
+                message.textContent = '结果已复制到剪贴板。';
+                message.className = 'json-message success';
+            }
             setTimeout(() => {
                 output.textContent = originalText;
             }, 1500);
