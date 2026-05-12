@@ -74,6 +74,18 @@ jobs:
       - name: Set package version
         run: npm version ${{ needs.metadata.outputs.package_version }} --no-git-tag-version --allow-same-version
 
+      - name: Write build info
+        shell: pwsh
+        run: |
+          $shortSha = $env:GITHUB_SHA.Substring(0, 7)
+          $buildDate = (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd")
+          $buildInfo = @{
+            releaseTag = "${{ needs.metadata.outputs.release_tag }}"
+            commit = $shortSha
+            buildDate = $buildDate
+          } | ConvertTo-Json
+          Set-Content -Path "electron/build-info.json" -Value $buildInfo -Encoding utf8
+
       - name: Build desktop package
         run: ${{ matrix.command }}
         env:
