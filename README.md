@@ -34,6 +34,69 @@
 
 3. 使用浏览器打开 `index.html` 文件即可
 
+## 桌面离线版
+
+本项目已加入 Electron 桌面离线版配置，可通过 GitHub Actions 自动构建 Windows 和 macOS 安装包，并上传到 GitHub Releases。
+
+### 触发 Release 构建
+
+方式一：推送到 `main` 分支
+
+每次推送到 `main` 分支都会自动构建一版桌面离线包，并发布到 GitHub Releases。Release 版本号会自动使用：
+
+```text
+YYYYMMDD-短commit
+```
+
+例如：
+
+```text
+20260512-a1b2c3d
+```
+
+对应的 Release tag 会使用：
+
+```text
+desktop-20260512-a1b2c3d
+```
+
+方式二：手动触发
+
+在 GitHub 仓库的 Actions 页面手动运行 `Build Desktop Releases`。如果不填写版本号，会自动使用日期和当前 commit；如果填写版本号，则 Release 使用你填写的版本号。
+
+历史方式：手动打标签仍然可用于代码管理，但桌面包构建不再依赖 `v*` 标签触发。
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+### 构建产物
+
+工作流会生成并上传以下离线桌面包：
+
+- Windows x64 安装版：`JavaPub Tools-日期.commit-windows-x64-setup.exe`
+- Windows x64 便携版：`JavaPub Tools-日期.commit-windows-x64-portable.exe`
+- macOS x64 / arm64：`.dmg` 和 `.zip`
+
+桌面版会直接加载仓库内的静态页面，工具逻辑仍然在本地浏览器内核中运行，不上传服务器。
+
+### 本地调试桌面版
+
+```bash
+npm ci
+npm run start
+```
+
+本地打包：
+
+```bash
+npm run dist:win
+npm run dist:mac
+```
+
+macOS 包建议在 macOS 或 GitHub Actions macOS runner 上构建。未签名包在 Windows/macOS 上可能出现安全提示，正式分发时可再配置代码签名和 macOS notarization。
+
 ## 部署到GitHub Pages
 
 ### 自动部署（推荐）

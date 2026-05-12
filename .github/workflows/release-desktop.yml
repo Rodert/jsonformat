@@ -1,0 +1,127 @@
+name: Build Desktop Releases
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: 'Optional release version. Leave empty to use YYYYMMDD-shortsha.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  metadata:
+    name: Generate release metadata
+    runs-on: ubuntu-latest
+    outputs:
+      release_version: ${{ steps.version.outputs.release_version }}
+      release_tag: ${{ steps.version.outputs.release_tag }}
+      package_version: ${{ steps.version.outputs.package_version }}
+    steps:
+      - name: Generate date and commit version
+        id: version
+        shell: bash
+        run: |
+          short_sha="${GITHUB_SHA::7}"
+          date_compact="$(date -u +'%Y%m%d')"
+          year="$(date -u +'%Y')"
+          month="$((10#$(date -u +'%m')))"
+          day="$((10#$(date -u +'%d')))"
+          input_version="${{ github.event.inputs.release_version }}"
+
+          if [ -n "$input_version" ]; then
+            release_version="$input_version"
+          else
+            release_version="${date_compact}-${short_sha}"
+          fi
+
+          package_version="${year}.${month}.${day}-${short_sha}"
+
+          echo "release_version=${release_version}" >> "$GITHUB_OUTPUT"
+          echo "release_tag=desktop-${release_version}" >> "$GITHUB_OUTPUT"
+          echo "package_version=${package_version}" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Build ${{ matrix.name }}
+    needs: metadata
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows x64
+            os: windows-latest
+            command: npm run dist:win
+          - name: macOS x64 arm64
+            os: macos-13
+            command: npm run dist:mac
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Set package version
+        run: npm version ${{ needs.metadata.outputs.package_version }} --no-git-tag-version --allow-same-version
+
+      - name: Build desktop package
+        run: ${{ matrix.command }}
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: javapub-tools-${{ matrix.name }}
+          path: |
+            release/*.exe
+            release/*.dmg
+            release/*.zip
+            release/*.blockmap
+          if-no-files-found: error
+
+  release:
+    name: Publish GitHub Release
+    runs-on: ubuntu-latest
+    needs:
+      - metadata
+      - build
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-artifacts
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.metadata.outputs.release_tag }}
+          name: JavaPub Tools ${{ needs.metadata.outputs.release_version }}
+          target_commitish: ${{ github.sha }}
+          draft: false
+          prerelease: false
+          overwrite_files: true
+          body: |
+            Desktop offline build for commit `${{ github.sha }}`.
+
+            Version: `${{ needs.metadata.outputs.release_version }}`
+          files: |
+            release-artifacts/**/*.exe
+            release-artifacts/**/*.dmg
+            release-artifacts/**/*.zip
+            release-artifacts/**/*.blockmap
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
