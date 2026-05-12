@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、Base64编码解码、加密解密、代码对比、人民币大写、AI请求体格式化等常用工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,Base64,MD5,SHA256,代码对比,JWT解析,时间戳转换,人民币大写,AI工具">
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、Base64编码解码、加密解密、代码对比、时间戳转换、JWT解析、UUID生成、正则测试、人民币大写等常用工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,Base64,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,人民币大写,AI工具">
     <title>JavaPub 开发者在线工具箱 - JSON格式化、编码加密、代码对比、AI调试工具</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,7 +32,7 @@
             <div class="hero-copy">
                 <p class="eyebrow">JavaPub 在线工具箱</p>
                 <h1 id="hero-title">开发者常用在线工具箱</h1>
-                <p class="hero-desc">JSON格式化、加密解密、代码对比、时间戳转换、JWT解析等工具，打开即用，本地处理，安全高效。</p>
+                <p class="hero-desc">JSON格式化、加密解密、代码对比、时间戳转换、JWT解析、UUID生成、正则测试等工具，打开即用，本地处理，安全高效。</p>
             </div>
             <div class="tool-search" role="search">
                 <label for="tool-search-input">搜索工具</label>
@@ -72,7 +72,7 @@
                     <h3>MD5/SHA加密</h3>
                     <p>生成 MD5、SHA-256 等常用摘要。</p>
                 </a>
-                <a class="tool-card is-soon" href="#dev-debug" data-tool-card data-keywords="timestamp 时间戳 unix 日期 转换">
+                <a class="tool-card is-live" href="timestamp.html" data-tool-card data-keywords="timestamp 时间戳 unix 日期 转换">
                     <span class="tool-badge">开发调试</span>
                     <h3>时间戳转换</h3>
                     <p>Unix 时间戳与本地时间互转。</p>
@@ -82,7 +82,7 @@
                     <h3>代码对比</h3>
                     <p>左右双栏对比代码或文本差异。</p>
                 </a>
-                <a class="tool-card is-soon" href="#encoding-crypto" data-tool-card data-keywords="jwt 解析 token header payload">
+                <a class="tool-card is-live" href="jwt.html" data-tool-card data-keywords="jwt 解析 token header payload">
                     <span class="tool-badge">编码加密</span>
                     <h3>JWT解析</h3>
                     <p>解析 Header、Payload，辅助接口调试。</p>
@@ -97,8 +97,18 @@
                     <h3>人民币大写</h3>
                     <p>数字金额转正式人民币大写。</p>
                 </a>
+                <a class="tool-card is-live" href="uuid.html" data-tool-card data-keywords="uuid guid 生成 随机 批量">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>UUID生成</h3>
+                    <p>批量生成 UUID v4，支持大小写和连字符。</p>
+                </a>
+                <a class="tool-card is-live" href="regex.html" data-tool-card data-keywords="正则 regex regexp 测试 匹配 替换">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>正则表达式测试</h3>
+                    <p>匹配高亮、捕获组查看和替换预览。</p>
+                </a>
             </div>
-            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、base64、jwt、时间戳。</div>
+            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、base64、jwt、时间戳、uuid、正则。</div>
         </section>
 
         <section class="section-block" aria-labelledby="category-title">
@@ -130,15 +140,15 @@
                         <a href="crypto.html">SHA1/SHA256加密</a>
                         <a href="crypto.html">AES加密解密</a>
                         <span>RSA加密解密</span>
-                        <span>JWT解析</span>
+                        <a href="jwt.html">JWT解析</a>
                     </div>
                 </article>
                 <article class="category-panel" id="dev-debug">
                     <h3>开发调试</h3>
                     <div class="link-list">
-                        <span>时间戳转换</span>
-                        <span>UUID生成</span>
-                        <span>正则表达式测试</span>
+                        <a href="timestamp.html">时间戳转换</a>
+                        <a href="uuid.html">UUID生成</a>
+                        <a href="regex.html">正则表达式测试</a>
                         <a href="diff.html">代码对比</a>
                         <span>HTTP状态码查询</span>
                         <span>Cron表达式解析</span>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线时间戳转换工具，支持 Unix 秒级时间戳、毫秒级时间戳、本地时间、UTC 时间、ISO 时间互转，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="时间戳转换,Unix时间戳,在线时间转换,毫秒时间戳,UTC时间,ISO时间">
+    <title>时间戳转换工具 - Unix时间戳与日期时间互转</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>时间戳转换工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html">JSON</a>
+            <a href="crypto.html">加密</a>
+            <a href="diff.html">代码对比</a>
+            <a href="jwt.html">JWT解析</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>时间戳转换工具</h1>
+                <p>支持 Unix 秒级时间戳、毫秒级时间戳、本地时间、UTC 时间和 ISO 时间互转。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>当前时间</h2>
+                    <div class="current-time-card">
+                        <span>秒级时间戳</span>
+                        <strong id="current-seconds">-</strong>
+                    </div>
+                    <div class="current-time-card">
+                        <span>毫秒时间戳</span>
+                        <strong id="current-millis">-</strong>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="pause-clock-btn" class="secondary">暂停</button>
+                        <button id="copy-current-btn" class="secondary">复制秒级时间戳</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>时间戳转日期</h2>
+                    <label for="timestamp-input">输入时间戳</label>
+                    <input id="timestamp-input" type="text" placeholder="例如：1715400000 或 1715400000000">
+                    <div class="button-group compact">
+                        <button id="convert-timestamp-btn" class="primary">转换</button>
+                        <button id="use-now-btn" class="secondary">填入当前</button>
+                        <button id="clear-timestamp-btn" class="secondary">清空</button>
+                    </div>
+                    <div id="timestamp-result" class="result-list"></div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>日期转时间戳</h2>
+                    <label for="datetime-input">选择本地日期时间</label>
+                    <input id="datetime-input" type="datetime-local">
+                    <div class="button-group compact">
+                        <button id="convert-date-btn" class="primary">转换为时间戳</button>
+                        <button id="date-now-btn" class="secondary">填入当前时间</button>
+                    </div>
+                    <div id="date-result" class="result-list"></div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>说明</h2>
+                    <p>10 位通常是秒级 Unix 时间戳，13 位通常是毫秒级时间戳。本工具按输入长度自动判断，也会同时输出本地时间、UTC 时间和 ISO 字符串。</p>
+                    <p class="muted">浏览器本地时区会影响“本地时间”的显示，不影响 UTC 和 ISO 结果。</p>
+                </article>
+            </div>
+            <div id="timestamp-message" class="json-message">等待输入时间戳或日期。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>更多开发者工具和 AI 开发教程持续补充中。</p>
+        </div>
+        <div class="footer-links">
+            <a href="json-format.html">JSON格式化</a>
+            <a href="jwt.html">JWT解析</a>
+            <a href="uuid.html">UUID生成</a>
+        </div>
+    </footer>
+
+    <script src="js/timestamp.js"></script>
+</body>
+</html>

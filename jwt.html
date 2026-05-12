@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线JWT解析工具，支持解析 JWT Header、Payload、签名片段、exp/iat/nbf 时间字段，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JWT解析,JWT Decoder,Token解析,JWT Payload,JWT Header,在线JWT工具">
+    <title>JWT解析工具 - 在线解析Header、Payload和过期时间</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>JWT解析工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html">JSON</a>
+            <a href="crypto.html">加密</a>
+            <a href="timestamp.html">时间戳</a>
+            <a href="uuid.html">UUID</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">编码加密类工具</p>
+                <h1>JWT解析工具</h1>
+                <p>解析 JWT 的 Header、Payload、签名片段和时间字段，辅助接口调试与 Token 排查。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-panel">
+                <h2>输入 JWT</h2>
+                <textarea id="jwt-input" class="utility-textarea" spellcheck="false" placeholder="粘贴 JWT，例如：eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."></textarea>
+                <div class="button-group compact">
+                    <button id="decode-jwt-btn" class="primary">解析 JWT</button>
+                    <button id="sample-jwt-btn" class="secondary">示例</button>
+                    <button id="clear-jwt-btn" class="secondary">清空</button>
+                    <button id="copy-payload-btn" class="secondary">复制 Payload</button>
+                </div>
+                <p class="muted">本工具只做 Base64URL 解码和字段展示，不验证签名合法性。</p>
+            </div>
+
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>Header</h2>
+                    <pre class="utility-code"><code id="jwt-header-output" class="json"></code></pre>
+                </article>
+                <article class="utility-panel">
+                    <h2>Payload</h2>
+                    <pre class="utility-code"><code id="jwt-payload-output" class="json"></code></pre>
+                </article>
+                <article class="utility-panel">
+                    <h2>Token 状态</h2>
+                    <div id="jwt-claims-output" class="result-list"></div>
+                </article>
+                <article class="utility-panel">
+                    <h2>Signature</h2>
+                    <div id="jwt-signature-output" class="token-fragment"></div>
+                </article>
+            </div>
+            <div id="jwt-message" class="json-message">等待输入 JWT。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>Token 调试建议结合接口文档和服务端签名校验结果一起判断。</p>
+        </div>
+        <div class="footer-links">
+            <a href="timestamp.html">时间戳转换</a>
+            <a href="json-format.html">JSON格式化</a>
+            <a href="crypto.html">Base64编码</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="js/jwt.js"></script>
+</body>
+</html>

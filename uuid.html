@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线UUID生成工具，支持生成 UUID v4、批量生成、大小写转换、去除连字符、复制结果，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="UUID生成,UUID v4,在线UUID,GUID生成,随机UUID,批量UUID">
+    <title>UUID生成工具 - 在线批量生成UUID v4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>UUID生成工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="timestamp.html">时间戳</a>
+            <a href="jwt.html">JWT解析</a>
+            <a href="regex.html">正则测试</a>
+            <a href="json-format.html">JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>UUID生成工具</h1>
+                <p>生成标准 UUID v4，支持批量生成、大小写格式和去除连字符，适合测试数据、主键和 Trace ID 场景。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>生成设置</h2>
+                    <label for="uuid-count">生成数量</label>
+                    <input id="uuid-count" type="number" min="1" max="200" value="10">
+                    <div class="option-row">
+                        <label><input type="radio" name="uuid-case" value="lower" checked> 小写</label>
+                        <label><input type="radio" name="uuid-case" value="upper"> 大写</label>
+                    </div>
+                    <div class="option-row">
+                        <label><input id="uuid-hyphen" type="checkbox" checked> 保留连字符</label>
+                        <label><input id="uuid-sort" type="checkbox"> 按字母排序</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="generate-uuid-btn" class="primary">生成 UUID</button>
+                        <button id="copy-uuid-btn" class="secondary">复制结果</button>
+                        <button id="clear-uuid-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>当前结果</h2>
+                    <textarea id="uuid-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                </article>
+            </div>
+            <div id="uuid-message" class="json-message">等待生成 UUID。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>UUID v4 基于浏览器安全随机数生成，适合开发调试和测试数据。</p>
+        </div>
+        <div class="footer-links">
+            <a href="timestamp.html">时间戳转换</a>
+            <a href="regex.html">正则测试</a>
+            <a href="json-format.html">JSON格式化</a>
+        </div>
+    </footer>
+
+    <script src="js/uuid.js"></script>
+</body>
+</html>

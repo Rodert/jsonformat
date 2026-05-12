@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线正则表达式测试工具，支持 JavaScript 正则匹配、flags 设置、匹配高亮、捕获组查看、替换预览，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="正则表达式测试,在线Regex,JavaScript正则,正则匹配,正则替换,Regex Tester">
+    <title>正则表达式测试工具 - 在线Regex匹配和替换预览</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>正则表达式测试工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="timestamp.html">时间戳</a>
+            <a href="uuid.html">UUID</a>
+            <a href="jwt.html">JWT解析</a>
+            <a href="diff.html">代码对比</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>正则表达式测试工具</h1>
+                <p>基于 JavaScript RegExp，支持匹配高亮、捕获组查看、flags 设置和替换结果预览。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-panel">
+                <h2>表达式</h2>
+                <div class="regex-input-row">
+                    <span>/</span>
+                    <input id="regex-pattern" type="text" placeholder="例如：\\b\\w+@\\w+\\.com\\b">
+                    <span>/</span>
+                    <label><input id="flag-g" type="checkbox" checked> g</label>
+                    <label><input id="flag-i" type="checkbox"> i</label>
+                    <label><input id="flag-m" type="checkbox"> m</label>
+                    <label><input id="flag-s" type="checkbox"> s</label>
+                    <label><input id="flag-u" type="checkbox"> u</label>
+                </div>
+                <label for="regex-text">测试文本</label>
+                <textarea id="regex-text" class="utility-textarea" spellcheck="false" placeholder="输入要测试的文本..."></textarea>
+                <label for="replace-text">替换为（可选）</label>
+                <input id="replace-text" type="text" placeholder="例如：*** 或 $1">
+                <div class="button-group compact">
+                    <button id="run-regex-btn" class="primary">执行测试</button>
+                    <button id="sample-regex-btn" class="secondary">示例</button>
+                    <button id="clear-regex-btn" class="secondary">清空</button>
+                    <button id="copy-regex-btn" class="secondary">复制匹配结果</button>
+                </div>
+            </div>
+
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>匹配高亮</h2>
+                    <div id="regex-highlight" class="highlight-box"></div>
+                </article>
+                <article class="utility-panel">
+                    <h2>匹配结果</h2>
+                    <div id="regex-matches" class="match-list"></div>
+                </article>
+                <article class="utility-panel wide-panel">
+                    <h2>替换预览</h2>
+                    <pre class="utility-code"><code id="regex-replace-output"></code></pre>
+                </article>
+            </div>
+            <div id="regex-message" class="json-message">等待输入正则表达式。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>正则执行在浏览器本地完成，复杂表达式可能造成页面短暂卡顿。</p>
+        </div>
+        <div class="footer-links">
+            <a href="diff.html">代码对比</a>
+            <a href="timestamp.html">时间戳转换</a>
+            <a href="json-format.html">JSON格式化</a>
+        </div>
+    </footer>
+
+    <script src="js/regex.js"></script>
+</body>
+</html>
