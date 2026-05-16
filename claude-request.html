@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Claude请求体格式化工具，支持生成Claude Messages API请求JSON，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Claude请求体,Claude Messages API,Anthropic请求JSON">
+    <title>Claude请求体格式化 - 在线生成Messages API请求JSON</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand"><span class="brand-mark">JP</span><span><strong>JavaPub Tools</strong><small>Claude请求体</small></span></a>
+        <nav class="top-nav" aria-label="主导航"><a href="index.html">首页</a><a href="ai-tools.html">AI工具</a><a href="openai-request.html">OpenAI请求体</a><a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a></nav>
+    </header>
+    <main class="tool-shell">
+        <section class="tool-hero"><div><p class="eyebrow">Claude 工具</p><h1>Claude请求体格式化</h1><p>生成 Claude Messages API 请求 JSON，方便接口调试和参数整理。</p></div><strong>数据仅在浏览器本地处理。</strong></section>
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>请求参数</h2>
+                    <label for="claude-model">模型</label>
+                    <select id="claude-model"><option value="claude-opus-4-1">claude-opus-4-1</option><option value="claude-sonnet-4" selected>claude-sonnet-4</option><option value="claude-3-5-haiku-latest">claude-3-5-haiku-latest</option></select>
+                    <label for="claude-system">System 指令</label>
+                    <textarea id="claude-system" class="utility-textarea small-output" spellcheck="false" placeholder="例如：你是一个专注代码审查的助手。"></textarea>
+                    <label for="claude-user">User 消息</label>
+                    <textarea id="claude-user" class="utility-textarea" spellcheck="false" placeholder="输入用户消息..."></textarea>
+                    <div class="option-row"><label for="claude-max-tokens">max_tokens</label><input type="number" id="claude-max-tokens" value="2048" min="1" step="1"></div>
+                    <div class="button-group compact"><button id="claude-generate-btn" class="primary">生成请求体</button><button id="claude-sample-btn" class="secondary">示例</button></div>
+                </article>
+                <article class="utility-panel">
+                    <h2>请求体</h2>
+                    <textarea id="claude-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact"><button id="claude-copy-btn" class="secondary">复制请求体</button></div>
+                    <div id="claude-message" class="json-message">等待输入内容。</div>
+                </article>
+            </div>
+        </section>
+        <section class="section-block seo-content"><h2>Claude API 请求 JSON</h2><p>适合把 Claude 对话参数快速整理成 Messages API 请求体。</p><div class="related-tools"><a href="prompt-format.html">Prompt格式化</a><a href="token-estimate.html">Token估算</a><a href="json-format.html">JSON格式化</a></div></section>
+    </main>
+    <footer class="site-footer"><div><strong>作者：王仕宇 / JavaPub</strong><p>适合 Claude API 调试。</p></div><div class="footer-links"><a href="ai-tools.html">AI工具</a><a href="json-format.html">JSON格式化</a></div></footer>
+    <script src="js/claude-request.js"></script>
+</body>
+</html>

@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setValue('image-api-url', 'https://api.chongplus.plus/v1/images/generations');
         setValue('image-model', 'gpt-image-2');
         setValue('image-size', '1024x1024');
-        setValue('image-prompt', '一张高端科技感的 API 中转平台海报，深色背景，蓝紫色霓虹光效，中心是抽象大象 Logo，文字：大象 AI Token 接入平台，稳定高速，国内直连');
+        setValue('image-prompt', '生成一张高端运动员写真，人物要有专业运动员的力量感、自信感和健康美感，深色背景，电影级灯光，真实皮肤质感，自然汗水，高级商业摄影风格，适合体育杂志封面，画面大气、干净、有冲击力。');
         renderCurl();
     }
 

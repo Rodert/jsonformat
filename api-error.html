@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线AI API错误码解释工具，支持查询401、429、context_length、rate_limit等常见接口错误原因和处理建议。">
+    <meta name="keywords" content="AI API错误码,OpenAI错误码,Claude错误码,rate_limit,context_length">
+    <title>AI API错误码解释 - 在线查询接口错误原因和处理建议</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand"><span class="brand-mark">JP</span><span><strong>JavaPub Tools</strong><small>API错误码解释</small></span></a>
+        <nav class="top-nav" aria-label="主导航"><a href="index.html">首页</a><a href="ai-tools.html">AI工具</a><a href="http-status.html">HTTP状态码</a><a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a></nav>
+    </header>
+    <main class="tool-shell">
+        <section class="tool-hero"><div><p class="eyebrow">API 排错</p><h1>API错误码解释</h1><p>查询常见 AI API 状态码、错误关键词和排查建议。</p></div><strong>适合接口调试和故障定位。</strong></section>
+        <section class="utility-workbench">
+            <div class="utility-grid">
+                <article class="utility-panel wide-panel">
+                    <h2>查询错误</h2>
+                    <label for="error-query">状态码或错误关键词</label>
+                    <input type="text" id="error-query" placeholder="例如：401、429、rate_limit、context_length">
+                    <div class="button-group compact"><button id="error-search-btn" class="primary">查询</button><button id="error-list-btn" class="secondary">常见错误</button></div>
+                    <div id="error-result" class="result-list"></div>
+                    <div id="error-message" class="json-message">等待输入关键词。</div>
+                </article>
+            </div>
+        </section>
+        <section class="section-block seo-content"><h2>AI API 常见错误排查</h2><p>整理认证、权限、模型、上下文、限流和服务端异常等常见错误，帮助快速定位接口问题。</p><div class="related-tools"><a href="openai-request.html">OpenAI请求体格式化</a><a href="claude-request.html">Claude请求体格式化</a><a href="http-status.html">HTTP状态码查询</a></div></section>
+    </main>
+    <footer class="site-footer"><div><strong>作者：王仕宇 / JavaPub</strong><p>适合 AI API 调试排错。</p></div><div class="footer-links"><a href="ai-tools.html">AI工具</a><a href="json-format.html">JSON格式化</a></div></footer>
+    <script src="js/api-error.js"></script>
+</body>
+</html>

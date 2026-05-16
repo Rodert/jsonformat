@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Token估算工具，离线粗估Prompt、接口消息和长文本的token数量，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Token估算,Prompt token,AI token计算,上下文长度">
+    <title>Token估算工具 - 在线粗估Prompt和文本Token数量</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand"><span class="brand-mark">JP</span><span><strong>JavaPub Tools</strong><small>Token估算</small></span></a>
+        <nav class="top-nav" aria-label="主导航"><a href="index.html">首页</a><a href="ai-tools.html">AI工具</a><a href="prompt-format.html">Prompt格式化</a><a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a></nav>
+    </header>
+    <main class="tool-shell">
+        <section class="tool-hero"><div><p class="eyebrow">Token 工具</p><h1>Token估算</h1><p>离线粗估 Prompt、接口消息和长文本的 token 数量，辅助判断上下文和成本。</p></div><strong>粗估结果不等同官方 tokenizer。</strong></section>
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入文本</h2>
+                    <textarea id="token-input" class="utility-textarea" spellcheck="false" placeholder="粘贴 Prompt、接口消息或长文本..."></textarea>
+                    <div class="button-group compact"><button id="token-estimate-btn" class="primary">估算 Token</button><button id="token-sample-btn" class="secondary">示例</button><button id="token-clear-btn" class="secondary">清空</button></div>
+                    <p class="muted">中英文混合、代码、JSON 和特殊符号会有偏差，计费以供应商返回 usage 为准。</p>
+                </article>
+                <article class="utility-panel">
+                    <h2>估算结果</h2>
+                    <div id="token-stats" class="result-list"></div>
+                    <div id="token-message" class="json-message">等待输入内容。</div>
+                </article>
+            </div>
+        </section>
+        <section class="section-block seo-content"><h2>Prompt 和文本 Token 粗估</h2><p>适合在提交请求前估算输入规模，辅助控制上下文长度和模型调用成本。</p><div class="related-tools"><a href="model-price.html">模型价格换算</a><a href="prompt-format.html">Prompt格式化</a><a href="ai-tools.html">AI工具导航</a></div></section>
+    </main>
+    <footer class="site-footer"><div><strong>作者：王仕宇 / JavaPub</strong><p>适合 AI 请求前的文本规模预估。</p></div><div class="footer-links"><a href="ai-tools.html">AI工具</a><a href="json-format.html">JSON格式化</a></div></footer>
+    <script src="js/token-estimate.js"></script>
+</body>
+</html>

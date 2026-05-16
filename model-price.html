@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线模型价格换算工具，按输入输出token、美元单价和汇率估算AI模型调用成本。">
+    <meta name="keywords" content="模型价格换算,AI成本估算,Token价格,OpenAI价格,Claude价格">
+    <title>模型价格换算 - 在线估算AI模型Token调用成本</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand"><span class="brand-mark">JP</span><span><strong>JavaPub Tools</strong><small>模型价格换算</small></span></a>
+        <nav class="top-nav" aria-label="主导航"><a href="index.html">首页</a><a href="ai-tools.html">AI工具</a><a href="token-estimate.html">Token估算</a><a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a></nav>
+    </header>
+    <main class="tool-shell">
+        <section class="tool-hero"><div><p class="eyebrow">成本工具</p><h1>模型价格换算</h1><p>按输入输出 token、模型单价和汇率估算单次调用与千次调用成本。</p></div><strong>实际账单以供应商控制台为准。</strong></section>
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>计费参数</h2>
+                    <label for="price-model">模型预设</label>
+                    <select id="price-model"></select>
+                    <div class="option-row"><label for="price-input-rate">输入 $/1M</label><input type="number" id="price-input-rate" min="0" step="0.001"><label for="price-output-rate">输出 $/1M</label><input type="number" id="price-output-rate" min="0" step="0.001"></div>
+                    <div class="option-row"><label for="price-input-tokens">输入 tokens</label><input type="number" id="price-input-tokens" value="10000" min="0" step="1"><label for="price-output-tokens">输出 tokens</label><input type="number" id="price-output-tokens" value="2000" min="0" step="1"></div>
+                    <div class="option-row"><label for="price-exchange-rate">美元兑人民币</label><input type="number" id="price-exchange-rate" value="7.20" min="0" step="0.01"></div>
+                    <div class="button-group compact"><button id="price-calc-btn" class="primary">计算费用</button></div>
+                    <p class="muted">内置价格仅用于估算，单价可手动修改。</p>
+                </article>
+                <article class="utility-panel">
+                    <h2>费用结果</h2>
+                    <div id="price-result" class="result-list"></div>
+                    <div id="price-message" class="json-message">等待输入计费参数。</div>
+                </article>
+            </div>
+        </section>
+        <section class="section-block seo-content"><h2>AI 模型调用成本估算</h2><p>适合在批量调用、对话应用和长上下文任务前预估大致费用。</p><div class="related-tools"><a href="token-estimate.html">Token估算</a><a href="prompt-format.html">Prompt格式化</a><a href="ai-tools.html">AI工具导航</a></div></section>
+    </main>
+    <footer class="site-footer"><div><strong>作者：王仕宇 / JavaPub</strong><p>适合 AI 调用成本预估。</p></div><div class="footer-links"><a href="ai-tools.html">AI工具</a><a href="json-format.html">JSON格式化</a></div></footer>
+    <script src="js/model-price.js"></script>
+</body>
+</html>

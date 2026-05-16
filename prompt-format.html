@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Prompt格式化工具，按角色、任务、上下文和输出要求生成结构化Prompt，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Prompt格式化,Prompt生成,AI提示词,提示词模板">
+    <title>Prompt格式化工具 - 在线生成结构化AI提示词</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span><strong>JavaPub Tools</strong><small>Prompt格式化</small></span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="ai-tools.html">AI工具</a>
+            <a href="openai-request.html">OpenAI请求体</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">Prompt 工具</p>
+                <h1>Prompt格式化</h1>
+                <p>把角色、任务、上下文和输出要求整理成清晰的结构化 Prompt。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入</h2>
+                    <label for="prompt-role">角色</label>
+                    <input type="text" id="prompt-role" placeholder="例如：资深 Java 后端工程师">
+                    <label for="prompt-task">任务</label>
+                    <textarea id="prompt-task" class="utility-textarea small-output" spellcheck="false" placeholder="描述你希望模型完成的任务..."></textarea>
+                    <label for="prompt-context">上下文</label>
+                    <textarea id="prompt-context" class="utility-textarea small-output" spellcheck="false" placeholder="补充项目背景、输入数据、限制条件..."></textarea>
+                    <label for="prompt-output">输出要求</label>
+                    <input type="text" id="prompt-output" placeholder="例如：用中文输出，给出步骤和代码块">
+                    <div class="button-group compact">
+                        <button id="prompt-format-btn" class="primary">生成 Prompt</button>
+                        <button id="prompt-sample-btn" class="secondary">示例</button>
+                        <button id="prompt-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+                <article class="utility-panel">
+                    <h2>结果</h2>
+                    <textarea id="prompt-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="prompt-copy-btn" class="secondary">复制 Prompt</button>
+                    </div>
+                    <div id="prompt-message" class="json-message">等待输入内容。</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>结构化 Prompt 整理</h2>
+            <p>适合把临时想法整理成可复用的提示词模板，减少任务、背景和输出格式混在一起造成的歧义。</p>
+            <div class="related-tools">
+                <a href="openai-request.html">OpenAI请求体格式化</a>
+                <a href="token-estimate.html">Token估算</a>
+                <a href="ai-tools.html">AI工具导航</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div><strong>作者：王仕宇 / JavaPub</strong><p>适合整理 AI 提示词。</p></div>
+        <div class="footer-links"><a href="ai-tools.html">AI工具</a><a href="json-format.html">JSON格式化</a></div>
+    </footer>
+    <script src="js/prompt-format.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线OpenAI请求体格式化工具，支持生成Responses API和Chat Completions请求JSON，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="OpenAI请求体,Responses API,Chat Completions,OpenAI JSON">
+    <title>OpenAI请求体格式化 - Responses API和Chat Completions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand"><span class="brand-mark">JP</span><span><strong>JavaPub Tools</strong><small>OpenAI请求体</small></span></a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a><a href="ai-tools.html">AI工具</a><a href="openai-image.html">OpenAI生图</a><a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div><p class="eyebrow">OpenAI 工具</p><h1>OpenAI请求体格式化</h1><p>生成 Responses API 或 Chat Completions 的请求 JSON，方便接口调试和文档整理。</p></div>
+            <strong>数据仅在浏览器本地处理。</strong>
+        </section>
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>请求参数</h2>
+                    <label for="openai-model">模型</label>
+                    <select id="openai-model">
+                        <option value="gpt-5.2">gpt-5.2</option>
+                        <option value="gpt-5-mini">gpt-5-mini</option>
+                        <option value="gpt-4.1">gpt-4.1</option>
+                        <option value="gpt-4.1-mini" selected>gpt-4.1-mini</option>
+                    </select>
+                    <label for="openai-system">System 指令</label>
+                    <textarea id="openai-system" class="utility-textarea small-output" spellcheck="false" placeholder="例如：你是一个严谨的开发助手。"></textarea>
+                    <label for="openai-user">User 消息</label>
+                    <textarea id="openai-user" class="utility-textarea" spellcheck="false" placeholder="输入用户消息..."></textarea>
+                    <div class="option-row">
+                        <label for="openai-temperature">temperature</label>
+                        <input type="number" id="openai-temperature" value="0.2" min="0" max="2" step="0.1">
+                        <label for="openai-max-output">max_output_tokens</label>
+                        <input type="number" id="openai-max-output" value="2048" min="1" step="1">
+                    </div>
+                    <div class="button-group compact">
+                        <button id="openai-responses-btn" class="primary">Responses API</button>
+                        <button id="openai-chat-btn" class="secondary">Chat Completions</button>
+                        <button id="openai-sample-btn" class="secondary">示例</button>
+                    </div>
+                </article>
+                <article class="utility-panel">
+                    <h2>请求体</h2>
+                    <textarea id="openai-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact"><button id="openai-copy-btn" class="secondary">复制请求体</button></div>
+                    <div id="openai-message" class="json-message">等待输入内容。</div>
+                </article>
+            </div>
+        </section>
+        <section class="section-block seo-content">
+            <h2>OpenAI API 请求 JSON</h2>
+            <p>适合把调试参数快速整理成标准 JSON，再复制到接口客户端、curl 或后端代码中使用。</p>
+            <div class="related-tools"><a href="prompt-format.html">Prompt格式化</a><a href="openai-image.html">OpenAI生图调试</a><a href="json-format.html">JSON格式化</a></div>
+        </section>
+    </main>
+    <footer class="site-footer"><div><strong>作者：王仕宇 / JavaPub</strong><p>适合 OpenAI API 调试。</p></div><div class="footer-links"><a href="ai-tools.html">AI工具</a><a href="json-format.html">JSON格式化</a></div></footer>
+    <script src="js/openai-request.js"></script>
+</body>
+</html>
