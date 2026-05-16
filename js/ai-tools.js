@@ -108,10 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return JSON.stringify(value, null, 2);
     }
 
-    function quoteShell(value) {
-        return "'" + String(value).replace(/'/g, "'\\''") + "'";
-    }
-
     function copyText(targetId) {
         const target = document.getElementById(targetId);
         if (!target || !target.value) {
@@ -225,124 +221,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         setValue('openai-result', formatJson(request));
         setMessage('OpenAI Chat Completions 请求体已生成。', 'success');
-    }
-
-    function buildImagePayload() {
-        return {
-            model: getValue('image-model') || 'gpt-image-2',
-            prompt: getValue('image-prompt'),
-            size: getValue('image-size') || '1024x1024'
-        };
-    }
-
-    function renderImageCurl() {
-        const apiUrl = getValue('image-api-url') || 'https://api.chongplus.plus/v1/images/generations';
-        const apiKey = getValue('image-api-key') || '$DAXIANGAI_API_KEY';
-        const payload = buildImagePayload();
-        const curl = [
-            `curl --location ${quoteShell(apiUrl)} \\`,
-            `--header ${quoteShell(`Authorization: Bearer ${apiKey}`)} \\`,
-            `--header ${quoteShell('Content-Type: application/json')} \\`,
-            `--data ${quoteShell(formatJson(payload))}`
-        ].join('\n');
-
-        setValue('image-curl-result', curl);
-        setMessage('生图 curl 已生成。', 'success');
-    }
-
-    function setImagePreview(content) {
-        const preview = document.getElementById('image-preview');
-        preview.innerHTML = content;
-    }
-
-    function pickImageSource(responseJson) {
-        const firstItem = responseJson && Array.isArray(responseJson.data) ? responseJson.data[0] : null;
-        if (!firstItem) {
-            return '';
-        }
-        if (firstItem.url) {
-            return firstItem.url;
-        }
-        if (firstItem.b64_json) {
-            return `data:image/png;base64,${firstItem.b64_json}`;
-        }
-        return '';
-    }
-
-    async function sendImageRequest() {
-        const apiUrl = getValue('image-api-url');
-        const apiKey = getValue('image-api-key');
-        const payload = buildImagePayload();
-
-        if (!apiUrl) {
-            setMessage('请先填写生图 API 地址。', 'error');
-            return;
-        }
-        if (!apiKey) {
-            setMessage('请先填写 API Key。', 'error');
-            return;
-        }
-        if (!payload.prompt) {
-            setMessage('请先填写生图 Prompt。', 'error');
-            return;
-        }
-
-        renderImageCurl();
-        const button = document.getElementById('image-generate-btn');
-        button.disabled = true;
-        button.textContent = '请求中...';
-        setImagePreview('<span>正在请求图片生成接口...</span>');
-
-        try {
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    Authorization: `Bearer ${apiKey}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-            const text = await response.text();
-            let responseJson = null;
-
-            try {
-                responseJson = JSON.parse(text);
-                setValue('image-result', formatJson(responseJson));
-            } catch (error) {
-                setValue('image-result', text);
-            }
-
-            if (!response.ok) {
-                setImagePreview('<span>接口返回错误，详情见接口返回。</span>');
-                setMessage(`生图请求失败：HTTP ${response.status}。`, 'error');
-                return;
-            }
-
-            const imageSource = pickImageSource(responseJson);
-            if (imageSource) {
-                setImagePreview(`<img src="${escapeHtml(imageSource)}" alt="AI 生成图片预览">`);
-                setMessage('生图请求完成。', 'success');
-                return;
-            }
-
-            setImagePreview('<span>请求完成，但返回中没有识别到 url 或 b64_json。</span>');
-            setMessage('生图请求完成，未识别到图片字段。', 'success');
-        } catch (error) {
-            setValue('image-result', error && error.message ? error.message : String(error));
-            setImagePreview('<span>请求失败，可能是网络或跨域限制。</span>');
-            setMessage('生图请求失败。若浏览器提示 CORS，需要接口侧允许跨域。', 'error');
-        } finally {
-            button.disabled = false;
-            button.textContent = '发送生图请求';
-        }
-    }
-
-    function fillImageSample() {
-        setValue('image-api-url', 'https://api.chongplus.plus/v1/images/generations');
-        setValue('image-model', 'gpt-image-2');
-        setValue('image-size', '1024x1024');
-        setValue('image-prompt', '一张高端科技感的 API 中转平台海报，深色背景，蓝紫色霓虹光效，中心是抽象大象 Logo，文字：大象 AI Token 接入平台，稳定高速，国内直连');
-        renderImageCurl();
     }
 
     function generateClaude() {
@@ -476,9 +354,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('prompt-clear-btn').addEventListener('click', clearPrompt);
     document.getElementById('openai-responses-btn').addEventListener('click', generateOpenAIResponses);
     document.getElementById('openai-chat-btn').addEventListener('click', generateOpenAIChat);
-    document.getElementById('image-generate-btn').addEventListener('click', sendImageRequest);
-    document.getElementById('image-curl-btn').addEventListener('click', renderImageCurl);
-    document.getElementById('image-sample-btn').addEventListener('click', fillImageSample);
     document.getElementById('claude-generate-btn').addEventListener('click', generateClaude);
     document.getElementById('token-estimate-btn').addEventListener('click', estimateTokens);
     document.getElementById('token-clear-btn').addEventListener('click', clearTokens);

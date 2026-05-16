@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="免费在线AI调试工具，支持Prompt格式化、OpenAI请求体格式化、OpenAI生图接口调试、Claude请求体格式化、Token估算、API错误码解释和模型价格换算，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="AI工具,Prompt格式化,OpenAI请求体,OpenAI生图,AI图片生成,Claude请求体,Token估算,API错误码,模型价格换算">
-    <title>AI调试工具 - OpenAI生图调试、Prompt格式化、Token估算</title>
+    <meta name="description" content="免费在线AI调试工具，支持Prompt格式化、OpenAI请求体格式化、Claude请求体格式化、Token估算、API错误码解释和模型价格换算，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="AI工具,Prompt格式化,OpenAI请求体,Claude请求体,Token估算,API错误码,模型价格换算">
+    <title>AI调试工具 - Prompt格式化、Token估算、API价格换算</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="tool-page">
@@ -31,7 +31,7 @@
             <div>
                 <p class="eyebrow">AI 工具</p>
                 <h1>AI调试工具</h1>
-                <p>Prompt 格式化、OpenAI / Claude 请求体生成、OpenAI 生图接口调试、Token 粗估、API 错误码解释和模型价格换算。</p>
+                <p>Prompt 格式化、OpenAI / Claude 请求体生成、Token 粗估、API 错误码解释和模型价格换算。</p>
             </div>
             <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
         </section>
@@ -82,49 +82,6 @@
                         <button class="secondary" data-copy="openai-result">复制</button>
                     </div>
                     <textarea id="openai-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
-                </article>
-
-                <article class="utility-panel wide-panel">
-                    <h2>OpenAI 生图接口调试</h2>
-                    <label for="image-api-url">API 地址</label>
-                    <input type="text" id="image-api-url" value="https://api.chongplus.plus/v1/images/generations" spellcheck="false">
-                    <label for="image-api-key">API Key</label>
-                    <input type="password" id="image-api-key" placeholder="输入 API Key，仅在当前页面请求时使用" autocomplete="off">
-                    <div class="option-row">
-                        <label for="image-model">模型</label>
-                        <input type="text" id="image-model" value="gpt-image-2" spellcheck="false">
-                        <label for="image-size">尺寸</label>
-                        <select id="image-size">
-                            <option value="1024x1024" selected>1024x1024</option>
-                            <option value="1024x1536">1024x1536</option>
-                            <option value="1536x1024">1536x1024</option>
-                            <option value="512x512">512x512</option>
-                        </select>
-                    </div>
-                    <label for="image-prompt">Prompt</label>
-                    <textarea id="image-prompt" class="utility-textarea" spellcheck="false" placeholder="描述要生成的图片..."></textarea>
-                    <div class="button-group compact">
-                        <button id="image-generate-btn" class="primary">发送生图请求</button>
-                        <button id="image-curl-btn" class="secondary">生成 curl</button>
-                        <button id="image-sample-btn" class="secondary">示例</button>
-                        <button class="secondary" data-copy="image-curl-result">复制 curl</button>
-                        <button class="secondary" data-copy="image-result">复制返回</button>
-                    </div>
-                    <div class="image-debug-layout">
-                        <div>
-                            <label for="image-curl-result">curl 命令</label>
-                            <textarea id="image-curl-result" class="utility-textarea small-output" spellcheck="false" readonly></textarea>
-                            <label for="image-result">接口返回</label>
-                            <textarea id="image-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
-                        </div>
-                        <div>
-                            <label>图片预览</label>
-                            <div id="image-preview" class="image-preview">
-                                <span>发送请求后在这里显示图片。</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="muted">请求直接从浏览器发出，接口需要允许跨域访问。API Key 不会保存到本地存储。</p>
                 </article>
 
                 <article class="utility-panel">
@@ -204,8 +161,9 @@
 
         <section class="section-block seo-content">
             <h2>在线 AI API 调试和成本估算</h2>
-            <p>这个工具页面面向 AI 应用开发和接口调试场景，帮助整理 Prompt、生成 OpenAI / Claude 请求体、调试 OpenAI 图片生成接口、快速估算 token 和调用成本。所有文本处理均在浏览器本地完成。</p>
+            <p>这个工具页面面向 AI 应用开发和接口调试场景，帮助整理 Prompt、生成 OpenAI / Claude 请求体、快速估算 token 和调用成本。所有文本处理均在浏览器本地完成。</p>
             <div class="related-tools">
+                <a href="openai-image.html">OpenAI生图调试</a>
                 <a href="json-format.html">JSON格式化</a>
                 <a href="jwt.html">JWT解析</a>
                 <a href="crypto.html">编码加密</a>

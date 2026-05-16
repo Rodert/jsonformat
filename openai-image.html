@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线OpenAI生图接口调试工具，支持自定义API地址、API Key、模型、Prompt和图片尺寸，生成curl命令并预览返回图片。">
+    <meta name="keywords" content="OpenAI生图,AI图片生成,图片生成接口调试,gpt-image-2,OpenAI Images API,curl调试">
+    <title>OpenAI生图调试 - 在线图片生成接口测试工具</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>OpenAI生图调试</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="ai-tools.html">AI调试</a>
+            <a href="json-format.html">JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">AI 图片生成</p>
+                <h1>OpenAI生图调试</h1>
+                <p>按 OpenAI 图片生成接口格式发送请求，支持自定义中转 API 地址、API Key、模型、Prompt 和图片尺寸。</p>
+            </div>
+            <strong>API Key 仅在当前页面请求时使用。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid">
+                <article class="utility-panel wide-panel">
+                    <h2>请求参数</h2>
+                    <label for="image-api-url">API 地址</label>
+                    <input type="text" id="image-api-url" value="https://api.chongplus.plus/v1/images/generations" spellcheck="false">
+                    <label for="image-api-key">API Key</label>
+                    <input type="password" id="image-api-key" placeholder="输入 API Key，仅用于本次请求" autocomplete="off">
+                    <div class="option-row">
+                        <label for="image-model">模型</label>
+                        <input type="text" id="image-model" value="gpt-image-2" spellcheck="false">
+                        <label for="image-size">尺寸</label>
+                        <select id="image-size">
+                            <option value="1024x1024" selected>1024x1024</option>
+                            <option value="1024x1536">1024x1536</option>
+                            <option value="1536x1024">1536x1024</option>
+                            <option value="512x512">512x512</option>
+                        </select>
+                    </div>
+                    <label for="image-prompt">Prompt</label>
+                    <textarea id="image-prompt" class="utility-textarea" spellcheck="false" placeholder="描述要生成的图片..."></textarea>
+                    <div class="button-group compact">
+                        <button id="image-generate-btn" class="primary">发送生图请求</button>
+                        <button id="image-curl-btn" class="secondary">生成 curl</button>
+                        <button id="image-sample-btn" class="secondary">示例</button>
+                        <button class="secondary" data-copy="image-curl-result">复制 curl</button>
+                        <button class="secondary" data-copy="image-result">复制返回</button>
+                    </div>
+                    <div id="image-message" class="json-message">等待输入请求参数。</div>
+                </article>
+
+                <article class="utility-panel wide-panel">
+                    <h2>调试结果</h2>
+                    <div class="image-debug-layout">
+                        <div>
+                            <label for="image-curl-result">curl 命令</label>
+                            <textarea id="image-curl-result" class="utility-textarea small-output" spellcheck="false" readonly></textarea>
+                            <label for="image-result">接口返回</label>
+                            <textarea id="image-result" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                        </div>
+                        <div>
+                            <label>图片预览</label>
+                            <div id="image-preview" class="image-preview">
+                                <span>发送请求后在这里显示图片。</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="muted">请求直接从浏览器发出，接口需要允许跨域访问。返回结果支持识别 OpenAI 常见的 url 和 b64_json 图片字段。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>OpenAI 图片生成接口调试</h2>
+            <p>这个页面专注调试图片生成请求，可用于验证 API Key、模型名称、Prompt 和图片尺寸是否可用。需要整理文本 Prompt、估算 token 或生成文本模型请求体时，可使用 AI 调试工具。</p>
+            <div class="related-tools">
+                <a href="ai-tools.html">AI调试工具</a>
+                <a href="json-format.html">JSON格式化</a>
+                <a href="https://api.chongplus.plus" target="_blank" rel="noopener">API 接入服务</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合调试 OpenAI 兼容图片生成接口。</p>
+        </div>
+        <div class="footer-links">
+            <a href="ai-tools.html">AI调试工具</a>
+            <a href="json-format.html">JSON格式化</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="js/openai-image.js"></script>
+</body>
+</html>
