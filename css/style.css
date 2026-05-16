@@ -1414,6 +1414,34 @@ body.tool-page {
     border: 1px solid #e6eaf2;
 }
 
+.image-debug-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.image-preview {
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #e6eaf2;
+    color: #667085;
+    text-align: center;
+    overflow: hidden;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 520px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
 .muted {
     color: #667085;
     font-size: 13px;
@@ -1762,7 +1790,8 @@ body.tool-page {
     .hero-panel,
     .tool-hero,
     .json-layout,
-    .utility-grid.two-column {
+    .utility-grid.two-column,
+    .image-debug-layout {
         grid-template-columns: 1fr;
     }
 
