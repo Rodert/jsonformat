@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线随机数生成器，支持整数、小数、范围、批量、去重、排序和多种输出格式，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="随机数生成器,随机整数,随机小数,批量随机数,随机数字">
+    <title>随机数生成器 - 在线批量生成随机整数和小数</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>随机数生成</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="random-password.html">随机密码</a>
+            <a href="uuid.html">UUID</a>
+            <a href="timestamp.html">时间戳</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">生成类工具</p>
+                <h1>随机数生成器</h1>
+                <p>生成指定范围内的随机整数或小数，支持批量输出、去重、排序和 JSON/CSV/换行格式。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>生成选项</h2>
+                    <div class="option-row">
+                        <label for="random-min">最小值</label>
+                        <input id="random-min" type="number" value="1">
+                        <label for="random-max">最大值</label>
+                        <input id="random-max" type="number" value="100">
+                    </div>
+                    <div class="option-row">
+                        <label for="random-count">数量</label>
+                        <input id="random-count" type="number" min="1" max="10000" value="20">
+                        <label for="random-decimals">小数位</label>
+                        <input id="random-decimals" type="number" min="0" max="12" value="0">
+                    </div>
+                    <div class="option-row">
+                        <label for="random-format">输出格式</label>
+                        <select id="random-format">
+                            <option value="line">每行一个</option>
+                            <option value="csv">逗号分隔</option>
+                            <option value="json">JSON数组</option>
+                        </select>
+                        <label for="random-sort">排序</label>
+                        <select id="random-sort">
+                            <option value="none">不排序</option>
+                            <option value="asc">升序</option>
+                            <option value="desc">降序</option>
+                        </select>
+                    </div>
+                    <div class="option-row">
+                        <label><input id="random-unique" type="checkbox"> 不重复</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="random-generate-btn" class="primary">生成</button>
+                        <button id="random-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>生成结果</h2>
+                    <textarea id="random-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="random-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                </article>
+            </div>
+            <div id="random-message" class="json-message">等待生成随机数。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>随机数来自浏览器 Crypto API，去重模式适合生成测试 ID、抽样序号和随机集合。</p>
+        </div>
+        <div class="footer-links">
+            <a href="random-password.html">随机密码生成</a>
+            <a href="uuid.html">UUID生成</a>
+            <a href="timestamp.html">时间戳转换</a>
+        </div>
+    </footer>
+
+    <script src="js/random-number.js"></script>
+</body>
+</html>

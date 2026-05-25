@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线URL地址解析工具，拆解协议、域名、端口、路径、查询参数和Hash，支持URL编码解码，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="URL解析,URL地址解析,Query参数解析,URL编码解码,链接解析">
+    <title>URL地址解析工具 - 在线拆解 URL 和 Query 参数</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>URL地址解析</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="punycode.html">Punycode</a>
+            <a href="crypto.html">URL编码</a>
+            <a href="ip-lookup.html">IP查询</a>
+            <a href="user-agent.html">User-Agent</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>URL地址解析</h1>
+                <p>拆解 URL 的协议、账号、域名、端口、路径、查询参数和 Hash，辅助接口调试、日志排查和链接清洗。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入 URL</h2>
+                    <textarea id="url-parser-input" class="utility-textarea" spellcheck="false" placeholder="输入完整 URL，例如：https://example.com:8443/api/list?page=1&tag=js#readme"></textarea>
+                    <div class="option-row">
+                        <label><input id="url-parser-auto-protocol" type="checkbox" checked> 缺少协议时自动补 https://</label>
+                        <label><input id="url-parser-decode" type="checkbox" checked> 解码参数值</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="url-parser-run-btn" class="primary">解析</button>
+                        <button id="url-parser-sample-btn" class="secondary">示例</button>
+                        <button id="url-parser-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>URL组成</h2>
+                    <div class="result-list">
+                        <div class="result-row"><span>协议</span><strong id="url-protocol-result">-</strong></div>
+                        <div class="result-row"><span>域名</span><strong id="url-hostname-result">-</strong></div>
+                        <div class="result-row"><span>端口</span><strong id="url-port-result">-</strong></div>
+                        <div class="result-row"><span>路径</span><strong id="url-path-result">-</strong></div>
+                        <div class="result-row"><span>Hash</span><strong id="url-hash-result">-</strong></div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>查询参数 JSON</h2>
+                    <textarea id="url-query-json" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="url-copy-json-btn" class="secondary">复制 JSON</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>规范化 URL</h2>
+                    <textarea id="url-normalized-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="url-copy-normalized-btn" class="secondary">复制 URL</button>
+                    </div>
+                </article>
+            </div>
+            <div id="url-parser-message" class="json-message">等待输入 URL。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>重复查询参数会保留为数组，适合处理筛选条件、回调地址和接口签名调试。</p>
+        </div>
+        <div class="footer-links">
+            <a href="punycode.html">Punycode编码</a>
+            <a href="crypto.html">URL编码解码</a>
+            <a href="ip-lookup.html">IP信息查询</a>
+        </div>
+    </footer>
+
+    <script src="js/url-parser.js"></script>
+</body>
+</html>

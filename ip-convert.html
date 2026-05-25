@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线IPv4地址和整数互转工具，支持IP转Int、Int转IP、十进制和十六进制输出，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="IP转Int,Int转IP,IPv4整数转换,IP地址转换,IPv4转数字">
+    <title>IPv4地址整数互转工具 - IP转Int和Int转IP</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>IPv4整数转换</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="ip-lookup.html">IP查询</a>
+            <a href="url-parser.html">URL解析</a>
+            <a href="random-number.html">随机数</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>IPv4地址整数互转</h1>
+                <p>将 IPv4 地址转换为无符号整数、十六进制和二进制，也可以把整数还原为点分十进制 IP。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="ip-convert-input" class="utility-textarea" spellcheck="false" placeholder="输入 IPv4，例如 192.168.1.1；或输入整数，例如 3232235777"></textarea>
+                    <div class="button-group compact">
+                        <button id="ip-to-int-btn" class="primary">IP转整数</button>
+                        <button id="int-to-ip-btn" class="secondary">整数转IP</button>
+                        <button id="ip-sample-btn" class="secondary">示例</button>
+                        <button id="ip-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <div class="result-list">
+                        <div class="result-row"><span>IPv4</span><strong id="ip-result">-</strong></div>
+                        <div class="result-row"><span>无符号整数</span><strong id="ip-uint-result">-</strong></div>
+                        <div class="result-row"><span>十六进制</span><strong id="ip-hex-result">-</strong></div>
+                        <div class="result-row"><span>二进制</span><strong id="ip-binary-result">-</strong></div>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="ip-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                </article>
+            </div>
+            <div id="ip-convert-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>当前工具面向 IPv4，整数按 0 到 4294967295 的无符号 32 位范围处理。</p>
+        </div>
+        <div class="footer-links">
+            <a href="ip-lookup.html">IP信息查询</a>
+            <a href="url-parser.html">URL地址解析</a>
+            <a href="random-number.html">随机数生成</a>
+        </div>
+    </footer>
+
+    <script src="js/ip-convert.js"></script>
+</body>
+</html>

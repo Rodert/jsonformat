@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线CRC校验计算工具，支持CRC-32、CRC-16/CCITT-FALSE、CRC-16/MODBUS，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="CRC32,CRC16,CRC校验,校验和,Checksum,在线CRC计算">
+    <title>CRC校验计算工具 - 在线 CRC32 和 CRC16</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>CRC校验</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="base32.html">Base32</a>
+            <a href="morse.html">摩斯密码</a>
+            <a href="unicode.html">Unicode</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">编码加密类工具</p>
+                <h1>CRC校验计算</h1>
+                <p>计算文本或十六进制字节的 CRC-32、CRC-16/CCITT-FALSE 和 CRC-16/MODBUS 校验值。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="checksum-input" class="utility-textarea" spellcheck="false" placeholder="输入文本，或选择十六进制后输入 48 65 6c 6c 6f"></textarea>
+                    <div class="option-row">
+                        <label for="checksum-mode">输入格式</label>
+                        <select id="checksum-mode">
+                            <option value="text">文本 UTF-8</option>
+                            <option value="hex">十六进制字节</option>
+                        </select>
+                        <label for="checksum-case">输出格式</label>
+                        <select id="checksum-case">
+                            <option value="upper">大写 HEX</option>
+                            <option value="lower">小写 HEX</option>
+                        </select>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="checksum-run-btn" class="primary">计算</button>
+                        <button id="checksum-sample-btn" class="secondary">示例</button>
+                        <button id="checksum-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>校验结果</h2>
+                    <div class="result-list">
+                        <div class="result-row"><span>CRC-32</span><strong id="crc32-result">-</strong></div>
+                        <div class="result-row"><span>CRC-16/CCITT-FALSE</span><strong id="crc16-ccitt-result">-</strong></div>
+                        <div class="result-row"><span>CRC-16/MODBUS</span><strong id="crc16-modbus-result">-</strong></div>
+                        <div class="result-row"><span>输入字节数</span><strong id="checksum-size-result">0</strong></div>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="checksum-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                </article>
+            </div>
+            <div id="checksum-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>十六进制输入支持空格、逗号、0x 前缀和换行分隔，适合协议字段和日志片段校验。</p>
+        </div>
+        <div class="footer-links">
+            <a href="crypto.html">MD5/SHA加密</a>
+            <a href="base32.html">Base32编码</a>
+            <a href="morse.html">摩斯密码</a>
+        </div>
+    </footer>
+
+    <script src="js/checksum.js"></script>
+</body>
+</html>

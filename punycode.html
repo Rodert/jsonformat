@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Punycode编码解码工具，支持中文域名、国际化域名IDN和xn--域名互转，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Punycode编码,Punycode解码,IDN,中文域名,xn--域名,域名转换">
+    <title>Punycode编码解码工具 - 中文域名和 xn-- 域名互转</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Punycode编码解码</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="url-parser.html">URL解析</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="unicode.html">Unicode</a>
+            <a href="base32.html">Base32</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">编码加密类工具</p>
+                <h1>Punycode编码解码</h1>
+                <p>将中文域名、国际化域名转换为 ASCII 形式的 xn-- 域名，也可以把 Punycode 域名解码回可读文本。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="punycode-input" class="utility-textarea" spellcheck="false" placeholder="输入域名或标签，例如：中文.com 或 xn--fiq228c.com"></textarea>
+                    <div class="option-row">
+                        <label><input id="punycode-domain-mode" type="checkbox" checked> 按域名标签处理</label>
+                        <label><input id="punycode-preserve-case" type="checkbox"> 解码保留 ASCII 大小写</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="punycode-encode-btn" class="primary">编码</button>
+                        <button id="punycode-decode-btn" class="secondary">解码</button>
+                        <button id="punycode-sample-btn" class="secondary">示例</button>
+                        <button id="punycode-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="punycode-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="punycode-copy-btn" class="secondary">复制结果</button>
+                        <button id="punycode-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="punycode-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>按域名处理时会逐段转换标签，保留点号分隔，适合排查 IDN 域名和证书域名。</p>
+        </div>
+        <div class="footer-links">
+            <a href="url-parser.html">URL地址解析</a>
+            <a href="unicode.html">Unicode编码</a>
+            <a href="crypto.html">URL编码</a>
+        </div>
+    </footer>
+
+    <script src="js/punycode.js"></script>
+</body>
+</html>

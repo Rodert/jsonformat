@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线摩斯密码加密解密工具，支持英文、数字和常用标点的 Morse 编码解码，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="摩斯密码,摩尔斯电码,Morse编码,Morse解码,摩斯密码加密,摩斯密码解密">
+    <title>摩斯密码加密解密工具 - 在线 Morse 编码解码</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>摩斯密码</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="base32.html">Base32</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="unicode.html">Unicode</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">编码加密类工具</p>
+                <h1>摩斯密码加密解密</h1>
+                <p>将英文、数字和常用标点转换为摩斯电码，也可以把点划格式的 Morse 内容解码回普通文本。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="morse-input" class="utility-textarea" spellcheck="false" placeholder="输入文本或摩斯密码，例如：JavaPub 或 .--- .- ...- .- .--. ..- -..."></textarea>
+                    <div class="option-row">
+                        <label for="morse-letter-separator">字母分隔</label>
+                        <select id="morse-letter-separator">
+                            <option value=" ">空格</option>
+                            <option value="|">竖线</option>
+                        </select>
+                        <label><input id="morse-keep-unknown" type="checkbox" checked> 保留无法编码字符</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="morse-encode-btn" class="primary">编码</button>
+                        <button id="morse-decode-btn" class="secondary">解码</button>
+                        <button id="morse-sample-btn" class="secondary">示例</button>
+                        <button id="morse-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="morse-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="morse-copy-btn" class="secondary">复制结果</button>
+                        <button id="morse-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="morse-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>摩斯密码按字符编码，单词之间用斜杠分隔，换行会保留为换行。</p>
+        </div>
+        <div class="footer-links">
+            <a href="base32.html">Base32编码</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="crypto.html">Base64编码</a>
+        </div>
+    </footer>
+
+    <script src="js/morse.js"></script>
+</body>
+</html>

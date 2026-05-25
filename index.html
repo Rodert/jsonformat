@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、SQL格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base64/Base58编码解码、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询、Markdown预览等常用工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、SQL格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base64/Base58/Base32编码解码、Punycode、摩斯密码、CRC校验、URL解析、随机密码、随机数、IPv4整数互转、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询、Markdown预览等常用工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,Base32,Punycode,URL解析,随机密码,随机数,IP转Int,Int转IP,摩斯密码,CRC32,CRC16,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
     <meta property="og:type" content="website">
     <meta property="og:title" content="JavaPub 开发者在线工具箱">
     <meta property="og:description" content="JSON格式化、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具，数据仅在浏览器本地处理。">
@@ -56,7 +56,7 @@
             <div class="hero-copy">
                 <p class="eyebrow">JavaPub 在线工具箱</p>
                 <h1 id="hero-title">开发者常用在线工具箱</h1>
-                <p class="hero-desc">JSON格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base58 编码解码、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询等工具，打开即用，本地处理，安全高效。</p>
+                <p class="hero-desc">JSON格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base58/Base32 编码解码、Punycode、摩斯密码、CRC校验、URL解析、随机密码、随机数、IPv4整数互转、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询等工具，打开即用，本地处理，安全高效。</p>
             </div>
             <div class="tool-search" role="search">
                 <label for="tool-search-input">搜索工具</label>
@@ -95,6 +95,31 @@
                     <span class="tool-badge">编码加密</span>
                     <h3>Base58编码解码</h3>
                     <p>使用 Bitcoin Base58 字母表，适合地址和短码调试。</p>
+                </a>
+                <a class="tool-card is-live" href="base32.html" data-tool-card data-keywords="base32 rfc4648 编码 解码 密钥 短码">
+                    <span class="tool-badge">编码加密</span>
+                    <h3>Base32编码解码</h3>
+                    <p>按 RFC 4648 字母表进行 Base32 编码和解码。</p>
+                </a>
+                <a class="tool-card is-live" href="morse.html" data-tool-card data-keywords="morse 摩斯 摩尔斯 电码 加密 解密">
+                    <span class="tool-badge">编码加密</span>
+                    <h3>摩斯密码</h3>
+                    <p>英文、数字和常用标点与 Morse 电码互转。</p>
+                </a>
+                <a class="tool-card is-live" href="checksum.html" data-tool-card data-keywords="crc crc32 crc16 checksum 校验和 校验">
+                    <span class="tool-badge">编码加密</span>
+                    <h3>CRC校验计算</h3>
+                    <p>计算 CRC-32、CRC-16/CCITT 和 CRC-16/MODBUS。</p>
+                </a>
+                <a class="tool-card is-live" href="punycode.html" data-tool-card data-keywords="punycode idn 中文域名 xn-- 域名 编码 解码">
+                    <span class="tool-badge">编码加密</span>
+                    <h3>Punycode编码解码</h3>
+                    <p>中文域名、国际化域名和 xn-- 域名互转。</p>
+                </a>
+                <a class="tool-card is-live" href="random-password.html" data-tool-card data-keywords="随机 密码 password 生成 安全 批量">
+                    <span class="tool-badge">编码加密</span>
+                    <h3>随机密码生成</h3>
+                    <p>使用 Crypto API 批量生成安全随机密码。</p>
                 </a>
                 <a class="tool-card is-live" href="crypto.html" data-tool-card data-keywords="md5 sha sha1 sha256 加密 哈希 hash">
                     <span class="tool-badge">编码加密</span>
@@ -176,6 +201,21 @@
                     <h3>User-Agent解析</h3>
                     <p>识别浏览器、系统、设备类型和渲染引擎。</p>
                 </a>
+                <a class="tool-card is-live" href="url-parser.html" data-tool-card data-keywords="url 解析 query 参数 hash 链接 地址">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>URL地址解析</h3>
+                    <p>拆解协议、域名、路径、查询参数和 Hash。</p>
+                </a>
+                <a class="tool-card is-live" href="random-number.html" data-tool-card data-keywords="随机数 random number 整数 小数 批量">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>随机数生成</h3>
+                    <p>按范围批量生成随机整数或小数。</p>
+                </a>
+                <a class="tool-card is-live" href="ip-convert.html" data-tool-card data-keywords="ip ipv4 int 整数 转换 数字">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>IPv4整数互转</h3>
+                    <p>IPv4 地址与无符号 32 位整数互转。</p>
+                </a>
                 <a class="tool-card is-live" href="markdown-preview.html" data-tool-card data-keywords="markdown md 预览 html 文档 readme">
                     <span class="tool-badge">文本处理</span>
                     <h3>Markdown预览</h3>
@@ -235,8 +275,13 @@
                     <div class="link-list">
                         <a href="crypto.html">Base64编码解码</a>
                         <a href="crypto.html">Base58编码解码</a>
+                        <a href="base32.html">Base32编码解码</a>
+                        <a href="punycode.html">Punycode编码解码</a>
                         <a href="crypto.html">URL编码解码</a>
                         <a href="unicode.html">Unicode编码转换</a>
+                        <a href="morse.html">摩斯密码</a>
+                        <a href="checksum.html">CRC校验计算</a>
+                        <a href="random-password.html">随机密码生成</a>
                         <a href="crypto.html">MD5加密</a>
                         <a href="crypto.html">SHA1/SHA256加密</a>
                         <a href="crypto.html">AES加密解密</a>
@@ -255,7 +300,10 @@
                         <a href="http-status.html">HTTP状态码查询</a>
                         <a href="cron.html">Cron表达式解析</a>
                         <a href="user-agent.html">User-Agent解析</a>
+                        <a href="url-parser.html">URL地址解析</a>
                         <a href="ip-lookup.html">IP信息查询</a>
+                        <a href="ip-convert.html">IPv4整数互转</a>
+                        <a href="random-number.html">随机数生成</a>
                     </div>
                 </article>
                 <article class="category-panel" id="text-tools">

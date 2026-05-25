@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Base32编码解码工具，支持RFC 4648 Base32编码、解码、补位控制，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Base32编码,Base32解码,RFC4648,Base32在线工具,编码解码">
+    <title>Base32编码解码工具 - 在线 Base32 转换</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Base32编码解码</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="morse.html">摩斯密码</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="unicode.html">Unicode</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">编码加密类工具</p>
+                <h1>Base32编码解码</h1>
+                <p>按 RFC 4648 字母表进行 Base32 编码和解码，适合密钥、短码、配置值和日志内容处理。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="base32-input" class="utility-textarea" spellcheck="false" placeholder="输入普通文本或 Base32 内容..."></textarea>
+                    <div class="option-row">
+                        <label><input id="base32-padding" type="checkbox" checked> 编码时保留 = 补位</label>
+                        <label><input id="base32-lowercase" type="checkbox"> 输出小写</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="base32-encode-btn" class="primary">编码</button>
+                        <button id="base32-decode-btn" class="secondary">解码</button>
+                        <button id="base32-sample-btn" class="secondary">示例</button>
+                        <button id="base32-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="base32-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="base32-copy-btn" class="secondary">复制结果</button>
+                        <button id="base32-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="base32-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>Base32 输出只使用 A-Z 和 2-7，解码时会自动忽略空白并接受缺少补位的输入。</p>
+        </div>
+        <div class="footer-links">
+            <a href="crypto.html">Base64编码</a>
+            <a href="morse.html">摩斯密码</a>
+            <a href="checksum.html">CRC校验</a>
+        </div>
+    </footer>
+
+    <script src="js/base32.js"></script>
+</body>
+</html>
