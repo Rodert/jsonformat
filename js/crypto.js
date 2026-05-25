@@ -1,6 +1,8 @@
 // 编码加密工具脚本：所有处理均在浏览器本地完成。
 
 const AES_ITERATIONS = 100000;
+const BASE58_ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+const BASE58_LOOKUP = new Map(Array.from(BASE58_ALPHABET, (char, index) => [char, BigInt(index)]));
 
 function getValue(id) {
     const element = document.getElementById(id);
@@ -76,6 +78,65 @@ function base64ToBytes(base64) {
     }
 
     return bytes;
+}
+
+function bytesToBase58(bytes) {
+    if (bytes.length === 0) {
+        return '';
+    }
+
+    let value = 0n;
+    for (const byte of bytes) {
+        value = (value << 8n) + BigInt(byte);
+    }
+
+    let encoded = '';
+    while (value > 0n) {
+        const remainder = Number(value % 58n);
+        encoded = BASE58_ALPHABET[remainder] + encoded;
+        value /= 58n;
+    }
+
+    for (const byte of bytes) {
+        if (byte !== 0) {
+            break;
+        }
+        encoded = BASE58_ALPHABET[0] + encoded;
+    }
+
+    return encoded || BASE58_ALPHABET[0];
+}
+
+function base58ToBytes(base58) {
+    const clean = base58.replace(/\s+/g, '');
+
+    if (!clean) {
+        return new Uint8Array();
+    }
+
+    let value = 0n;
+    for (const char of clean) {
+        const digit = BASE58_LOOKUP.get(char);
+        if (digit === undefined) {
+            throw new Error(`包含无效字符 "${char}"。`);
+        }
+        value = value * 58n + digit;
+    }
+
+    const bytes = [];
+    while (value > 0n) {
+        bytes.unshift(Number(value & 0xffn));
+        value >>= 8n;
+    }
+
+    for (const char of clean) {
+        if (char !== BASE58_ALPHABET[0]) {
+            break;
+        }
+        bytes.unshift(0);
+    }
+
+    return new Uint8Array(bytes);
 }
 
 function formatJson(value) {
@@ -192,6 +253,42 @@ function base64Decode() {
 function clearBase64() {
     setValue('base64-input', '');
     setOutput('base64-output', '', 'Base64 输入已清空。', '');
+}
+
+// ==================== Base58 编码/解码 ====================
+function base58Encode() {
+    const input = getValue('base58-input');
+
+    if (!input) {
+        setCryptoMessage('请输入要编码的文本。', 'error');
+        return;
+    }
+
+    try {
+        setOutput('base58-output', bytesToBase58(textToBytes(input)), 'Base58 编码完成。');
+    } catch (error) {
+        setCryptoMessage(`编码失败：${error.message}`, 'error');
+    }
+}
+
+function base58Decode() {
+    const input = getValue('base58-input');
+
+    if (!input) {
+        setCryptoMessage('请输入要解码的 Base58 文本。', 'error');
+        return;
+    }
+
+    try {
+        setOutput('base58-output', bytesToText(base58ToBytes(input)), 'Base58 解码完成。');
+    } catch (error) {
+        setCryptoMessage(`解码失败：${error.message}`, 'error');
+    }
+}
+
+function clearBase58() {
+    setValue('base58-input', '');
+    setOutput('base58-output', '', 'Base58 输入已清空。', '');
 }
 
 // ==================== URL 编码/解码 ====================

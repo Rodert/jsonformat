@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="免费在线编码加密工具，支持Base64、URL编码、MD5、SHA1、SHA256、SHA512、HMAC-SHA256、AES-GCM、RSA-OAEP，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="Base64编码解码,URL编码解码,MD5,SHA1,SHA256,SHA512,HMAC,AES-GCM,RSA加密解密,在线加密工具">
-    <title>编码加密工具 - Base64、URL、哈希、AES-GCM、RSA</title>
+    <meta name="description" content="免费在线编码加密工具，支持Base64、Base58、URL编码、MD5、SHA1、SHA256、SHA512、HMAC-SHA256、AES-GCM、RSA-OAEP，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Base64编码解码,Base58编码解码,URL编码解码,MD5,SHA1,SHA256,SHA512,HMAC,AES-GCM,RSA加密解密,在线加密工具">
+    <title>编码加密工具 - Base64、Base58、URL、哈希、AES-GCM、RSA</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="tool-page">
@@ -32,7 +32,7 @@
             <div>
                 <p class="eyebrow">编码加密类工具</p>
                 <h1>编码加密工具</h1>
-                <p>Base64、URL 编码、哈希摘要、HMAC、AES-GCM 和 RSA-OAEP，全部在浏览器本地完成。</p>
+                <p>Base64、Base58、URL 编码、哈希摘要、HMAC、AES-GCM 和 RSA-OAEP，全部在浏览器本地完成。</p>
             </div>
             <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
         </section>
@@ -49,6 +49,19 @@
                         <button class="secondary" onclick="copyById('base64-output')">复制结果</button>
                     </div>
                     <textarea id="base64-output" class="utility-textarea output small-output" spellcheck="false" readonly></textarea>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>Base58 编码/解码</h2>
+                    <textarea id="base58-input" class="utility-textarea" spellcheck="false" placeholder="输入要编码的文本，或粘贴 Base58 字符串..."></textarea>
+                    <div class="button-group compact">
+                        <button class="primary" onclick="base58Encode()">Base58 编码</button>
+                        <button class="secondary" onclick="base58Decode()">Base58 解码</button>
+                        <button class="secondary" onclick="clearBase58()">清空</button>
+                        <button class="secondary" onclick="copyById('base58-output')">复制结果</button>
+                    </div>
+                    <textarea id="base58-output" class="utility-textarea output small-output" spellcheck="false" readonly></textarea>
+                    <p class="muted">使用 Bitcoin Base58 字母表，不包含 0、O、I、l，适合地址、短码和标识符调试。</p>
                 </article>
 
                 <article class="utility-panel">
