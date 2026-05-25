@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线十六进制和文本互转工具，支持UTF-8文本转Hex、Hex转文本、大小写和分隔符控制，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Hex转文本,文本转Hex,十六进制转字符串,字符串转十六进制,UTF8 Hex">
+    <title>Hex和文本互转工具 - 十六进制字符串在线转换</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Hex文本互转</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="unicode.html">Unicode</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="base32.html">Base32</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">编码加密类工具</p>
+                <h1>Hex和文本互转</h1>
+                <p>将 UTF-8 文本转换为十六进制字节，也可以把 Hex 字符串还原为文本，适合协议、日志和签名参数排查。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="hex-input" class="utility-textarea" spellcheck="false" placeholder="输入文本或十六进制字符串，例如 48656c6c6f"></textarea>
+                    <div class="option-row">
+                        <label for="hex-separator">Hex分隔符</label>
+                        <select id="hex-separator">
+                            <option value="">无分隔</option>
+                            <option value=" ">空格</option>
+                            <option value=",">逗号</option>
+                        </select>
+                        <label><input id="hex-uppercase" type="checkbox" checked> 输出大写</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="text-to-hex-btn" class="primary">文本转Hex</button>
+                        <button id="hex-to-text-btn" class="secondary">Hex转文本</button>
+                        <button id="hex-sample-btn" class="secondary">示例</button>
+                        <button id="hex-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="hex-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="hex-copy-btn" class="secondary">复制结果</button>
+                        <button id="hex-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="hex-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>Hex 输入支持空格、逗号、冒号、短横线和 `0x` 前缀，按 UTF-8 解码。</p>
+        </div>
+        <div class="footer-links">
+            <a href="unicode.html">Unicode编码</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="crypto.html">Base64编码</a>
+        </div>
+    </footer>
+
+    <script src="js/hex-text.js"></script>
+</body>
+</html>

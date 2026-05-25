@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线进制转换工具，支持二进制、八进制、十进制、十六进制和自定义2到36进制互转，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="进制转换,二进制转十进制,十六进制转十进制,八进制转换,Base36转换">
+    <title>进制转换工具 - 二进制八进制十进制十六进制互转</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>进制转换</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="hex-text.html">Hex文本</a>
+            <a href="ip-convert.html">IPv4整数</a>
+            <a href="random-number.html">随机数</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>进制转换工具</h1>
+                <p>输入 2 到 36 进制数字，一次输出二进制、八进制、十进制、十六进制和自定义目标进制。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入数字</h2>
+                    <textarea id="radix-input" class="utility-textarea" spellcheck="false" placeholder="输入数字，例如 FF、101010、755 或 123456"></textarea>
+                    <div class="option-row">
+                        <label for="radix-from">输入进制</label>
+                        <input id="radix-from" type="number" min="2" max="36" value="16">
+                        <label for="radix-target">目标进制</label>
+                        <input id="radix-target" type="number" min="2" max="36" value="36">
+                    </div>
+                    <div class="button-group compact">
+                        <button id="radix-convert-btn" class="primary">转换</button>
+                        <button id="radix-sample-btn" class="secondary">示例</button>
+                        <button id="radix-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <div class="result-list">
+                        <div class="result-row"><span>二进制</span><strong id="radix-bin-result">-</strong></div>
+                        <div class="result-row"><span>八进制</span><strong id="radix-oct-result">-</strong></div>
+                        <div class="result-row"><span>十进制</span><strong id="radix-dec-result">-</strong></div>
+                        <div class="result-row"><span>十六进制</span><strong id="radix-hex-result">-</strong></div>
+                        <div class="result-row"><span>目标进制</span><strong id="radix-custom-result">-</strong></div>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="radix-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                </article>
+            </div>
+            <div id="radix-message" class="json-message">等待输入数字。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>使用 BigInt 处理整数，不支持小数；输入可以带 `0b`、`0o`、`0x` 前缀。</p>
+        </div>
+        <div class="footer-links">
+            <a href="hex-text.html">Hex文本互转</a>
+            <a href="ip-convert.html">IPv4整数互转</a>
+            <a href="random-number.html">随机数生成</a>
+        </div>
+    </footer>
+
+    <script src="js/radix-convert.js"></script>
+</body>
+</html>

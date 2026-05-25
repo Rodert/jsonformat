@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、SQL格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base64/Base58/Base32编码解码、Punycode、摩斯密码、CRC校验、URL解析、随机密码、随机数、IPv4整数互转、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询、Markdown预览等常用工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,Base32,Punycode,URL解析,随机密码,随机数,IP转Int,Int转IP,摩斯密码,CRC32,CRC16,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON和Query互转、Properties转JSON/YAML、SQL格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、进制转换、文件大小换算、颜色转换、Base64/Base58/Base32编码解码、Hex文本互转、Punycode、摩斯密码、CRC校验、URL解析、随机密码、随机数、IPv4整数互转等常用工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转Query,Query转JSON,Properties转JSON,Properties转YAML,进制转换,文件大小换算,颜色转换,Hex转文本,文本转Hex,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,Base32,Punycode,URL解析,随机密码,随机数,IP转Int,Int转IP,摩斯密码,CRC32,CRC16,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
     <meta property="og:type" content="website">
     <meta property="og:title" content="JavaPub 开发者在线工具箱">
     <meta property="og:description" content="JSON格式化、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具，数据仅在浏览器本地处理。">
@@ -56,7 +56,7 @@
             <div class="hero-copy">
                 <p class="eyebrow">JavaPub 在线工具箱</p>
                 <h1 id="hero-title">开发者常用在线工具箱</h1>
-                <p class="hero-desc">JSON格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base58/Base32 编码解码、Punycode、摩斯密码、CRC校验、URL解析、随机密码、随机数、IPv4整数互转、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询等工具，打开即用，本地处理，安全高效。</p>
+                <p class="hero-desc">JSON格式化、JSON和Query互转、Properties转JSON/YAML、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、进制转换、文件大小换算、颜色转换、Base58/Base32 编码解码、Hex文本互转、Punycode、摩斯密码、CRC校验、URL解析、随机密码、随机数、IPv4整数互转等工具，打开即用，本地处理，安全高效。</p>
             </div>
             <div class="tool-search" role="search">
                 <label for="tool-search-input">搜索工具</label>
@@ -85,6 +85,31 @@
                     <span class="tool-badge">数据格式</span>
                     <h3>JSON转换</h3>
                     <p>转换为 YAML、XML、Java Bean、Go Struct 等。</p>
+                </a>
+                <a class="tool-card is-live" href="query-string.html" data-tool-card data-keywords="json query url 参数 转换 get">
+                    <span class="tool-badge">数据格式</span>
+                    <h3>JSON和Query互转</h3>
+                    <p>JSON 对象与 URL 查询参数双向转换。</p>
+                </a>
+                <a class="tool-card is-live" href="properties-convert.html" data-tool-card data-keywords="properties json yaml java 配置 转换">
+                    <span class="tool-badge">数据格式</span>
+                    <h3>Properties转换</h3>
+                    <p>Java properties 配置转 JSON 或 YAML。</p>
+                </a>
+                <a class="tool-card is-live" href="radix-convert.html" data-tool-card data-keywords="进制 转换 二进制 八进制 十进制 十六进制 base36">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>进制转换</h3>
+                    <p>2 到 36 进制整数互转，支持 BigInt。</p>
+                </a>
+                <a class="tool-card is-live" href="file-size.html" data-tool-card data-keywords="文件大小 换算 kb mb gb kib mib 字节">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>文件大小换算</h3>
+                    <p>B、KB、MB、GB 与 KiB、MiB、GiB 互转。</p>
+                </a>
+                <a class="tool-card is-live" href="color-convert.html" data-tool-card data-keywords="颜色 转换 hex rgb hsl css 前端">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>颜色转换</h3>
+                    <p>HEX、RGB、HSL 常用 CSS 颜色格式互转。</p>
                 </a>
                 <a class="tool-card is-live" href="crypto.html" data-tool-card data-keywords="base64 编码 解码">
                     <span class="tool-badge">编码加密</span>
@@ -120,6 +145,11 @@
                     <span class="tool-badge">编码加密</span>
                     <h3>随机密码生成</h3>
                     <p>使用 Crypto API 批量生成安全随机密码。</p>
+                </a>
+                <a class="tool-card is-live" href="hex-text.html" data-tool-card data-keywords="hex 十六进制 文本 字符串 utf8 编码 解码">
+                    <span class="tool-badge">编码加密</span>
+                    <h3>Hex文本互转</h3>
+                    <p>UTF-8 文本与十六进制字节字符串互转。</p>
                 </a>
                 <a class="tool-card is-live" href="crypto.html" data-tool-card data-keywords="md5 sha sha1 sha256 加密 哈希 hash">
                     <span class="tool-badge">编码加密</span>
@@ -264,6 +294,8 @@
                         <a href="json-format.html">JSON校验</a>
                         <a href="json-format.html">JSON转YAML</a>
                         <a href="json-format.html">JSON转XML</a>
+                        <a href="query-string.html">JSON和Query互转</a>
+                        <a href="properties-convert.html">Properties转JSON/YAML</a>
                         <a href="json-csv.html">JSON转CSV</a>
                         <a href="csv-json.html">CSV转JSON</a>
                         <a href="yaml-json.html">YAML转JSON</a>
@@ -282,6 +314,7 @@
                         <a href="morse.html">摩斯密码</a>
                         <a href="checksum.html">CRC校验计算</a>
                         <a href="random-password.html">随机密码生成</a>
+                        <a href="hex-text.html">Hex文本互转</a>
                         <a href="crypto.html">MD5加密</a>
                         <a href="crypto.html">SHA1/SHA256加密</a>
                         <a href="crypto.html">AES加密解密</a>
@@ -296,6 +329,9 @@
                         <a href="uuid.html">UUID生成</a>
                         <a href="sql-format.html">SQL格式化</a>
                         <a href="regex.html">正则表达式测试</a>
+                        <a href="radix-convert.html">进制转换</a>
+                        <a href="file-size.html">文件大小换算</a>
+                        <a href="color-convert.html">颜色转换</a>
                         <a href="diff.html">代码对比</a>
                         <a href="http-status.html">HTTP状态码查询</a>
                         <a href="cron.html">Cron表达式解析</a>

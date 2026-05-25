@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线文件大小换算工具，支持B、KB、MB、GB、TB、KiB、MiB、GiB、TiB互转，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="文件大小换算,KB转MB,MB转GB,字节换算,KiB MiB GiB">
+    <title>文件大小换算工具 - B KB MB GB TB 在线转换</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>文件大小换算</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="radix-convert.html">进制转换</a>
+            <a href="timestamp.html">时间戳</a>
+            <a href="random-number.html">随机数</a>
+            <a href="json-format.html">JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>文件大小换算</h1>
+                <p>在十进制单位和二进制单位之间换算文件大小，适合日志、上传限制、存储容量和带宽估算。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入大小</h2>
+                    <div class="option-row">
+                        <label for="file-size-value">数值</label>
+                        <input id="file-size-value" type="number" min="0" step="any" value="1024">
+                        <label for="file-size-unit">单位</label>
+                        <select id="file-size-unit">
+                            <option value="B">B</option>
+                            <option value="KB">KB</option>
+                            <option value="MB" selected>MB</option>
+                            <option value="GB">GB</option>
+                            <option value="TB">TB</option>
+                            <option value="KiB">KiB</option>
+                            <option value="MiB">MiB</option>
+                            <option value="GiB">GiB</option>
+                            <option value="TiB">TiB</option>
+                        </select>
+                    </div>
+                    <div class="option-row">
+                        <label for="file-size-decimals">小数位</label>
+                        <input id="file-size-decimals" type="number" min="0" max="12" value="4">
+                    </div>
+                    <div class="button-group compact">
+                        <button id="file-size-convert-btn" class="primary">换算</button>
+                        <button id="file-size-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>换算结果</h2>
+                    <div class="result-list">
+                        <div class="result-row"><span>B</span><strong id="size-b-result">-</strong></div>
+                        <div class="result-row"><span>KB / MB / GB</span><strong id="size-decimal-result">-</strong></div>
+                        <div class="result-row"><span>KiB / MiB / GiB</span><strong id="size-binary-result">-</strong></div>
+                        <div class="result-row"><span>Bit</span><strong id="size-bit-result">-</strong></div>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="file-size-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                </article>
+            </div>
+            <div id="file-size-message" class="json-message">等待输入文件大小。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>KB/MB/GB 使用 1000 进制，KiB/MiB/GiB 使用 1024 进制。</p>
+        </div>
+        <div class="footer-links">
+            <a href="radix-convert.html">进制转换</a>
+            <a href="random-number.html">随机数生成</a>
+            <a href="timestamp.html">时间戳转换</a>
+        </div>
+    </footer>
+
+    <script src="js/file-size.js"></script>
+</body>
+</html>

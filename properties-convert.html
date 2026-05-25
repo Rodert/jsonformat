@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Properties配置转换工具，支持Java .properties转JSON、转YAML，支持点号键转嵌套对象，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Properties转JSON,Properties转YAML,Java配置转换,配置文件转换">
+    <title>Properties转JSON/YAML工具 - Java配置在线转换</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Properties转换</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="yaml-json.html">YAML</a>
+            <a href="json-format.html">JSON</a>
+            <a href="query-string.html">Query互转</a>
+            <a href="xml-json.html">XML</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">数据格式类工具</p>
+                <h1>Properties转JSON/YAML</h1>
+                <p>把 Java `.properties` 配置转换为 JSON 或 YAML，支持注释过滤、转义字符和点号键展开为嵌套对象。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>Properties 输入</h2>
+                    <textarea id="properties-input" class="utility-textarea" spellcheck="false" placeholder="server.port=8080&#10;spring.application.name=demo"></textarea>
+                    <div class="option-row">
+                        <label><input id="properties-nested" type="checkbox" checked> 点号键转嵌套对象</label>
+                        <label><input id="properties-coerce" type="checkbox" checked> 自动识别数字和布尔值</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="properties-json-btn" class="primary">转JSON</button>
+                        <button id="properties-yaml-btn" class="secondary">转YAML</button>
+                        <button id="properties-sample-btn" class="secondary">示例</button>
+                        <button id="properties-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="properties-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="properties-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                </article>
+            </div>
+            <div id="properties-message" class="json-message">等待输入配置。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>支持 `=`、`:` 和空白分隔的常见 properties 写法，复杂 Spring 占位符会按字符串保留。</p>
+        </div>
+        <div class="footer-links">
+            <a href="yaml-json.html">YAML转JSON</a>
+            <a href="json-format.html">JSON格式化</a>
+            <a href="query-string.html">JSON Query互转</a>
+        </div>
+    </footer>
+
+    <script src="js/properties-convert.js"></script>
+</body>
+</html>
