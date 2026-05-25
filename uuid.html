@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="免费在线UUID生成工具，支持生成 UUID v4、批量生成、大小写转换、去除连字符、复制结果，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="UUID生成,UUID v4,在线UUID,GUID生成,随机UUID,批量UUID">
+    <meta name="description" content="免费在线UUID批量生成工具，支持生成 UUID v4、批量生成、大小写转换、去除连字符、SQL IN、JSON数组、CSV、复制结果，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="UUID生成,UUID v4,在线UUID,GUID生成,随机UUID,批量UUID,SQL IN UUID,JSON UUID数组">
     <title>UUID生成工具 - 在线批量生成UUID v4</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,7 +32,7 @@
             <div>
                 <p class="eyebrow">开发调试类工具</p>
                 <h1>UUID生成工具</h1>
-                <p>生成标准 UUID v4，支持批量生成、大小写格式和去除连字符，适合测试数据、主键和 Trace ID 场景。</p>
+                <p>生成标准 UUID v4，支持批量生成、大小写格式、去除连字符和多种输出格式，适合测试数据、主键和 Trace ID 场景。</p>
             </div>
             <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
         </section>
@@ -42,13 +42,22 @@
                 <article class="utility-panel">
                     <h2>生成设置</h2>
                     <label for="uuid-count">生成数量</label>
-                    <input id="uuid-count" type="number" min="1" max="200" value="10">
+                    <input id="uuid-count" type="number" min="1" max="1000" value="10">
+                    <label for="uuid-output-format">输出格式</label>
+                    <select id="uuid-output-format">
+                        <option value="lines">每行一个</option>
+                        <option value="comma">逗号分隔</option>
+                        <option value="sql-in">SQL IN 列表</option>
+                        <option value="sql-values">SQL VALUES</option>
+                        <option value="json">JSON 数组</option>
+                    </select>
                     <div class="option-row">
                         <label><input type="radio" name="uuid-case" value="lower" checked> 小写</label>
                         <label><input type="radio" name="uuid-case" value="upper"> 大写</label>
                     </div>
                     <div class="option-row">
                         <label><input id="uuid-hyphen" type="checkbox" checked> 保留连字符</label>
+                        <label><input id="uuid-quote" type="checkbox"> 字符串加引号</label>
                         <label><input id="uuid-sort" type="checkbox"> 按字母排序</label>
                     </div>
                     <div class="button-group compact">
@@ -74,6 +83,7 @@
         </div>
         <div class="footer-links">
             <a href="timestamp.html">时间戳转换</a>
+            <a href="sql-format.html">SQL格式化</a>
             <a href="regex.html">正则测试</a>
             <a href="json-format.html">JSON格式化</a>
         </div>

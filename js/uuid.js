@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const countInput = document.getElementById('uuid-count');
+    const outputFormatInput = document.getElementById('uuid-output-format');
     const hyphenInput = document.getElementById('uuid-hyphen');
+    const quoteInput = document.getElementById('uuid-quote');
     const sortInput = document.getElementById('uuid-sort');
     const output = document.getElementById('uuid-output');
     const generateBtn = document.getElementById('generate-uuid-btn');
@@ -15,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getCount() {
         const count = Number(countInput.value);
-        if (!Number.isInteger(count) || count < 1 || count > 200) {
-            throw new Error('生成数量需在 1 到 200 之间');
+        if (!Number.isInteger(count) || count < 1 || count > 1000) {
+            throw new Error('生成数量需在 1 到 1000 之间');
         }
         return count;
     }
@@ -47,6 +49,28 @@ document.addEventListener('DOMContentLoaded', function() {
         return value;
     }
 
+    function quoteValue(value) {
+        return `'${value}'`;
+    }
+
+    function formatOutput(values) {
+        const format = outputFormatInput.value;
+        const quotedValues = quoteInput.checked ? values.map(quoteValue) : values;
+
+        switch (format) {
+            case 'comma':
+                return quotedValues.join(', ');
+            case 'sql-in':
+                return `IN (${quotedValues.join(', ')})`;
+            case 'sql-values':
+                return quotedValues.map(value => `(${value})`).join(',\n');
+            case 'json':
+                return JSON.stringify(values, null, 2);
+            default:
+                return quotedValues.join('\n');
+        }
+    }
+
     function generate() {
         try {
             const count = getCount();
@@ -54,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (sortInput.checked) {
                 values = values.sort();
             }
-            output.value = values.join('\n');
+            output.value = formatOutput(values);
             setMessage(`已生成 ${count} 个 UUID。`, 'success');
         } catch (error) {
             setMessage(`错误：${error.message}`, 'error');

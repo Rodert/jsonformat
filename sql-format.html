@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线SQL格式化工具，支持 SQL 美化、压缩、关键字大小写、缩进设置、复制结果和示例 SQL，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="SQL格式化,SQL美化,SQL压缩,在线SQL格式化,SQL Formatter,MySQL,PostgreSQL">
+    <title>SQL格式化工具 - 在线SQL美化、压缩和关键字大小写转换</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>SQL格式化工具</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html">JSON</a>
+            <a href="diff.html">代码对比</a>
+            <a href="uuid.html">UUID</a>
+            <a href="regex.html">正则测试</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>SQL格式化工具</h1>
+                <p>整理 SELECT、JOIN、WHERE、GROUP BY、ORDER BY 等常见 SQL 语句，支持美化、压缩和关键字大小写转换。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入 SQL</h2>
+                    <textarea id="sql-input" class="utility-textarea output" spellcheck="false" placeholder="请在此处粘贴 SQL 语句..."></textarea>
+                    <div class="option-row">
+                        <label for="sql-keyword-case">关键字</label>
+                        <select id="sql-keyword-case">
+                            <option value="upper">大写</option>
+                            <option value="lower">小写</option>
+                            <option value="preserve">保持原样</option>
+                        </select>
+                        <label for="sql-indent-size">缩进</label>
+                        <select id="sql-indent-size">
+                            <option value="2">2 空格</option>
+                            <option value="4" selected>4 空格</option>
+                        </select>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="format-sql-btn" class="primary">格式化</button>
+                        <button id="minify-sql-btn" class="secondary">压缩</button>
+                        <button id="sample-sql-btn" class="secondary">示例</button>
+                        <button id="clear-sql-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>格式化结果</h2>
+                    <textarea id="sql-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="copy-sql-btn" class="secondary">复制结果</button>
+                    </div>
+                    <p class="muted">适合开发调试和日志排查。复杂存储过程或厂商专有语法建议结合数据库 IDE 再检查一次。</p>
+                </article>
+            </div>
+            <div class="status-panel">
+                <div id="sql-message" class="json-message">等待输入 SQL。</div>
+                <div class="json-stats">
+                    <span id="sql-stat-chars">字符：0</span>
+                    <span id="sql-stat-lines">行数：0</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>在线 SQL 美化和压缩</h2>
+            <p>SQL 格式化工具可以把单行 SQL、日志中的查询语句或临时拼接的 SQL 整理成更容易阅读的结构，也可以压缩成单行便于复制到配置或脚本中。</p>
+            <div class="related-tools">
+                <a href="json-format.html">JSON格式化</a>
+                <a href="diff.html">代码对比</a>
+                <a href="regex.html">正则表达式测试</a>
+                <a href="uuid.html">UUID批量生成</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合 SQL 调试、接口日志排查和数据库脚本整理。</p>
+        </div>
+        <div class="footer-links">
+            <a href="json-format.html">JSON格式化</a>
+            <a href="diff.html">代码对比</a>
+            <a href="uuid.html">UUID生成</a>
+        </div>
+    </footer>
+
+    <script src="js/sql-format.js"></script>
+</body>
+</html>

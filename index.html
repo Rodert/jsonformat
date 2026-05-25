@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base64/Base58编码解码、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询、Markdown预览等常用工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,Base64,Base58,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、SQL格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、Base64/Base58编码解码、加密解密、代码对比、时间戳转换、JWT解析、IP信息查询、Markdown预览等常用工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
     <meta property="og:type" content="website">
     <meta property="og:title" content="JavaPub 开发者在线工具箱">
     <meta property="og:description" content="JSON格式化、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具，数据仅在浏览器本地处理。">
@@ -129,7 +129,12 @@
                 <a class="tool-card is-live" href="uuid.html" data-tool-card data-keywords="uuid guid 生成 随机 批量">
                     <span class="tool-badge">开发调试</span>
                     <h3>UUID生成</h3>
-                    <p>批量生成 UUID v4，支持大小写和连字符。</p>
+                    <p>批量生成 UUID v4，支持 SQL IN 和 JSON 数组。</p>
+                </a>
+                <a class="tool-card is-live" href="sql-format.html" data-tool-card data-keywords="sql 格式化 美化 压缩 mysql postgresql select join where">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>SQL格式化</h3>
+                    <p>美化、压缩 SQL，并转换关键字大小写。</p>
                 </a>
                 <a class="tool-card is-live" href="regex.html" data-tool-card data-keywords="正则 regex regexp 测试 匹配 替换">
                     <span class="tool-badge">开发调试</span>
@@ -202,7 +207,7 @@
                     <p>校验 IPv4/IPv6 并识别常见地址类型。</p>
                 </a>
             </div>
-            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、csv、yaml、ip、jwt、cron。</div>
+            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、csv、yaml、sql、ip、jwt、cron。</div>
         </section>
 
         <section class="section-block" aria-labelledby="category-title">
@@ -244,6 +249,7 @@
                     <div class="link-list">
                         <a href="timestamp.html">时间戳转换</a>
                         <a href="uuid.html">UUID生成</a>
+                        <a href="sql-format.html">SQL格式化</a>
                         <a href="regex.html">正则表达式测试</a>
                         <a href="diff.html">代码对比</a>
                         <a href="http-status.html">HTTP状态码查询</a>
