@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线字符串出现次数统计工具，支持普通字符串和正则匹配、忽略大小写、重叠匹配、匹配列表预览，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="字符串出现次数,字符统计,文本匹配统计,正则匹配统计,关键词统计">
+    <title>字符串出现次数统计工具 - 在线统计关键词匹配次数</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>出现次数统计</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="regex.html">正则测试</a>
+            <a href="text-sort.html">文本排序</a>
+            <a href="html-strip.html">HTML清理</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>字符串出现次数统计</h1>
+                <p>统计关键词、字符或正则表达式在文本中出现的次数，并预览匹配片段。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入文本</h2>
+                    <textarea id="string-count-input" class="utility-textarea" spellcheck="false" placeholder="输入要统计的文本..."></textarea>
+                    <div class="option-row">
+                        <label for="string-count-pattern">匹配内容</label>
+                        <input id="string-count-pattern" type="text" placeholder="关键词或正则">
+                    </div>
+                    <div class="option-row">
+                        <label><input id="string-count-ignore-case" type="checkbox"> 忽略大小写</label>
+                        <label><input id="string-count-regex" type="checkbox"> 使用正则</label>
+                        <label><input id="string-count-overlap" type="checkbox"> 普通匹配允许重叠</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="string-count-run-btn" class="primary">统计</button>
+                        <button id="string-count-sample-btn" class="secondary">示例</button>
+                        <button id="string-count-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>统计结果</h2>
+                    <div class="result-list">
+                        <div class="result-row"><span>匹配次数</span><strong id="match-count-result">0</strong></div>
+                        <div class="result-row"><span>文本长度</span><strong id="source-length-result">0</strong></div>
+                    </div>
+                    <textarea id="string-count-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="string-count-copy-btn" class="secondary">复制匹配列表</button>
+                    </div>
+                </article>
+            </div>
+            <div id="string-count-message" class="json-message">等待输入文本。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>普通字符串统计支持重叠匹配，例如 `aaaa` 中 `aa` 可以统计为 3 次。</p>
+        </div>
+        <div class="footer-links">
+            <a href="word-count.html">字数统计</a>
+            <a href="regex.html">正则测试</a>
+            <a href="text-sort.html">文本排序</a>
+        </div>
+    </footer>
+
+    <script src="js/string-count.js"></script>
+</body>
+</html>

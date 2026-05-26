@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线文本排序和行处理工具，支持按行升序、降序、数字排序、随机打乱、去空行、添加行号，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="文本排序,列表排序,按行排序,随机打乱,添加行号,去除空行">
+    <title>文本排序和行处理工具 - 在线列表排序随机打乱</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>文本排序</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="case-convert.html">大小写</a>
+            <a href="fullwidth-halfwidth.html">全角半角</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>文本排序和行处理</h1>
+                <p>对多行文本进行升序、降序、数字排序、随机打乱、反转、去空行和添加行号处理。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入文本</h2>
+                    <textarea id="text-sort-input" class="utility-textarea" spellcheck="false" placeholder="每行一条内容..."></textarea>
+                    <div class="option-row">
+                        <label><input id="text-sort-trim" type="checkbox" checked> 去除首尾空格</label>
+                        <label><input id="text-sort-remove-empty" type="checkbox" checked> 去除空行</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button data-sort-mode="asc" class="primary">升序</button>
+                        <button data-sort-mode="desc" class="secondary">降序</button>
+                        <button data-sort-mode="numeric" class="secondary">数字升序</button>
+                        <button data-sort-mode="shuffle" class="secondary">随机打乱</button>
+                        <button data-sort-mode="reverse" class="secondary">反转</button>
+                        <button data-sort-mode="number" class="secondary">添加行号</button>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="text-sort-sample-btn" class="secondary">示例</button>
+                        <button id="text-sort-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>处理结果</h2>
+                    <textarea id="text-sort-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="text-sort-copy-btn" class="secondary">复制结果</button>
+                        <button id="text-sort-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="text-sort-message" class="json-message">等待输入文本。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合处理 ID 列表、日志片段、关键词列表和临时批量文本。</p>
+        </div>
+        <div class="footer-links">
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="word-count.html">字数统计</a>
+            <a href="case-convert.html">大小写转换</a>
+        </div>
+    </footer>
+
+    <script src="js/text-sort.js"></script>
+</body>
+</html>

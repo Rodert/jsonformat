@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线多行文本处理工具，支持多行拼接、添加前缀后缀、包裹引号、逗号分隔、删除换行，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="多行文本处理,字符串拼接,添加前缀后缀,删除换行,列表转CSV">
+    <title>多行文本处理工具 - 在线拼接添加前后缀</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>多行文本处理</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="text-sort.html">文本排序</a>
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="string-count.html">出现次数</a>
+            <a href="case-convert.html">大小写</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>多行文本处理</h1>
+                <p>对每行文本添加前缀后缀、包裹引号，并按换行、逗号、空格或自定义分隔符拼接输出。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入文本</h2>
+                    <textarea id="line-tools-input" class="utility-textarea" spellcheck="false" placeholder="每行一条内容..."></textarea>
+                    <div class="option-row">
+                        <label for="line-prefix">前缀</label>
+                        <input id="line-prefix" type="text" placeholder="可选">
+                        <label for="line-suffix">后缀</label>
+                        <input id="line-suffix" type="text" placeholder="可选">
+                    </div>
+                    <div class="option-row">
+                        <label for="line-joiner">分隔符</label>
+                        <select id="line-joiner">
+                            <option value="\n">换行</option>
+                            <option value=",">逗号</option>
+                            <option value=", ">逗号+空格</option>
+                            <option value=" ">空格</option>
+                            <option value="custom">自定义</option>
+                        </select>
+                        <input id="line-custom-joiner" type="text" placeholder="自定义分隔符">
+                    </div>
+                    <div class="option-row">
+                        <label><input id="line-trim" type="checkbox" checked> 去除首尾空格</label>
+                        <label><input id="line-remove-empty" type="checkbox" checked> 去除空行</label>
+                        <label><input id="line-wrap-quotes" type="checkbox"> 包裹单引号</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="line-tools-run-btn" class="primary">处理</button>
+                        <button id="line-tools-sample-btn" class="secondary">示例</button>
+                        <button id="line-tools-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>处理结果</h2>
+                    <textarea id="line-tools-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="line-tools-copy-btn" class="secondary">复制结果</button>
+                        <button id="line-tools-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="line-tools-message" class="json-message">等待输入文本。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合把 ID 列表快速处理为 SQL IN、CSV、JSON 字符串片段或命令参数。</p>
+        </div>
+        <div class="footer-links">
+            <a href="text-sort.html">文本排序</a>
+            <a href="text-dedupe.html">文本去重</a>
+            <a href="string-count.html">出现次数统计</a>
+        </div>
+    </footer>
+
+    <script src="js/line-tools.js"></script>
+</body>
+</html>

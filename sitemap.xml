@@ -55,6 +55,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rodert.github.io/jsonformat/js-escape.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rodert.github.io/jsonformat/diff.html</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -93,6 +99,24 @@
   <url>
     <loc>https://rodert.github.io/jsonformat/color-convert.html</loc>
     <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rodert.github.io/jsonformat/meta-tag.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rodert.github.io/jsonformat/mime-type.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rodert.github.io/jsonformat/port-lookup.html</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -201,6 +225,36 @@
   <url>
     <loc>https://rodert.github.io/jsonformat/text-dedupe.html</loc>
     <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rodert.github.io/jsonformat/text-sort.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rodert.github.io/jsonformat/line-tools.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rodert.github.io/jsonformat/string-count.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rodert.github.io/jsonformat/html-strip.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rodert.github.io/jsonformat/fullwidth-halfwidth.html</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

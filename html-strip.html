@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线去除HTML标签工具，支持HTML转纯文本、保留换行、压缩空白、提取链接，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="去除HTML标签,HTML转文本,提取纯文本,HTML清理,提取链接">
+    <title>去除HTML标签工具 - 在线HTML转纯文本</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>HTML标签清理</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="html-entity.html">HTML实体</a>
+            <a href="line-tools.html">多行处理</a>
+            <a href="string-count.html">出现次数</a>
+            <a href="markdown-preview.html">Markdown</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">文本处理类工具</p>
+                <h1>去除HTML标签</h1>
+                <p>把 HTML 片段转换为纯文本，支持保留段落换行、压缩空白，也可以提取页面中的链接。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>HTML 输入</h2>
+                    <textarea id="html-strip-input" class="utility-textarea" spellcheck="false" placeholder="粘贴 HTML 代码片段..."></textarea>
+                    <div class="option-row">
+                        <label><input id="strip-keep-linebreaks" type="checkbox" checked> 保留段落换行</label>
+                        <label><input id="strip-collapse-space" type="checkbox" checked> 压缩空白</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="strip-html-btn" class="primary">转纯文本</button>
+                        <button id="extract-links-btn" class="secondary">提取链接</button>
+                        <button id="html-strip-sample-btn" class="secondary">示例</button>
+                        <button id="html-strip-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>处理结果</h2>
+                    <textarea id="html-strip-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="html-strip-copy-btn" class="secondary">复制结果</button>
+                        <button id="html-strip-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="html-strip-message" class="json-message">等待输入 HTML。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合从网页片段、富文本编辑器、爬取内容中快速提取可读文本。</p>
+        </div>
+        <div class="footer-links">
+            <a href="html-entity.html">HTML实体转义</a>
+            <a href="line-tools.html">多行文本处理</a>
+            <a href="string-count.html">出现次数统计</a>
+        </div>
+    </footer>
+
+    <script src="js/html-strip.js"></script>
+</body>
+</html>

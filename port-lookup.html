@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线常用端口查询工具，按端口号、协议、服务名查询HTTP、HTTPS、SSH、MySQL、Redis等常见端口。">
+    <meta name="keywords" content="常用端口,端口查询,HTTP端口,MySQL端口,Redis端口,服务端口">
+    <title>常用端口查询工具 - 在线查询服务默认端口</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>常用端口查询</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="mime-type.html">MIME Type</a>
+            <a href="ip-lookup.html">IP查询</a>
+            <a href="url-parser.html">URL解析</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>常用端口查询</h1>
+                <p>查询常见服务默认端口和协议，适合排查防火墙、连接串、服务暴露和本地开发端口。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <article class="utility-panel wide-panel">
+                <h2>搜索端口</h2>
+                <div class="option-row">
+                    <label for="port-search">关键词</label>
+                    <input id="port-search" type="text" placeholder="例如：443、mysql、redis、http">
+                    <button id="port-clear-btn" class="secondary" type="button">清空</button>
+                </div>
+                <textarea id="port-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+            </article>
+            <div id="port-message" class="json-message">输入端口号、协议或服务名查询。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>端口列表覆盖常见 Web、数据库、消息队列、缓存、邮件和远程登录服务。</p>
+        </div>
+        <div class="footer-links">
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="mime-type.html">MIME Type查询</a>
+            <a href="ip-lookup.html">IP信息查询</a>
+        </div>
+    </footer>
+
+    <script src="js/port-lookup.js"></script>
+</body>
+</html>

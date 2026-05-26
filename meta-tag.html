@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Meta Tag生成器，生成网页title、description、canonical、Open Graph和Twitter Card标签，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="Meta Tag生成器,SEO标签生成,Open Graph,Twitter Card,网页Meta">
+    <title>Meta Tag生成器 - 在线生成SEO和Open Graph标签</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Meta Tag生成</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="url-parser.html">URL解析</a>
+            <a href="html-entity.html">HTML实体</a>
+            <a href="markdown-preview.html">Markdown</a>
+            <a href="json-format.html">JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>Meta Tag生成器</h1>
+                <p>生成常用 SEO Meta、Canonical、Open Graph 和 Twitter Card 标签，适合静态页面和工具页快速补齐头部信息。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>页面信息</h2>
+                    <div class="option-row">
+                        <label for="meta-title">标题</label>
+                        <input id="meta-title" type="text" placeholder="页面标题">
+                    </div>
+                    <div class="option-row">
+                        <label for="meta-url">URL</label>
+                        <input id="meta-url" type="text" placeholder="https://example.com/page">
+                    </div>
+                    <div class="option-row">
+                        <label for="meta-image">图片</label>
+                        <input id="meta-image" type="text" placeholder="https://example.com/cover.png">
+                    </div>
+                    <textarea id="meta-description" class="utility-textarea small-output" spellcheck="false" placeholder="页面描述..."></textarea>
+                    <div class="button-group compact">
+                        <button id="meta-generate-btn" class="primary">生成</button>
+                        <button id="meta-sample-btn" class="secondary">示例</button>
+                        <button id="meta-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>Meta 标签</h2>
+                    <textarea id="meta-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="meta-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                </article>
+            </div>
+            <div id="meta-message" class="json-message">等待输入页面信息。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>输出内容会对 HTML 特殊字符进行转义，可直接放入页面 head 区域。</p>
+        </div>
+        <div class="footer-links">
+            <a href="html-entity.html">HTML实体转义</a>
+            <a href="url-parser.html">URL地址解析</a>
+            <a href="markdown-preview.html">Markdown预览</a>
+        </div>
+    </footer>
+
+    <script src="js/meta-tag.js"></script>
+</body>
+</html>
