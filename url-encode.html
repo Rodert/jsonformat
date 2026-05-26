@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线URL编码解码工具，支持encodeURIComponent、encodeURI、表单参数编码、URL解码，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="URL编码,URL解码,encodeURIComponent,encodeURI,URL参数编码">
+    <title>URL编码解码工具 - 在线 encodeURIComponent 和 URL Decode</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>URL编码解码</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="url-parser.html">URL解析</a>
+            <a href="query-string.html">Query互转</a>
+            <a href="punycode.html">Punycode</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">编码加密类工具</p>
+                <h1>URL编码解码</h1>
+                <p>对 URL、查询参数和表单字段进行编码解码，支持 `encodeURIComponent`、`encodeURI` 和 `+` 空格格式。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="url-encode-input" class="utility-textarea" spellcheck="false" placeholder="输入 URL 或参数，例如：JavaPub Tools 中文?q=1"></textarea>
+                    <div class="option-row">
+                        <label><input id="url-form-space" type="checkbox"> 空格编码为 +</label>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="url-component-encode-btn" class="primary">组件编码</button>
+                        <button id="url-full-encode-btn" class="secondary">整段URL编码</button>
+                        <button id="url-decode-btn" class="secondary">解码</button>
+                        <button id="url-encode-sample-btn" class="secondary">示例</button>
+                        <button id="url-encode-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="url-encode-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="url-encode-copy-btn" class="secondary">复制结果</button>
+                        <button id="url-encode-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="url-encode-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>组件编码适合 query 参数值，整段 URL 编码会保留 `:/?#[]@!$&'()*+,;=` 等 URL 结构字符。</p>
+        </div>
+        <div class="footer-links">
+            <a href="url-parser.html">URL地址解析</a>
+            <a href="query-string.html">JSON Query互转</a>
+            <a href="punycode.html">Punycode编码</a>
+        </div>
+    </footer>
+
+    <script src="js/url-encode.js"></script>
+</body>
+</html>

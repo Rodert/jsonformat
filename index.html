@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON和Query互转、Properties转JSON/YAML、SQL格式化、JSON转CSV、CSV转JSON、YAML转JSON、XML转JSON、进制转换、文件大小换算、颜色转换、全角半角转换、文本排序、多行文本处理、字符串出现次数统计、HTML标签清理、Meta Tag生成、MIME Type查询、常用端口查询、JavaScript字符串转义等工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转Query,Query转JSON,Properties转JSON,Properties转YAML,进制转换,文件大小换算,颜色转换,全角半角转换,文本排序,多行文本处理,字符串出现次数,去除HTML标签,Meta Tag生成,MIME Type查询,常用端口,JavaScript转义,JS字符串转义,Hex转文本,文本转Hex,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,Base32,Punycode,URL解析,随机密码,随机数,IP转Int,Int转IP,摩斯密码,CRC32,CRC16,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON和Query互转、Properties转JSON/YAML、SQL格式化、进制转换、文件大小换算、颜色转换、CSS渐变生成、全角半角转换、文本排序、HTML标签清理、Meta Tag生成、MIME Type查询、常用端口查询、HTTP Header查询、URL编码解码、JavaScript字符串转义等工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转Query,Query转JSON,Properties转JSON,Properties转YAML,进制转换,文件大小换算,颜色转换,CSS渐变生成,HTTP Header查询,URL编码解码,全角半角转换,文本排序,多行文本处理,字符串出现次数,去除HTML标签,Meta Tag生成,MIME Type查询,常用端口,JavaScript转义,JS字符串转义,Hex转文本,文本转Hex,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,Base32,Punycode,URL解析,随机密码,随机数,IP转Int,Int转IP,摩斯密码,CRC32,CRC16,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
     <meta property="og:type" content="website">
     <meta property="og:title" content="JavaPub 开发者在线工具箱">
     <meta property="og:description" content="JSON格式化、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具，数据仅在浏览器本地处理。">
@@ -56,7 +56,7 @@
             <div class="hero-copy">
                 <p class="eyebrow">JavaPub 在线工具箱</p>
                 <h1 id="hero-title">开发者常用在线工具箱</h1>
-                <p class="hero-desc">JSON格式化、JSON和Query互转、Properties转JSON/YAML、进制转换、文件大小换算、颜色转换、全角半角转换、文本排序、多行文本处理、HTML标签清理、Meta Tag生成、MIME Type查询、常用端口查询、JavaScript字符串转义等工具，打开即用，本地处理，安全高效。</p>
+                <p class="hero-desc">JSON格式化、JSON和Query互转、Properties转JSON/YAML、进制转换、文件大小换算、颜色转换、CSS渐变生成、全角半角转换、HTML标签清理、Meta Tag生成、MIME Type查询、常用端口查询、HTTP Header查询、URL编码解码等工具，打开即用，本地处理，安全高效。</p>
             </div>
             <div class="tool-search" role="search">
                 <label for="tool-search-input">搜索工具</label>
@@ -111,6 +111,11 @@
                     <h3>颜色转换</h3>
                     <p>HEX、RGB、HSL 常用 CSS 颜色格式互转。</p>
                 </a>
+                <a class="tool-card is-live" href="css-gradient.html" data-tool-card data-keywords="css 渐变 gradient linear-gradient 颜色 前端">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>CSS渐变生成</h3>
+                    <p>选择颜色和角度生成 linear-gradient 代码。</p>
+                </a>
                 <a class="tool-card is-live" href="meta-tag.html" data-tool-card data-keywords="meta tag seo open graph twitter card 生成">
                     <span class="tool-badge">开发调试</span>
                     <h3>Meta Tag生成</h3>
@@ -120,6 +125,11 @@
                     <span class="tool-badge">开发调试</span>
                     <h3>MIME Type查询</h3>
                     <p>按扩展名或 Content-Type 查询常见 MIME 类型。</p>
+                </a>
+                <a class="tool-card is-live" href="http-header.html" data-tool-card data-keywords="http header 请求头 响应头 cors cache 安全 查询">
+                    <span class="tool-badge">开发调试</span>
+                    <h3>HTTP Header查询</h3>
+                    <p>查询常见请求头、响应头、缓存和跨域 Header。</p>
                 </a>
                 <a class="tool-card is-live" href="port-lookup.html" data-tool-card data-keywords="端口 port http https mysql redis 查询 服务">
                     <span class="tool-badge">开发调试</span>
@@ -165,6 +175,11 @@
                     <span class="tool-badge">编码加密</span>
                     <h3>JS字符串转义</h3>
                     <p>JavaScript 字符串转义和反转义。</p>
+                </a>
+                <a class="tool-card is-live" href="url-encode.html" data-tool-card data-keywords="url 编码 解码 encodeURIComponent encodeURI 参数">
+                    <span class="tool-badge">编码加密</span>
+                    <h3>URL编码解码</h3>
+                    <p>URL 组件编码、整段 URL 编码和解码。</p>
                 </a>
                 <a class="tool-card is-live" href="hex-text.html" data-tool-card data-keywords="hex 十六进制 文本 字符串 utf8 编码 解码">
                     <span class="tool-badge">编码加密</span>
@@ -354,7 +369,7 @@
                         <a href="crypto.html">Base58编码解码</a>
                         <a href="base32.html">Base32编码解码</a>
                         <a href="punycode.html">Punycode编码解码</a>
-                        <a href="crypto.html">URL编码解码</a>
+                        <a href="url-encode.html">URL编码解码</a>
                         <a href="unicode.html">Unicode编码转换</a>
                         <a href="morse.html">摩斯密码</a>
                         <a href="checksum.html">CRC校验计算</a>
@@ -378,9 +393,11 @@
                         <a href="radix-convert.html">进制转换</a>
                         <a href="file-size.html">文件大小换算</a>
                         <a href="color-convert.html">颜色转换</a>
+                        <a href="css-gradient.html">CSS渐变生成</a>
                         <a href="meta-tag.html">Meta Tag生成</a>
                         <a href="mime-type.html">MIME Type查询</a>
                         <a href="port-lookup.html">常用端口查询</a>
+                        <a href="http-header.html">HTTP Header查询</a>
                         <a href="diff.html">代码对比</a>
                         <a href="http-status.html">HTTP状态码查询</a>
                         <a href="cron.html">Cron表达式解析</a>

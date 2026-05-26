@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线HTTP Header查询工具，查询常见请求头、响应头、缓存、跨域、安全相关Header含义和示例。">
+    <meta name="keywords" content="HTTP Header查询,请求头,响应头,CORS,Cache-Control,Content-Type">
+    <title>HTTP Header查询工具 - 常见请求头和响应头说明</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>HTTP Header查询</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="mime-type.html">MIME Type</a>
+            <a href="url-parser.html">URL解析</a>
+            <a href="api-error.html">API错误码</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>HTTP Header查询</h1>
+                <p>查询常见 HTTP 请求头、响应头、缓存、跨域和安全 Header 的用途与示例值。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <article class="utility-panel wide-panel">
+                <h2>搜索 Header</h2>
+                <div class="option-row">
+                    <label for="header-search">关键词</label>
+                    <input id="header-search" type="text" placeholder="例如：cache、cors、authorization、content-type">
+                    <button id="header-clear-btn" class="secondary" type="button">清空</button>
+                </div>
+                <textarea id="header-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+            </article>
+            <div id="header-message" class="json-message">输入 Header 名称、分类或关键词查询。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合排查接口请求、浏览器缓存、跨域配置、下载响应和基础安全响应头。</p>
+        </div>
+        <div class="footer-links">
+            <a href="http-status.html">HTTP状态码</a>
+            <a href="mime-type.html">MIME Type查询</a>
+            <a href="url-parser.html">URL地址解析</a>
+        </div>
+    </footer>
+
+    <script src="js/http-header.js"></script>
+</body>
+</html>

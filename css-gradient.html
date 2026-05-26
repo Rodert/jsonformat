@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线CSS线性渐变生成器，选择起止颜色和角度生成linear-gradient CSS代码，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="CSS渐变,linear-gradient,渐变生成器,颜色渐变,CSS颜色">
+    <title>CSS渐变生成器 - 在线生成 linear-gradient 代码</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>CSS渐变生成</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="color-convert.html">颜色转换</a>
+            <a href="hex-text.html">Hex文本</a>
+            <a href="html-entity.html">HTML实体</a>
+            <a href="markdown-preview.html">Markdown</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">前端开发类工具</p>
+                <h1>CSS渐变生成器</h1>
+                <p>选择起止颜色、角度和色标位置，生成可直接使用的 `linear-gradient` CSS 代码。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>渐变参数</h2>
+                    <div class="option-row">
+                        <label for="gradient-start-color">起始色</label>
+                        <input id="gradient-start-color" type="color" value="#1677ff">
+                        <label for="gradient-end-color">结束色</label>
+                        <input id="gradient-end-color" type="color" value="#12b76a">
+                    </div>
+                    <div class="option-row">
+                        <label for="gradient-angle">角度</label>
+                        <input id="gradient-angle" type="number" min="0" max="360" value="135">
+                        <label for="gradient-start-pos">起始位置</label>
+                        <input id="gradient-start-pos" type="number" min="0" max="100" value="0">
+                        <label for="gradient-end-pos">结束位置</label>
+                        <input id="gradient-end-pos" type="number" min="0" max="100" value="100">
+                    </div>
+                    <div class="button-group compact">
+                        <button id="gradient-generate-btn" class="primary">生成</button>
+                        <button id="gradient-sample-btn" class="secondary">示例</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>预览和代码</h2>
+                    <div id="gradient-preview" style="height: 96px; border-radius: 8px; border: 1px solid #e6eaf2;"></div>
+                    <textarea id="gradient-output" class="utility-textarea small-output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="gradient-copy-btn" class="secondary">复制CSS</button>
+                    </div>
+                </article>
+            </div>
+            <div id="gradient-message" class="json-message">等待生成渐变。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>输出包含 `background` 声明，适合快速生成按钮、标签、图表色带或页面区块背景。</p>
+        </div>
+        <div class="footer-links">
+            <a href="color-convert.html">颜色转换</a>
+            <a href="hex-text.html">Hex文本互转</a>
+            <a href="html-entity.html">HTML实体转义</a>
+        </div>
+    </footer>
+
+    <script src="js/css-gradient.js"></script>
+</body>
+</html>
