@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线Magic Bytes文件头查询工具，按文件类型、扩展名或十六进制文件头查询PNG、JPG、PDF、ZIP等常见格式。">
+    <meta name="keywords" content="Magic Bytes,文件头,文件格式识别,文件签名,十六进制文件头">
+    <title>Magic Bytes文件头查询工具 - 常见文件格式签名</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>Magic Bytes</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="mime-type.html">MIME Type</a>
+            <a href="hex-text.html">Hex文本</a>
+            <a href="file-size.html">文件大小</a>
+            <a href="checksum.html">CRC校验</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>Magic Bytes文件头查询</h1>
+                <p>查询常见文件格式的十六进制文件头签名，辅助识别真实文件类型和排查上传内容。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <article class="utility-panel wide-panel">
+                <h2>搜索文件头</h2>
+                <div class="option-row">
+                    <label for="magic-search">关键词</label>
+                    <input id="magic-search" type="text" placeholder="例如：png、pdf、zip、FF D8">
+                    <button id="magic-clear-btn" class="secondary" type="button">清空</button>
+                </div>
+                <textarea id="magic-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+            </article>
+            <div id="magic-message" class="json-message">输入扩展名、格式名或十六进制文件头查询。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>文件头只能辅助识别格式，不能作为安全校验的唯一依据。</p>
+        </div>
+        <div class="footer-links">
+            <a href="mime-type.html">MIME Type查询</a>
+            <a href="hex-text.html">Hex文本互转</a>
+            <a href="file-size.html">文件大小换算</a>
+        </div>
+    </footer>
+
+    <script src="js/magic-bytes.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线正则表达式转义工具，将普通字符串转义为可安全用于正则表达式的文本，也支持基础反转义，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="正则转义,Regex Escape,RegExp转义,正则特殊字符,字符串转正则">
+    <title>正则表达式转义工具 - 在线 Regex Escape</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>正则转义</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="regex.html">正则测试</a>
+            <a href="js-escape.html">JS转义</a>
+            <a href="string-count.html">出现次数</a>
+            <a href="case-convert.html">大小写</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">开发调试类工具</p>
+                <h1>正则表达式转义</h1>
+                <p>把普通字符串中的正则特殊字符转义，生成可安全放入 `RegExp` 或正则字面量的匹配文本。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>输入内容</h2>
+                    <textarea id="regex-escape-input" class="utility-textarea" spellcheck="false" placeholder="输入普通字符串，例如：https://example.com?a=1+b"></textarea>
+                    <div class="button-group compact">
+                        <button id="regex-escape-btn" class="primary">转义</button>
+                        <button id="regex-unescape-btn" class="secondary">基础反转义</button>
+                        <button id="regex-escape-sample-btn" class="secondary">示例</button>
+                        <button id="regex-escape-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>转换结果</h2>
+                    <textarea id="regex-escape-output" class="utility-textarea output" spellcheck="false" readonly></textarea>
+                    <div class="button-group compact">
+                        <button id="regex-escape-copy-btn" class="secondary">复制结果</button>
+                        <button id="regex-escape-swap-btn" class="secondary">结果放回输入</button>
+                    </div>
+                </article>
+            </div>
+            <div id="regex-escape-message" class="json-message">等待输入内容。</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>会转义 `.*+?^${}()|[]\` 等正则特殊字符，适合把用户输入作为普通文本匹配。</p>
+        </div>
+        <div class="footer-links">
+            <a href="regex.html">正则表达式测试</a>
+            <a href="js-escape.html">JS字符串转义</a>
+            <a href="string-count.html">出现次数统计</a>
+        </div>
+    </footer>
+
+    <script src="js/regex-escape.js"></script>
+</body>
+</html>
