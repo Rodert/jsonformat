@@ -4,6 +4,11 @@
 
 [https://rodert.github.io/jsonformat/](https://rodert.github.io/jsonformat/)
 
+代码仓库：
+
+- GitHub：[https://github.com/Rodert/jsonformat](https://github.com/Rodert/jsonformat)
+- Gitee：[https://gitee.com/rodert/jsonformat](https://gitee.com/rodert/jsonformat)
+
 ## 功能特点
 
 - 即时JSON格式化和验证
@@ -25,6 +30,11 @@
 1. 克隆仓库
    ```
    git clone https://github.com/Rodert/jsonformat.git
+   ```
+
+   也可以从 Gitee 克隆：
+   ```
+   git clone https://gitee.com/rodert/jsonformat.git
    ```
 
 2. 进入项目目录
