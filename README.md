@@ -23,6 +23,12 @@
 
 访问 [GitHub Pages](https://Rodert.github.io/jsonformat/) 即可在线使用该工具。
 
+### 首页预览
+
+![JavaPub 在线工具箱首页](img/shou-ye-tu.png)
+
+### JSON格式化工具
+
 ![JSON格式化工具截图](img/image.png)
 
 ## 本地运行
