@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线 JSON Path 查询工具，支持点号路径、方括号路径、数组下标、通配符、递归查找和简单过滤表达式，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JSON Path,JSONPath,JSON查询,JSON路径,JSON过滤,JSON提取">
+    <title>JSON Path查询工具 - 在线 JSON 路径筛选和提取</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>JSON Path 查询</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="json-format.html">JSON</a>
+            <a href="query-string.html">Query互转</a>
+            <a href="json-csv.html">JSON转CSV</a>
+            <a href="yaml-json.html">YAML转JSON</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://gitee.com/rodert/jsonformat" target="_blank" rel="noopener">Gitee</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">数据格式类工具</p>
+                <h1>JSON Path查询工具</h1>
+                <p>输入 JSON 和路径表达式，快速筛选字段、数组元素和嵌套节点，适合接口响应排查、日志数据提取和配置结构检查。</p>
+            </div>
+            <strong>数据仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid two-column">
+                <article class="utility-panel">
+                    <h2>JSON 输入</h2>
+                    <textarea id="json-path-input" class="utility-textarea tall" spellcheck="false" placeholder='粘贴 JSON，例如：{"users":[{"name":"Tom","age":28}]}'></textarea>
+                    <div class="button-group compact">
+                        <button id="json-path-sample-btn" class="secondary">示例</button>
+                        <button id="json-path-format-btn" class="secondary">格式化JSON</button>
+                        <button id="json-path-clear-btn" class="secondary">清空</button>
+                    </div>
+                </article>
+
+                <article class="utility-panel">
+                    <h2>路径表达式</h2>
+                    <label for="json-path-expression">JSON Path</label>
+                    <input id="json-path-expression" type="text" value="$.users[*].name" spellcheck="false" placeholder="例如：$.users[*].name">
+                    <div class="quick-paths" aria-label="常用 JSON Path 示例">
+                        <button type="button" data-path="$">根节点</button>
+                        <button type="button" data-path="$.users[*]">数组全部</button>
+                        <button type="button" data-path="$.users[0].name">数组下标</button>
+                        <button type="button" data-path="$..email">递归查找</button>
+                        <button type="button" data-path="$.users[?(@.age >= 18)]">简单过滤</button>
+                    </div>
+                    <div class="button-group compact">
+                        <button id="json-path-run-btn" class="primary">查询</button>
+                        <button id="json-path-copy-btn" class="secondary">复制结果</button>
+                    </div>
+                    <div class="path-help">
+                        支持：<code>$</code>、<code>.name</code>、<code>['name']</code>、<code>[0]</code>、<code>[*]</code>、<code>..name</code>、<code>[?(@.age &gt;= 18)]</code>
+                    </div>
+                </article>
+            </div>
+
+            <article class="utility-panel wide-panel json-path-output-panel">
+                <div class="result-heading">
+                    <h2>查询结果</h2>
+                    <span id="json-path-count">0 个匹配</span>
+                </div>
+                <div id="json-path-results" class="path-result-list" aria-live="polite"></div>
+            </article>
+            <div id="json-path-message" class="json-message">等待输入 JSON 和路径表达式。</div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>在线 JSON Path 路径查询和字段提取</h2>
+            <p>JSON Path 可以从复杂 JSON 文档中定位字段、筛选数组项或递归查找嵌套节点。本工具在浏览器内完成解析和查询，适合处理接口响应、调试日志和本地配置片段。</p>
+            <div class="related-tools">
+                <a href="json-format.html">JSON格式化</a>
+                <a href="json-csv.html">JSON转CSV</a>
+                <a href="query-string.html">JSON和Query互转</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>路径结果会保留匹配位置，方便继续定位原始 JSON 结构。</p>
+        </div>
+        <div class="footer-links">
+            <a href="json-format.html">JSON格式化</a>
+            <a href="json-csv.html">JSON转CSV</a>
+            <a href="yaml-json.html">YAML转JSON</a>
+        </div>
+    </footer>
+
+    <script src="js/json-path.js"></script>
+</body>
+</html>
