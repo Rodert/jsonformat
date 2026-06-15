@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON和Query互转、Properties转JSON/YAML、SQL格式化、进制转换、文件大小换算、颜色转换、CSS渐变生成、全角半角转换、文本排序、HTML标签清理、Meta Tag生成、MIME Type查询、Magic Bytes查询、常用端口查询、HTTP Header和请求方法查询、URL编码解码、正则转义等工具，打开即用，数据仅在浏览器本地处理。">
-    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转Query,Query转JSON,Properties转JSON,Properties转YAML,进制转换,文件大小换算,颜色转换,CSS渐变生成,HTTP Header查询,HTTP请求方法,Magic Bytes,正则转义,URL编码解码,全角半角转换,文本排序,多行文本处理,字符串出现次数,去除HTML标签,Meta Tag生成,MIME Type查询,常用端口,JavaScript转义,JS字符串转义,Hex转文本,文本转Hex,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,Base32,Punycode,URL解析,随机密码,随机数,IP转Int,Int转IP,摩斯密码,CRC32,CRC16,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
+    <meta name="description" content="JavaPub 开发者在线工具箱，提供 JSON格式化、JSON和Query互转、图片压缩、Properties转JSON/YAML、SQL格式化、进制转换、文件大小换算、颜色转换、CSS渐变生成、全角半角转换、文本排序、HTML标签清理、Meta Tag生成、MIME Type查询、Magic Bytes查询、常用端口查询、HTTP Header和请求方法查询、URL编码解码、正则转义等工具，打开即用，数据仅在浏览器本地处理。">
+    <meta name="keywords" content="JavaPub,在线工具箱,JSON格式化,JSON转Query,Query转JSON,图片压缩,照片压缩,图像处理,Properties转JSON,Properties转YAML,进制转换,文件大小换算,颜色转换,CSS渐变生成,HTTP Header查询,HTTP请求方法,Magic Bytes,正则转义,URL编码解码,全角半角转换,文本排序,多行文本处理,字符串出现次数,去除HTML标签,Meta Tag生成,MIME Type查询,常用端口,JavaScript转义,JS字符串转义,Hex转文本,文本转Hex,JSON转CSV,CSV转JSON,YAML转JSON,XML转JSON,SQL格式化,Base64,Base58,Base32,Punycode,URL解析,随机密码,随机数,IP转Int,Int转IP,摩斯密码,CRC32,CRC16,MD5,SHA256,代码对比,JWT解析,时间戳转换,UUID生成,正则表达式测试,HTTP状态码,Cron表达式,User-Agent解析,IP信息查询,Markdown预览,Unicode转换,文本去重,大小写转换,字数统计,HTML实体转义,人民币大写">
     <meta property="og:type" content="website">
     <meta property="og:title" content="JavaPub 开发者在线工具箱">
-    <meta property="og:description" content="JSON格式化、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具，数据仅在浏览器本地处理。">
+    <meta property="og:description" content="JSON格式化、图片压缩、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具，数据仅在浏览器本地处理。">
     <meta property="og:url" content="https://rodert.github.io/jsonformat/">
     <link rel="canonical" href="https://rodert.github.io/jsonformat/">
     <title>JavaPub 开发者在线工具箱 - JSON格式化、编码加密、代码对比工具</title>
@@ -18,7 +18,7 @@
         "@type": "WebSite",
         "name": "JavaPub Tools",
         "url": "https://rodert.github.io/jsonformat/",
-        "description": "JavaPub 开发者在线工具箱，提供 JSON格式化、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具。",
+        "description": "JavaPub 开发者在线工具箱，提供 JSON格式化、图片压缩、编码加密、代码对比、时间戳转换、JWT解析等常用在线工具。",
         "inLanguage": "zh-CN",
         "publisher": {
             "@type": "Person",
@@ -45,6 +45,7 @@
             <a href="#data-format">数据格式</a>
             <a href="#encoding-crypto">编码加密</a>
             <a href="#dev-debug">开发调试</a>
+            <a href="#image-tools">图像处理</a>
             <a href="#ai-tools">AI工具</a>
             <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
             <a href="https://gitee.com/rodert/jsonformat" target="_blank" rel="noopener">Gitee</a>
@@ -57,11 +58,11 @@
             <div class="hero-copy">
                 <p class="eyebrow">JavaPub 在线工具箱</p>
                 <h1 id="hero-title">开发者常用在线工具箱</h1>
-                <p class="hero-desc">JSON格式化、JSON和Query互转、Properties转JSON/YAML、进制转换、文件大小换算、颜色转换、Magic Bytes查询、HTTP Header和请求方法查询、正则转义、URL编码解码等工具，打开即用，本地处理，安全高效。</p>
+                <p class="hero-desc">JSON格式化、JSON和Query互转、图片压缩、Properties转JSON/YAML、进制转换、文件大小换算、颜色转换、Magic Bytes查询、HTTP Header和请求方法查询、正则转义、URL编码解码等工具，打开即用，本地处理，安全高效。</p>
             </div>
             <div class="tool-search" role="search">
                 <label for="tool-search-input">搜索工具</label>
-                <input id="tool-search-input" type="search" placeholder="搜索工具，例如：json、csv、yaml、ip、jwt">
+                <input id="tool-search-input" type="search" placeholder="搜索工具，例如：json、图片、csv、yaml、ip、jwt">
                 <p id="search-count" class="search-count">输入关键词快速定位工具</p>
             </div>
         </section>
@@ -111,6 +112,11 @@
                     <span class="tool-badge">开发调试</span>
                     <h3>文件大小换算</h3>
                     <p>B、KB、MB、GB 与 KiB、MiB、GiB 互转。</p>
+                </a>
+                <a class="tool-card is-live" href="image-compress.html" data-tool-card data-keywords="图片 压缩 照片 压缩 图像 处理 jpeg jpg png webp canvas 本地">
+                    <span class="tool-badge">图像处理</span>
+                    <h3>图片压缩</h3>
+                    <p>本地压缩照片，调整格式、质量和最大宽高。</p>
                 </a>
                 <a class="tool-card is-live" href="color-convert.html" data-tool-card data-keywords="颜色 转换 hex rgb hsl css 前端">
                     <span class="tool-badge">开发调试</span>
@@ -358,7 +364,7 @@
                     <p>校验 IPv4/IPv6 并识别常见地址类型。</p>
                 </a>
             </div>
-            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、csv、yaml、sql、ip、jwt、cron。</div>
+            <div id="no-results" class="empty-results" hidden>没有找到匹配工具，试试 json、图片、csv、yaml、sql、ip、jwt、cron。</div>
         </section>
 
         <section class="section-block" aria-labelledby="category-title">
@@ -447,6 +453,13 @@
                         <a href="money.html">人民币大写</a>
                         <a href="markdown-preview.html">Markdown预览</a>
                         <a href="html-entity.html">HTML实体转义</a>
+                    </div>
+                </article>
+                <article class="category-panel" id="image-tools">
+                    <h3>图像处理</h3>
+                    <div class="link-list">
+                        <a href="image-tools.html">图像处理工具</a>
+                        <a href="image-compress.html">图片压缩</a>
                     </div>
                 </article>
                 <article class="category-panel" id="ai-tools">

@@ -248,6 +248,14 @@ button.secondary:hover {
     background: linear-gradient(135deg, #839496 0%, #6c7a7b 100%);
 }
 
+button:disabled,
+button:disabled:hover {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+    box-shadow: none;
+}
+
 button.success {
     background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
@@ -1547,6 +1555,80 @@ body.tool-page {
     object-fit: contain;
 }
 
+.image-compress-layout {
+    grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+}
+
+.image-drop-zone {
+    position: relative;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 22px;
+    border: 2px dashed #98a2b3;
+    border-radius: 10px;
+    background: #fff;
+    color: #475467;
+    text-align: center;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.image-drop-zone input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-drop-zone strong {
+    color: #101828;
+    font-size: 16px;
+}
+
+.image-drop-zone span {
+    color: #667085;
+    font-size: 13px;
+}
+
+.image-drop-zone.is-dragover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.image-quality-slider {
+    width: 100%;
+    accent-color: #2563eb;
+}
+
+.image-metric-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-bottom: 14px;
+}
+
+.image-metric-grid .metric-card strong {
+    font-size: 18px;
+}
+
+.image-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.image-local-preview {
+    min-height: 280px;
+    max-height: 420px;
+}
+
+.image-local-preview img {
+    max-height: 390px;
+}
+
 .muted {
     color: #667085;
     font-size: 13px;
@@ -1896,6 +1978,7 @@ body.tool-page {
     .tool-hero,
     .json-layout,
     .utility-grid.two-column,
+    .image-compress-layout,
     .image-debug-layout {
         grid-template-columns: 1fr;
     }
@@ -1977,7 +2060,9 @@ body.tool-page {
     }
 
     .status-grid,
-    .markdown-layout {
+    .markdown-layout,
+    .image-metric-grid,
+    .image-preview-grid {
         grid-template-columns: 1fr;
     }
 }
