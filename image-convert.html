@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线图片格式转换工具，支持 PNG、JPEG、WebP、AVIF 图片在浏览器本地转换为 JPEG、PNG 或 WebP，并可预览和下载转换结果。">
+    <meta name="keywords" content="图片格式转换,PNG转JPG,JPG转PNG,PNG转WebP,JPG转WebP,WebP转JPG,在线图片转换,纯前端图片转换">
+    <title>图片格式转换工具 - PNG JPG WebP 在线互转</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>图片格式转换</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="image-tools.html">图像处理</a>
+            <a href="image-compress.html">图片压缩</a>
+            <a href="mime-type.html">MIME Type</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://gitee.com/rodert/jsonformat" target="_blank" rel="noopener">Gitee</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">图像处理</p>
+                <h1>图片格式转换</h1>
+                <p>选择本地图片，转换为 JPEG、PNG 或 WebP。适合 PNG 转 JPG、JPG 转 WebP、WebP 转 PNG 等常见场景。</p>
+            </div>
+            <strong>图片仅在浏览器本地处理，不上传服务器。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid image-compress-layout">
+                <article class="utility-panel">
+                    <h2>转换设置</h2>
+                    <label for="image-file">选择图片</label>
+                    <div id="image-drop-zone" class="image-drop-zone">
+                        <input id="image-file" type="file" accept="image/jpeg,image/png,image/webp,image/avif">
+                        <strong>点击选择或拖入图片</strong>
+                        <span>支持 JPEG、PNG、WebP、AVIF，转换结果可直接下载。</span>
+                    </div>
+
+                    <div class="option-row">
+                        <label for="image-output-format">目标格式</label>
+                        <select id="image-output-format">
+                            <option value="image/jpeg" selected>JPEG / JPG</option>
+                            <option value="image/png">PNG</option>
+                            <option value="image/webp">WebP</option>
+                        </select>
+                    </div>
+
+                    <label for="image-quality">输出质量：<span id="image-quality-value">92%</span></label>
+                    <input id="image-quality" class="image-quality-slider" type="range" min="1" max="100" value="92">
+
+                    <div class="button-group compact">
+                        <button id="image-convert-btn" class="primary">转换格式</button>
+                        <button id="image-download-btn" class="secondary" disabled>下载结果</button>
+                        <button id="image-reset-btn" class="secondary">重置</button>
+                    </div>
+                    <div id="image-convert-message" class="json-message">等待选择图片。</div>
+                </article>
+
+                <article class="utility-panel wide-panel">
+                    <h2>转换结果</h2>
+                    <div class="metric-grid image-metric-grid">
+                        <div class="metric-card"><span>原始格式</span><strong id="image-original-format">-</strong></div>
+                        <div class="metric-card"><span>目标格式</span><strong id="image-output-format-text">-</strong></div>
+                        <div class="metric-card"><span>原始大小</span><strong id="image-original-size">-</strong></div>
+                        <div class="metric-card"><span>转换后</span><strong id="image-output-size">-</strong></div>
+                        <div class="metric-card"><span>尺寸</span><strong id="image-output-dimension">-</strong></div>
+                    </div>
+
+                    <div class="image-preview-grid">
+                        <div>
+                            <label>原图预览</label>
+                            <div id="image-original-preview" class="image-preview image-local-preview">
+                                <span>选择图片后显示原图。</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label>转换预览</label>
+                            <div id="image-converted-preview" class="image-preview image-local-preview">
+                                <span>转换后显示结果。</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="muted">转换为 JPEG 时透明区域会使用白色背景；PNG 输出不使用质量参数，JPEG 和 WebP 会按质量重新编码。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>在线图片格式转换</h2>
+            <p>图片格式转换工具使用浏览器 Canvas 完成本地解码和重新编码，适合把透明 PNG 转为 JPG、把照片转为 WebP，或临时调整图片格式以适配上传限制。</p>
+            <div class="related-tools">
+                <a href="image-tools.html">图像处理工具</a>
+                <a href="image-compress.html">图片压缩</a>
+                <a href="file-size.html">文件大小换算</a>
+                <a href="mime-type.html">MIME Type查询</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>适合 PNG、JPG、WebP 等常见图片格式互转。</p>
+        </div>
+        <div class="footer-links">
+            <a href="image-tools.html">图像处理</a>
+            <a href="image-compress.html">图片压缩</a>
+            <a href="index.html">工具首页</a>
+        </div>
+    </footer>
+
+    <script src="js/image-convert.js"></script>
+</body>
+</html>
