@@ -32,7 +32,7 @@
                         <strong>点击选择或拖入多张图片</strong>
                         <span>支持 JPEG、PNG、WebP、AVIF，至少选择两张图片。</span>
                     </div>
-                    <div class="option-row"><label for="gif-delay">每帧停留</label><select id="gif-delay"><option value="100">100 ms</option><option value="250">250 ms</option><option value="500" selected>500 ms</option><option value="1000">1 秒</option><option value="2000">2 秒</option></select></div>
+                    <div class="option-row"><label for="gif-delay">每帧停留</label><select id="gif-delay"><option value="100">100 ms</option><option value="250">250 ms</option><option value="500" selected>500 ms</option><option value="1000">1 秒</option><option value="2000">2 秒</option><option value="custom">自定义</option></select><div id="gif-delay-custom" class="gif-delay-custom is-hidden"><label for="gif-delay-custom-value">自定义</label><input id="gif-delay-custom-value" type="number" min="10" max="60000" step="10" value="500" inputmode="numeric" aria-label="自定义每帧停留时间（毫秒）"><span>ms</span></div></div>
                     <div class="option-row"><label for="gif-size">输出尺寸</label><select id="gif-size"><option value="source" selected>首帧尺寸</option><option value="1280">长边 1280 px</option><option value="1024">长边 1024 px</option><option value="768">长边 768 px</option><option value="512">长边 512 px</option></select></div>
                     <div class="option-row"><label for="gif-quality">编码质量</label><select id="gif-quality"><option value="1">高质量（较慢）</option><option value="10" selected>均衡</option><option value="20">较小文件</option></select></div>
                     <label class="checkbox-label" for="gif-loop"><input id="gif-loop" type="checkbox" checked> 循环播放</label>

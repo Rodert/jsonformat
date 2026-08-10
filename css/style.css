@@ -1683,6 +1683,24 @@ body.tool-page {
 .gif-result { margin-top: 14px; }
 .gif-result .image-preview { min-height: 220px; }
 
+.gif-delay-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.gif-delay-custom label {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.gif-delay-custom input {
+    width: 96px;
+    padding: 7px 8px;
+}
+
+.gif-delay-custom.is-hidden { display: none; }
+
 .muted {
     color: #667085;
     font-size: 13px;

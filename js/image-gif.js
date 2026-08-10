@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropZone = document.getElementById('gif-drop-zone');
     const frameList = document.getElementById('gif-frame-list');
     const delayInput = document.getElementById('gif-delay');
+    const customDelayContainer = document.getElementById('gif-delay-custom');
+    const customDelayInput = document.getElementById('gif-delay-custom-value');
     const sizeInput = document.getElementById('gif-size');
     const qualityInput = document.getElementById('gif-quality');
     const loopInput = document.getElementById('gif-loop');
@@ -25,6 +27,17 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${value >= 10 || index === 0 ? value.toFixed(0) : value.toFixed(2)} ${units[index]}`;
     }
     function supported(file) { return file && /^image\/(jpeg|png|webp|avif)$/.test(file.type); }
+    function updateDelayInput() {
+        customDelayContainer.classList.toggle('is-hidden', delayInput.value !== 'custom');
+        customDelayInput.disabled = delayInput.value !== 'custom';
+    }
+    function getDelay() {
+        const delay = Number(delayInput.value === 'custom' ? customDelayInput.value : delayInput.value);
+        if (!Number.isInteger(delay) || delay < 10 || delay > 60000) {
+            throw new Error('自定义每帧停留时间请输入 10 到 60000 ms 的整数。');
+        }
+        return delay;
+    }
     function clearResult() {
         if (resultUrl) URL.revokeObjectURL(resultUrl);
         resultBlob = null; resultUrl = ''; outputSize.textContent = '-'; downloadButton.disabled = true;
@@ -67,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (frames.length < 2 || !window.GIF) { setMessage('GIF 编码器未准备好，请刷新页面后重试。', 'error'); return; }
         createButton.disabled = true; clearResult(); setMessage('正在读取图片并编码 GIF，请保持页面开启...');
         try {
+            const delay = getDelay();
             const images = await Promise.all(frames.map((frame) => loadImage(frame.url)));
             const first = images[0]; const max = Number(sizeInput.value);
             const scale = Number.isFinite(max) ? Math.min(1, max / Math.max(first.naturalWidth, first.naturalHeight)) : 1;
@@ -79,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const drawWidth = Math.round(image.naturalWidth * ratio); const drawHeight = Math.round(image.naturalHeight * ratio);
                 context.fillStyle = '#ffffff'; context.fillRect(0, 0, width, height);
                 context.drawImage(image, Math.round((width - drawWidth) / 2), Math.round((height - drawHeight) / 2), drawWidth, drawHeight);
-                gif.addFrame(canvas, { copy: true, delay: Number(delayInput.value) });
+                gif.addFrame(canvas, { copy: true, delay });
             });
             gif.on('progress', (progress) => setMessage(`正在编码 GIF：${Math.round(progress * 100)}%`));
             gif.on('finished', (blob) => { resultBlob = blob; resultUrl = URL.createObjectURL(blob); preview.innerHTML = `<img src="${resultUrl}" alt="生成的 GIF 预览">`; outputSize.textContent = formatBytes(blob.size); outputDimension.textContent = `${width} x ${height}`; downloadButton.disabled = false; createButton.disabled = false; setMessage('GIF 已生成，可以预览或下载。', 'success'); });
@@ -99,8 +113,11 @@ document.addEventListener('DOMContentLoaded', function() {
     ['dragleave', 'drop'].forEach((name) => dropZone.addEventListener(name, (event) => { event.preventDefault(); dropZone.classList.remove('is-dragover'); }));
     dropZone.addEventListener('drop', (event) => addFiles(event.dataTransfer.files));
     sizeInput.addEventListener('change', () => { clearResult(); updateDimensions(); });
+    delayInput.addEventListener('change', () => { updateDelayInput(); clearResult(); });
+    customDelayInput.addEventListener('input', clearResult);
     createButton.addEventListener('click', createGif);
     downloadButton.addEventListener('click', () => { if (!resultUrl) return; const link = document.createElement('a'); link.href = resultUrl; link.download = 'animated-image.gif'; document.body.appendChild(link); link.click(); link.remove(); });
     resetButton.addEventListener('click', reset);
     window.addEventListener('beforeunload', () => { frames.forEach((frame) => URL.revokeObjectURL(frame.url)); if (resultUrl) URL.revokeObjectURL(resultUrl); });
+    updateDelayInput();
 });
