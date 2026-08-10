@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线图片合成 GIF 工具，选择多张 PNG、JPG、WebP 或 AVIF 图片，在浏览器本地调整顺序、帧间隔和尺寸后导出 GIF。">
+    <meta name="keywords" content="图片合成GIF,GIF制作,多图转GIF,PNG转GIF,JPG转GIF,在线GIF制作,本地GIF编码">
+    <title>图片合成 GIF - 多张图片本地制作动图</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <header class="site-header">
+        <a href="index.html" class="brand"><span class="brand-mark">JP</span><span><strong>JavaPub Tools</strong><small>图片合成 GIF</small></span></a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a><a href="image-tools.html">图像处理</a><a href="image-compress.html">图片压缩</a><a href="image-convert.html">格式转换</a><a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a><a href="https://gitee.com/rodert/jsonformat" target="_blank" rel="noopener">Gitee</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div><p class="eyebrow">图像处理</p><h1>图片合成 GIF</h1><p>选择多张图片，调整播放顺序和节奏，直接生成可下载的 GIF 动图。</p></div>
+            <strong>编码仅在浏览器本地完成，不上传图片。</strong>
+        </section>
+
+        <section class="utility-workbench">
+            <div class="utility-grid image-compress-layout">
+                <article class="utility-panel">
+                    <h2>GIF 设置</h2>
+                    <label for="gif-files">选择图片</label>
+                    <div id="gif-drop-zone" class="image-drop-zone">
+                        <input id="gif-files" type="file" accept="image/jpeg,image/png,image/webp,image/avif" multiple>
+                        <strong>点击选择或拖入多张图片</strong>
+                        <span>支持 JPEG、PNG、WebP、AVIF，至少选择两张图片。</span>
+                    </div>
+                    <div class="option-row"><label for="gif-delay">每帧停留</label><select id="gif-delay"><option value="100">100 ms</option><option value="250">250 ms</option><option value="500" selected>500 ms</option><option value="1000">1 秒</option><option value="2000">2 秒</option></select></div>
+                    <div class="option-row"><label for="gif-size">输出尺寸</label><select id="gif-size"><option value="source" selected>首帧尺寸</option><option value="1280">长边 1280 px</option><option value="1024">长边 1024 px</option><option value="768">长边 768 px</option><option value="512">长边 512 px</option></select></div>
+                    <div class="option-row"><label for="gif-quality">编码质量</label><select id="gif-quality"><option value="1">高质量（较慢）</option><option value="10" selected>均衡</option><option value="20">较小文件</option></select></div>
+                    <label class="checkbox-label" for="gif-loop"><input id="gif-loop" type="checkbox" checked> 循环播放</label>
+                    <div class="button-group compact"><button id="gif-create-btn" class="primary" disabled>生成 GIF</button><button id="gif-download-btn" class="secondary" disabled>下载 GIF</button><button id="gif-reset-btn" class="secondary">重置</button></div>
+                    <div id="gif-message" class="json-message">至少选择两张图片后即可生成。</div>
+                </article>
+
+                <article class="utility-panel wide-panel">
+                    <h2>帧序列</h2>
+                    <div class="metric-grid image-metric-grid gif-metric-grid"><div class="metric-card"><span>图片数量</span><strong id="gif-frame-count">0</strong></div><div class="metric-card"><span>输出尺寸</span><strong id="gif-output-dimension">-</strong></div><div class="metric-card"><span>GIF 大小</span><strong id="gif-output-size">-</strong></div></div>
+                    <div id="gif-frame-list" class="gif-frame-list" aria-live="polite"><p class="muted">选择图片后会按此处顺序播放。可使用每一帧上的按钮调整顺序或移除图片。</p></div>
+                    <div class="gif-result"><label>GIF 预览</label><div id="gif-preview" class="image-preview image-local-preview"><span>生成后显示 GIF 预览。</span></div></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block seo-content">
+            <h2>在线制作 GIF 动图</h2>
+            <p>图片会在当前浏览器中解码、绘制和编码，不会发送到服务器。为获得更稳定的生成速度，建议使用尺寸接近的图片；较大的图片或大量帧会占用更多本机 CPU 和内存。</p>
+            <div class="related-tools"><a href="image-tools.html">图像处理工具</a><a href="image-compress.html">图片压缩</a><a href="image-convert.html">图片格式转换</a><a href="file-size.html">文件大小换算</a></div>
+        </section>
+    </main>
+    <footer class="site-footer"><div><strong>作者：王仕宇 / JavaPub</strong><p>适合多张图片快速制作 GIF 动图。</p></div><div class="footer-links"><a href="image-tools.html">图像处理</a><a href="image-compress.html">图片压缩</a><a href="index.html">工具首页</a></div></footer>
+    <script src="vendor/gif.js/gif.js"></script>
+    <script src="js/image-gif.js"></script>
+</body>
+</html>

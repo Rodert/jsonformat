@@ -1629,6 +1629,60 @@ body.tool-page {
     max-height: 390px;
 }
 
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 14px 0;
+    color: #344054;
+}
+
+.checkbox-label input {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563eb;
+}
+
+.gif-frame-list {
+    display: grid;
+    gap: 8px;
+    max-height: 360px;
+    overflow: auto;
+    padding-right: 2px;
+}
+
+.gif-frame-item {
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid #e6eaf2;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.gif-frame-item img {
+    width: 62px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #f2f4f7;
+}
+
+.gif-frame-name {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+}
+
+.gif-frame-name strong { color: #101828; font-size: 13px; }
+.gif-frame-name span { overflow: hidden; color: #667085; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.gif-frame-actions { display: flex; gap: 5px; }
+.gif-frame-actions button { padding: 5px 7px; font-size: 12px; }
+.gif-result { margin-top: 14px; }
+.gif-result .image-preview { min-height: 220px; }
+
 .muted {
     color: #667085;
     font-size: 13px;
@@ -2065,4 +2119,8 @@ body.tool-page {
     .image-preview-grid {
         grid-template-columns: 1fr;
     }
+
+    .gif-frame-item { grid-template-columns: 54px minmax(0, 1fr); }
+    .gif-frame-item img { width: 54px; }
+    .gif-frame-actions { grid-column: 1 / -1; }
 }
