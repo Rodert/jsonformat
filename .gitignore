@@ -167,6 +167,9 @@ yarn-error.log*
 release/
 dist/
 
+# Operating system files
+.DS_Store
+
 # Pyre type checker
 .pyre/
 
