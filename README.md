@@ -4,6 +4,12 @@
 
 [https://rodert.github.io/jsonformat/](https://rodert.github.io/jsonformat/)
 
+## 项目海报
+
+[![JavaPub Tools 开发者工具箱项目海报](img/javapub-tools-poster.jpg)](img/javapub-tools-poster.jpg)
+
+点击海报可查看大图。
+
 代码仓库：
 
 - GitHub：[https://github.com/Rodert/jsonformat](https://github.com/Rodert/jsonformat)

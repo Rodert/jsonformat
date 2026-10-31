@@ -1087,6 +1087,70 @@ body.tool-page {
     color: #344054;
 }
 
+.project-poster {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
+    gap: 24px;
+    align-items: center;
+    margin-top: 22px;
+    padding: 24px 26px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #e6eaf2;
+}
+
+.project-poster-copy h2 {
+    margin: 0;
+    color: #101828;
+    font-size: 20px;
+}
+
+.project-poster-copy p {
+    margin: 8px 0 16px;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.project-poster-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 7px;
+    color: #175cd3;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.project-poster-link:hover {
+    color: #fff;
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.project-poster-image {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #e6eaf2;
+    background: #f8fafc;
+}
+
+.project-poster-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.project-poster-image:hover img {
+    transform: scale(1.015);
+}
+
 .site-footer {
     max-width: 1180px;
     display: flex;
@@ -2051,7 +2115,8 @@ body.tool-page {
     .json-layout,
     .utility-grid.two-column,
     .image-compress-layout,
-    .image-debug-layout {
+    .image-debug-layout,
+    .project-poster {
         grid-template-columns: 1fr;
     }
 
