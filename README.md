@@ -4,6 +4,28 @@
 
 [https://rodert.github.io/jsonformat/](https://rodert.github.io/jsonformat/)
 
+## 使用方式
+
+| 方式 | 说明 |
+| --- | --- |
+| 在线使用 | 直接访问 [GitHub Pages](https://rodert.github.io/jsonformat/)，打开即用。 |
+| 本地使用 | 克隆或下载项目后，用浏览器打开 `index.html`，可离线使用，数据在本地处理。 |
+
+## 核心特点
+
+| 代码开源 | 数据本地处理 |
+| --- | --- |
+| 提供 [GitHub](https://github.com/Rodert/jsonformat) 和 [Gitee](https://gitee.com/rodert/jsonformat) 源码仓库。 | 输入内容和处理结果不上传云端。 |
+
+## 功能模块
+
+| 模块 | 模块 |
+| --- | --- |
+| 数据格式转换 | 编码加密 |
+| 开发调试 | 文本处理 |
+| 图像处理 | AI 工具 |
+| 更多工具 | 持续补充中 |
+
 ## 项目海报
 
 [![JavaPub Tools 开发者工具箱项目海报](img/javapub-tools-poster.jpg)](img/javapub-tools-poster.jpg)
@@ -15,7 +37,7 @@
 - GitHub：[https://github.com/Rodert/jsonformat](https://github.com/Rodert/jsonformat)
 - Gitee：[https://gitee.com/rodert/jsonformat](https://gitee.com/rodert/jsonformat)
 
-## 功能特点
+## 工具功能
 
 - 即时JSON格式化和验证
 - 语法高亮显示

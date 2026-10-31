@@ -1178,6 +1178,38 @@ body.tool-page {
     font-size: 14px;
 }
 
+.offline-download {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 15;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 8px;
+    color: #fff;
+    background: #175cd3;
+    box-shadow: 0 8px 20px rgba(23, 92, 211, 0.26);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.offline-download:hover {
+    color: #fff;
+    background: #1249a8;
+    box-shadow: 0 10px 24px rgba(23, 92, 211, 0.32);
+    transform: translateY(-2px);
+}
+
+.offline-download:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
 .json-workbench {
     margin-top: 22px;
     padding: 18px;
@@ -2137,6 +2169,11 @@ body.tool-page {
     .site-header {
         margin: 10px 10px 0;
         align-items: stretch;
+    }
+
+    .offline-download {
+        right: 14px;
+        bottom: 14px;
     }
 
     .top-nav {
