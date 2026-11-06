@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线 2FA 验证码生成器，支持 Base32 密钥和 otpauth:// 链接生成 TOTP 动态验证码，所有计算均在浏览器本地完成。">
+    <meta name="keywords" content="2FA验证码生成器,TOTP验证码,Google Authenticator,动态验证码,otpauth,Base32密钥">
+    <title>2FA验证码生成器 - 在线 TOTP 动态验证码</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page twofa-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>2FA验证码生成器</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="crypto.html">编码加密</a>
+            <a href="base32.html">Base32</a>
+            <a href="random-password.html">随机密码</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://gitee.com/rodert/jsonformat" target="_blank" rel="noopener">Gitee</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">本地安全工具</p>
+                <h1>2FA验证码生成器</h1>
+                <p>输入 Base32 密钥或粘贴 otpauth:// 链接，生成与 Google Authenticator 兼容的 TOTP 动态验证码。</p>
+            </div>
+            <strong>密钥仅在当前浏览器中计算，不会上传或保存。</strong>
+        </section>
+
+        <section class="twofa-workbench" aria-labelledby="twofa-title">
+            <div class="twofa-input-panel">
+                <h2 id="twofa-title">添加验证密钥</h2>
+                <label for="twofa-secret">Base32 密钥或 otpauth:// 链接</label>
+                <textarea id="twofa-secret" rows="3" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="例如：JBSWY3DPEHPK3PXP 或 otpauth://totp/..." aria-describedby="twofa-help"></textarea>
+                <p id="twofa-help" class="twofa-help">支持从服务商复制的 TOTP 配置链接。密钥中的空格、连字符和等号会自动忽略。</p>
+                <label class="twofa-reveal"><input id="twofa-reveal" type="checkbox"> 显示密钥</label>
+            </div>
+
+            <div class="twofa-code-panel">
+                <div id="twofa-timer" class="twofa-timer" aria-label="验证码剩余时间">
+                    <span id="twofa-seconds">30</span>
+                    <small>秒</small>
+                </div>
+                <p id="twofa-account" class="twofa-account">等待输入密钥</p>
+                <output id="twofa-code" class="twofa-code" aria-label="当前验证码" aria-live="polite">------</output>
+                <p id="twofa-detail" class="twofa-detail">6 位 TOTP，每 30 秒更新</p>
+                <div class="twofa-actions">
+                    <button id="twofa-copy" class="primary" type="button" disabled>复制验证码</button>
+                    <button id="twofa-clear" class="secondary" type="button">清空</button>
+                </div>
+                <p id="twofa-message" class="json-message" role="status">输入密钥后自动生成验证码。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>兼容 RFC 6238 TOTP。请仅在可信设备上使用验证密钥。</p>
+        </div>
+        <div class="footer-links">
+            <a href="base32.html">Base32编码解码</a>
+            <a href="random-password.html">随机密码生成</a>
+            <a href="crypto.html">编码加密</a>
+        </div>
+    </footer>
+
+    <script src="js/twofa.js"></script>
+</body>
+</html>

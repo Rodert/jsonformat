@@ -1436,6 +1436,178 @@ body.tool-page {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
+.twofa-workbench {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+    gap: 0;
+    max-width: 900px;
+    margin: 22px auto 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #e6eaf2;
+    box-shadow: 0 10px 28px rgba(22, 34, 51, 0.06);
+}
+
+.twofa-input-panel,
+.twofa-code-panel {
+    padding: 34px;
+}
+
+.twofa-input-panel {
+    border-right: 1px solid #e6eaf2;
+}
+
+.twofa-input-panel h2 {
+    margin: 0 0 22px;
+    color: #101828;
+    font-size: 20px;
+}
+
+.twofa-input-panel label {
+    display: block;
+    margin-bottom: 8px;
+    color: #344054;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.twofa-input-panel textarea {
+    width: 100%;
+    min-height: 88px;
+    padding: 12px;
+    resize: vertical;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #101828;
+    background: #fff;
+    font: 14px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.twofa-input-panel textarea:not(.is-revealed) {
+    -webkit-text-security: disc;
+}
+
+.twofa-input-panel textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.twofa-help {
+    margin: 10px 0 16px;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.twofa-reveal {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 7px;
+    margin: 0 !important;
+    color: #475467 !important;
+    font-weight: 600 !important;
+}
+
+.twofa-reveal input {
+    margin: 0;
+}
+
+.twofa-code-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    text-align: center;
+    background: #fbfcfe;
+}
+
+.twofa-timer {
+    --twofa-progress: 0deg;
+    display: grid;
+    width: 76px;
+    height: 76px;
+    place-content: center;
+    border-radius: 50%;
+    background: conic-gradient(#2563eb var(--twofa-progress), #e6eaf2 0);
+    color: #175cd3;
+    font-weight: 800;
+    position: relative;
+}
+
+.twofa-timer::before {
+    content: '';
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #fbfcfe;
+}
+
+.twofa-timer span,
+.twofa-timer small {
+    position: relative;
+    z-index: 1;
+    display: block;
+    line-height: 1;
+}
+
+.twofa-timer span {
+    font-size: 22px;
+}
+
+.twofa-timer small {
+    margin-top: 3px;
+    font-size: 11px;
+}
+
+.twofa-account {
+    min-height: 20px;
+    margin: 18px 0 8px;
+    color: #475467;
+    font-size: 14px;
+}
+
+.twofa-code {
+    color: #101828;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    line-height: 1.15;
+    font-variant-numeric: tabular-nums;
+}
+
+.twofa-detail {
+    margin: 10px 0 0;
+    color: #667085;
+    font-size: 13px;
+}
+
+.twofa-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.twofa-actions button {
+    width: auto;
+    min-width: 112px;
+    padding: 10px 13px;
+    border-radius: 7px;
+}
+
+.twofa-actions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.twofa-code-panel .json-message {
+    min-height: 20px;
+    margin: 14px 0 0;
+}
+
 .utility-textarea {
     width: 100%;
     min-height: 170px;
@@ -2148,8 +2320,14 @@ body.tool-page {
     .utility-grid.two-column,
     .image-compress-layout,
     .image-debug-layout,
-    .project-poster {
+    .project-poster,
+    .twofa-workbench {
         grid-template-columns: 1fr;
+    }
+
+    .twofa-input-panel {
+        border-right: 0;
+        border-bottom: 1px solid #e6eaf2;
     }
 
     .tool-grid {
@@ -2184,6 +2362,20 @@ body.tool-page {
     .tool-hero,
     .section-block {
         padding: 20px;
+    }
+
+    .twofa-input-panel,
+    .twofa-code-panel {
+        padding: 24px 20px;
+    }
+
+    .twofa-code-panel {
+        min-height: 310px;
+    }
+
+    .twofa-code {
+        font-size: 36px;
+        letter-spacing: 4px;
     }
 
     .hero-panel h1,
