@@ -822,11 +822,23 @@ body.tool-page {
     background: #eff6ff;
 }
 
-.home-shell,
 .tool-shell {
     max-width: 1180px;
     margin: 0 auto;
     padding: 22px 16px 0;
+}
+
+.home-shell {
+    max-width: none;
+    margin: 0;
+    padding: 22px clamp(16px, 3vw, 56px) 0;
+}
+
+.home-page .site-header,
+.home-page .site-footer {
+    max-width: none;
+    margin-left: clamp(16px, 3vw, 56px);
+    margin-right: clamp(16px, 3vw, 56px);
 }
 
 .hero-panel,
@@ -954,7 +966,7 @@ body.tool-page {
 
 .tool-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 12px;
 }
 
@@ -1027,12 +1039,15 @@ body.tool-page {
 }
 
 .category-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 14px;
+    align-items: flex-start;
 }
 
 .category-panel {
+    flex: 1 1 300px;
+    min-width: min(100%, 280px);
     padding: 18px;
     border-radius: 8px;
     background: #fbfcfe;
@@ -2670,7 +2685,11 @@ body.tool-page {
     }
 
     .category-grid {
-        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .category-panel {
+        flex-basis: 260px;
     }
 
     .tool-hero strong {
@@ -2697,6 +2716,16 @@ body.tool-page {
     .tool-hero,
     .section-block {
         padding: 20px;
+    }
+
+    .home-shell {
+        padding: 14px 10px 0;
+    }
+
+    .home-page .site-header,
+    .home-page .site-footer {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .twofa-input-panel,
@@ -2739,7 +2768,11 @@ body.tool-page {
     }
 
     .tool-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .category-panel {
+        flex-basis: 100%;
     }
 
     .section-heading,

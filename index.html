@@ -43,11 +43,13 @@
             </span>
         </a>
         <nav class="top-nav" aria-label="主导航">
-            <a href="#data-format">数据格式</a>
-            <a href="#encoding-crypto">编码加密</a>
-            <a href="#dev-debug">开发调试</a>
-            <a href="#image-tools">图像处理</a>
-            <a href="#ai-tools">AI工具</a>
+            <a href="#data-format">数据与格式</a>
+            <a href="#text-documents">文本与文档</a>
+            <a href="#security-encoding">编码与安全</a>
+            <a href="#network-api">网络与接口</a>
+            <a href="#dev-tools">代码与开发</a>
+            <a href="#file-media">图像与文件</a>
+            <a href="#ai-tools">AI 开发</a>
             <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
             <a href="https://gitee.com/rodert/jsonformat" target="_blank" rel="noopener">Gitee</a>
             <a href="#about">关于作者</a>
@@ -390,13 +392,14 @@
 
         <section class="section-block" aria-labelledby="category-title">
             <div class="section-heading">
-                <h2 id="category-title">工具分类</h2>
-                <p>按场景组织工具入口，后续每个工具可拆成独立 SEO 页面。</p>
+                <h2 id="category-title">按场景浏览</h2>
+                <p>按要完成的工作选择工具，所有分类会根据屏幕宽度自动换行。</p>
             </div>
             <div class="category-grid">
                 <article class="category-panel" id="data-format">
-                    <h3>数据格式</h3>
+                    <h3>数据与格式</h3>
                     <div class="link-list">
+                        <a href="convert.html">JSON格式转换</a>
                         <a href="json-format.html">JSON格式化</a>
                         <a href="json-format.html">JSON压缩</a>
                         <a href="json-format.html">JSON校验</a>
@@ -411,84 +414,88 @@
                         <a href="xml-json.html">XML转JSON</a>
                     </div>
                 </article>
-                <article class="category-panel" id="encoding-crypto">
-                    <h3>编码加密</h3>
+                <article class="category-panel" id="text-documents">
+                    <h3>文本与文档</h3>
                     <div class="link-list">
-                        <a href="crypto.html">Base64编码解码</a>
-                        <a href="crypto.html">Base58编码解码</a>
-                        <a href="base32.html">Base32编码解码</a>
-                        <a href="twofa.html">2FA验证码生成器</a>
-                        <a href="punycode.html">Punycode编码解码</a>
-                        <a href="url-encode.html">URL编码解码</a>
-                        <a href="unicode.html">Unicode编码转换</a>
-                        <a href="morse.html">摩斯密码</a>
-                        <a href="checksum.html">CRC校验计算</a>
-                        <a href="random-password.html">随机密码生成</a>
-                        <a href="js-escape.html">JS字符串转义</a>
-                        <a href="hex-text.html">Hex文本互转</a>
-                        <a href="crypto.html">MD5加密</a>
-                        <a href="crypto.html">SHA1/SHA256加密</a>
-                        <a href="crypto.html">AES加密解密</a>
-                        <a href="crypto.html">RSA加密解密</a>
-                        <a href="jwt.html">JWT解析</a>
-                    </div>
-                </article>
-                <article class="category-panel" id="dev-debug">
-                    <h3>开发调试</h3>
-                    <div class="link-list">
-                        <a href="timestamp.html">时间戳转换</a>
-                        <a href="uuid.html">UUID生成</a>
-                        <a href="sql-format.html">SQL格式化</a>
-                        <a href="regex.html">正则表达式测试</a>
-                        <a href="regex-escape.html">正则转义</a>
-                        <a href="radix-convert.html">进制转换</a>
-                        <a href="file-size.html">文件大小换算</a>
                         <a href="page-count.html">批量文件页数统计</a>
-                        <a href="color-convert.html">颜色转换</a>
-                        <a href="css-gradient.html">CSS渐变生成</a>
-                        <a href="meta-tag.html">Meta Tag生成</a>
-                        <a href="mime-type.html">MIME Type查询</a>
-                        <a href="magic-bytes.html">Magic Bytes查询</a>
-                        <a href="port-lookup.html">常用端口查询</a>
-                        <a href="http-header.html">HTTP Header查询</a>
-                        <a href="http-method.html">HTTP请求方法</a>
-                        <a href="diff.html">代码对比</a>
-                        <a href="http-status.html">HTTP状态码查询</a>
-                        <a href="cron.html">Cron表达式解析</a>
-                        <a href="user-agent.html">User-Agent解析</a>
-                        <a href="url-parser.html">URL地址解析</a>
-                        <a href="ip-lookup.html">IP信息查询</a>
-                        <a href="ip-convert.html">IPv4整数互转</a>
-                        <a href="random-number.html">随机数生成</a>
-                    </div>
-                </article>
-                <article class="category-panel" id="text-tools">
-                    <h3>文本处理</h3>
-                    <div class="link-list">
+                        <a href="markdown-preview.html">Markdown预览</a>
                         <a href="text-dedupe.html">文本去重</a>
                         <a href="text-sort.html">文本排序</a>
                         <a href="line-tools.html">多行文本处理</a>
                         <a href="string-count.html">出现次数统计</a>
-                        <a href="html-strip.html">HTML标签清理</a>
-                        <a href="fullwidth-halfwidth.html">全角半角转换</a>
-                        <a href="case-convert.html">大小写转换</a>
                         <a href="word-count.html">字数统计</a>
-                        <a href="money.html">人民币大写</a>
-                        <a href="markdown-preview.html">Markdown预览</a>
+                        <a href="case-convert.html">大小写转换</a>
+                        <a href="fullwidth-halfwidth.html">全角半角转换</a>
+                        <a href="html-strip.html">HTML标签清理</a>
                         <a href="html-entity.html">HTML实体转义</a>
+                        <a href="money.html">人民币大写</a>
                     </div>
                 </article>
-                <article class="category-panel" id="image-tools">
-                    <h3>图像处理</h3>
+                <article class="category-panel" id="security-encoding">
+                    <h3>编码与安全</h3>
+                    <div class="link-list">
+                        <a href="crypto.html">Base64编码解码</a>
+                        <a href="crypto.html">Base58编码解码</a>
+                        <a href="base32.html">Base32编码解码</a>
+                        <a href="url-encode.html">URL编码解码</a>
+                        <a href="unicode.html">Unicode编码转换</a>
+                        <a href="punycode.html">Punycode编码解码</a>
+                        <a href="hex-text.html">Hex文本互转</a>
+                        <a href="js-escape.html">JS字符串转义</a>
+                        <a href="morse.html">摩斯密码</a>
+                        <a href="checksum.html">CRC校验计算</a>
+                        <a href="crypto.html">MD5/SHA加密</a>
+                        <a href="crypto.html">AES/RSA加密解密</a>
+                        <a href="jwt.html">JWT解析</a>
+                        <a href="random-password.html">随机密码生成</a>
+                        <a href="twofa.html">2FA验证码生成器</a>
+                    </div>
+                </article>
+                <article class="category-panel" id="network-api">
+                    <h3>网络与接口</h3>
+                    <div class="link-list">
+                        <a href="http-header.html">HTTP Header查询</a>
+                        <a href="http-method.html">HTTP请求方法</a>
+                        <a href="http-status.html">HTTP状态码查询</a>
+                        <a href="port-lookup.html">常用端口查询</a>
+                        <a href="url-parser.html">URL地址解析</a>
+                        <a href="user-agent.html">User-Agent解析</a>
+                        <a href="ip-lookup.html">IP信息查询</a>
+                        <a href="ip-convert.html">IPv4整数互转</a>
+                        <a href="api-error.html">API错误码解释</a>
+                    </div>
+                </article>
+                <article class="category-panel" id="dev-tools">
+                    <h3>代码与开发</h3>
+                    <div class="link-list">
+                        <a href="sql-format.html">SQL格式化</a>
+                        <a href="regex.html">正则表达式测试</a>
+                        <a href="regex-escape.html">正则转义</a>
+                        <a href="diff.html">代码对比</a>
+                        <a href="timestamp.html">时间戳转换</a>
+                        <a href="uuid.html">UUID生成</a>
+                        <a href="random-number.html">随机数生成</a>
+                        <a href="radix-convert.html">进制转换</a>
+                        <a href="cron.html">Cron表达式解析</a>
+                        <a href="color-convert.html">颜色转换</a>
+                        <a href="css-gradient.html">CSS渐变生成</a>
+                        <a href="meta-tag.html">Meta Tag生成</a>
+                    </div>
+                </article>
+                <article class="category-panel" id="file-media">
+                    <h3>图像与文件</h3>
                     <div class="link-list">
                         <a href="image-tools.html">图像处理工具</a>
                         <a href="image-compress.html">图片压缩</a>
                         <a href="image-convert.html">图片格式转换</a>
                         <a href="image-gif.html">图片合成 GIF</a>
+                        <a href="file-size.html">文件大小换算</a>
+                        <a href="mime-type.html">MIME Type查询</a>
+                        <a href="magic-bytes.html">Magic Bytes查询</a>
                     </div>
                 </article>
                 <article class="category-panel" id="ai-tools">
-                    <h3>AI 工具</h3>
+                    <h3>AI 开发</h3>
                     <div class="link-list">
                         <a href="prompt-format.html">Prompt格式化</a>
                         <a href="openai-request.html">OpenAI请求体格式化</a>
