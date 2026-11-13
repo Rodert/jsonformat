@@ -10,6 +10,7 @@
 | --- | --- |
 | 在线使用 | 直接访问 [GitHub Pages](https://rodert.github.io/jsonformat/)，打开即用。 |
 | 本地使用 | 克隆或下载项目后，用浏览器打开 `index.html`，可离线使用，数据在本地处理。 |
+| Docker 使用 | 安装 Docker 后运行 `docker compose up --build -d`，访问 `http://localhost:8080`。 |
 
 ## 核心特点
 
@@ -79,6 +80,28 @@
    ```
 
 3. 使用浏览器打开 `index.html` 文件即可
+
+## Docker 部署
+
+需要已安装 Docker Desktop 或 Docker Engine（包含 Docker Compose）。在项目根目录运行：
+
+```bash
+docker compose up --build -d
+```
+
+启动后访问 [http://localhost:8080](http://localhost:8080)。容器只提供仓库中的静态页面，工具处理的数据仍保留在浏览器本地。
+
+如需使用其他端口：
+
+```bash
+JAVAPUB_PORT=8090 docker compose up --build -d
+```
+
+停止并移除容器：
+
+```bash
+docker compose down
+```
 
 ## 桌面离线版
 

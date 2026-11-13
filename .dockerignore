@@ -1,0 +1,9 @@
+.git
+.github
+.DS_Store
+node_modules
+release
+dist
+npm-debug.log*
+yarn-debug.log*
+*.md

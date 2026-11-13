@@ -1,0 +1,15 @@
+services:
+  javapub-tools:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: javapub-tools:local
+    ports:
+      - "${JAVAPUB_PORT:-8080}:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
