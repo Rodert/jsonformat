@@ -115,6 +115,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rodert.github.io/jsonformat/page-count.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rodert.github.io/jsonformat/color-convert.html</loc>
     <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>

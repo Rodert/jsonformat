@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线批量文件页数统计工具，支持 PDF 精确页数，以及 TXT、HTML、Markdown、DOCX 和 PPTX 的本地页数估算，适用于打印前页数汇总。">
+    <meta name="keywords" content="文件页数统计,批量页数统计,PDF页数,Word页数估算,DOCX页数,PPTX页数,打印店工具">
+    <title>批量文件页数统计 - PDF精确、Word文本估算</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page page-count-page">
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">JP</span>
+            <span>
+                <strong>JavaPub Tools</strong>
+                <small>批量文件页数统计</small>
+            </span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+            <a href="index.html">首页</a>
+            <a href="file-size.html">文件大小</a>
+            <a href="markdown-preview.html">Markdown预览</a>
+            <a href="https://github.com/Rodert/jsonformat" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://gitee.com/rodert/jsonformat" target="_blank" rel="noopener">Gitee</a>
+        </nav>
+    </header>
+
+    <main class="tool-shell">
+        <section class="tool-hero">
+            <div>
+                <p class="eyebrow">打印前批量核算</p>
+                <h1>批量文件页数统计</h1>
+                <p>一次拖入多个文件，汇总总页数和超过 50、60、70 页等档位的文件数量。所有文件仅在当前浏览器中读取。</p>
+            </div>
+            <strong>PDF 精确统计；Office 与文本文件按类型标注估算结果。</strong>
+        </section>
+
+        <section class="page-count-layout" aria-labelledby="page-count-upload-title">
+            <div class="page-count-main">
+                <section class="page-count-dropzone" id="page-count-dropzone" tabindex="0" role="button" aria-labelledby="page-count-upload-title" aria-describedby="page-count-upload-help">
+                    <input id="page-count-input" type="file" multiple accept=".pdf,.txt,.md,.markdown,.html,.htm,.csv,.json,.xml,.yaml,.yml,.log,.docx,.pptx,.doc,.ppt,.xls,.xlsx,image/*">
+                    <h2 id="page-count-upload-title">拖入文件，开始统计</h2>
+                    <p>也可以点击选择文件。支持一次处理多个 PDF、文本、DOCX、PPTX 和图片。</p>
+                    <span id="page-count-upload-help">文件不会上传服务器或被保存。</span>
+                </section>
+
+                <section class="page-count-results" aria-labelledby="page-count-results-title">
+                    <div class="page-count-results-heading">
+                        <div>
+                            <h2 id="page-count-results-title">统计结果</h2>
+                            <p id="page-count-progress">等待添加文件。</p>
+                        </div>
+                        <button id="page-count-clear" class="secondary" type="button" disabled>清空列表</button>
+                    </div>
+                    <div class="page-count-table-wrap">
+                        <table class="page-count-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">文件</th>
+                                    <th scope="col">类型</th>
+                                    <th scope="col">页数</th>
+                                    <th scope="col">结果说明</th>
+                                </tr>
+                            </thead>
+                            <tbody id="page-count-list">
+                                <tr class="page-count-empty"><td colspan="4">尚未添加文件。</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="page-count-sidebar" aria-label="统计设置与汇总">
+                <section class="page-count-settings">
+                    <h2>估算设置</h2>
+                    <label for="page-count-paper">纸张</label>
+                    <select id="page-count-paper">
+                        <option value="a4">A4</option>
+                        <option value="letter">Letter</option>
+                    </select>
+                    <label for="page-count-margin">页边距</label>
+                    <select id="page-count-margin">
+                        <option value="normal">普通（20 mm）</option>
+                        <option value="narrow">窄（12 mm）</option>
+                        <option value="wide">宽（28 mm）</option>
+                    </select>
+                    <label for="page-count-font-size">正文字号</label>
+                    <div class="page-count-font-size">
+                        <input id="page-count-font-size" type="range" min="12" max="18" value="14">
+                        <output id="page-count-font-size-value" for="page-count-font-size">14 px</output>
+                    </div>
+                    <p>设置只影响文本和 DOCX 的估算结果，不影响 PDF 或 PPTX 幻灯片统计。</p>
+                </section>
+
+                <section class="page-count-summary" aria-live="polite">
+                    <h2>汇总</h2>
+                    <div class="page-count-total">
+                        <strong id="page-count-total-files">0</strong><span>个文件</span>
+                        <strong id="page-count-total-pages">0</strong><span>页 / 张</span>
+                    </div>
+                    <div class="page-count-thresholds">
+                        <label>超过 <input id="page-count-threshold-1" type="number" min="1" value="50"> 页 <strong id="page-count-over-1">0</strong> 个</label>
+                        <label>超过 <input id="page-count-threshold-2" type="number" min="1" value="60"> 页 <strong id="page-count-over-2">0</strong> 个</label>
+                        <label>超过 <input id="page-count-threshold-3" type="number" min="1" value="70"> 页 <strong id="page-count-over-3">0</strong> 个</label>
+                    </div>
+                </section>
+
+                <section class="page-count-offline">
+                    <h2>需要精确 Office 页数？</h2>
+                    <p>Word、Excel、PPT 的最终打印页数受字体、版式和打印机设置影响。请在离线版中进行最终核对。</p>
+                    <a href="https://github.com/Rodert/jsonformat/releases/latest" target="_blank" rel="noopener">下载离线版</a>
+                </section>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>作者：王仕宇 / JavaPub</strong>
+            <p>PDF 页数来自文件本身；其他类型会清楚标注为估算或不支持。</p>
+        </div>
+        <div class="footer-links">
+            <a href="file-size.html">文件大小换算</a>
+            <a href="markdown-preview.html">Markdown预览</a>
+            <a href="https://github.com/Rodert/jsonformat/releases/latest" target="_blank" rel="noopener">下载离线版</a>
+        </div>
+    </footer>
+
+    <script src="vendor/jszip/jszip.min.js"></script>
+    <script type="module" src="js/page-count.js"></script>
+</body>
+</html>

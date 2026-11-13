@@ -14,7 +14,9 @@
   },
   "devDependencies": {
     "electron": "31.7.7",
-    "electron-builder": "24.13.3"
+    "electron-builder": "24.13.3",
+    "jszip": "^3.10.2",
+    "pdfjs-dist": "^5.4.394"
   },
   "build": {
     "appId": "plus.javapub.tools",

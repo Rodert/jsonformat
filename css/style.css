@@ -1608,6 +1608,315 @@ body.tool-page {
     margin: 14px 0 0;
 }
 
+.page-count-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 22px;
+    margin-top: 22px;
+    align-items: start;
+}
+
+.page-count-main,
+.page-count-sidebar {
+    display: grid;
+    gap: 16px;
+}
+
+.page-count-dropzone,
+.page-count-results,
+.page-count-settings,
+.page-count-summary,
+.page-count-offline {
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #e6eaf2;
+    box-shadow: 0 10px 28px rgba(22, 34, 51, 0.06);
+}
+
+.page-count-dropzone {
+    padding: 32px;
+    border-style: dashed;
+    border-width: 2px;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.page-count-dropzone:hover,
+.page-count-dropzone:focus-visible,
+.page-count-dropzone.is-dragging {
+    outline: none;
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.page-count-dropzone input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.page-count-dropzone h2,
+.page-count-results h2,
+.page-count-sidebar h2 {
+    margin: 0;
+    color: #101828;
+    font-size: 18px;
+}
+
+.page-count-dropzone p {
+    margin: 10px 0 6px;
+    color: #475467;
+    font-size: 14px;
+}
+
+.page-count-dropzone span {
+    color: #667085;
+    font-size: 13px;
+}
+
+.page-count-results {
+    overflow: hidden;
+}
+
+.page-count-results-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    padding: 20px 20px 14px;
+}
+
+.page-count-results-heading p {
+    margin: 6px 0 0;
+    color: #667085;
+    font-size: 13px;
+}
+
+.page-count-results-heading button {
+    width: auto;
+    min-width: 84px;
+    padding: 9px 11px;
+    border-radius: 7px;
+}
+
+.page-count-table-wrap {
+    overflow-x: auto;
+}
+
+.page-count-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.page-count-table th,
+.page-count-table td {
+    padding: 12px 14px;
+    border-top: 1px solid #e6eaf2;
+    color: #475467;
+    font-size: 13px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.page-count-table th {
+    color: #344054;
+    background: #f8fafc;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.page-count-table th:nth-child(1) { width: 28%; }
+.page-count-table th:nth-child(2) { width: 10%; }
+.page-count-table th:nth-child(3) { width: 14%; }
+
+.page-count-table td:first-child {
+    overflow: hidden;
+    color: #172033;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.page-count-table td:nth-child(3) {
+    color: #175cd3;
+    font-size: 15px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.page-count-empty td {
+    padding: 34px;
+    color: #667085;
+    text-align: center;
+}
+
+.page-count-badge {
+    display: inline-flex;
+    margin-right: 7px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.page-count-badge.exact {
+    color: #047857;
+    background: #ecfdf3;
+}
+
+.page-count-badge.estimate {
+    color: #175cd3;
+    background: #eff6ff;
+}
+
+.page-count-badge.unsupported,
+.page-count-badge.error {
+    color: #b42318;
+    background: #fef3f2;
+}
+
+.page-count-settings,
+.page-count-summary,
+.page-count-offline {
+    padding: 20px;
+}
+
+.page-count-settings label {
+    display: block;
+    margin: 16px 0 7px;
+    color: #344054;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.page-count-settings select {
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    color: #172033;
+    background: #fff;
+    font-size: 14px;
+}
+
+.page-count-font-size {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-count-font-size input {
+    min-width: 0;
+    flex: 1;
+    accent-color: #2563eb;
+}
+
+.page-count-font-size output {
+    width: 40px;
+    color: #175cd3;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.page-count-settings p,
+.page-count-offline p {
+    margin: 16px 0 0;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.page-count-total {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 8px;
+    align-items: baseline;
+    margin: 16px 0;
+}
+
+.page-count-total strong {
+    color: #175cd3;
+    font-size: 28px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.page-count-total span {
+    color: #667085;
+    font-size: 13px;
+}
+
+.page-count-thresholds {
+    display: grid;
+    gap: 8px;
+}
+
+.page-count-thresholds label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 38px;
+    padding: 7px 8px;
+    border-radius: 7px;
+    color: #475467;
+    background: #f8fafc;
+    font-size: 13px;
+}
+
+.page-count-thresholds input {
+    width: 48px;
+    min-height: 27px;
+    padding: 3px 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    color: #172033;
+    background: #fff;
+    font: inherit;
+    text-align: center;
+}
+
+.page-count-thresholds strong {
+    margin-left: auto;
+    color: #175cd3;
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+}
+
+.page-count-offline {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+}
+
+.page-count-offline a {
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    margin-top: 16px;
+    padding: 0 11px;
+    border-radius: 7px;
+    color: #fff;
+    background: #175cd3;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.page-count-offline a:hover {
+    color: #fff;
+    background: #1249a8;
+}
+
 .utility-textarea {
     width: 100%;
     min-height: 170px;
@@ -2321,13 +2630,18 @@ body.tool-page {
     .image-compress-layout,
     .image-debug-layout,
     .project-poster,
-    .twofa-workbench {
+    .twofa-workbench,
+    .page-count-layout {
         grid-template-columns: 1fr;
     }
 
     .twofa-input-panel {
         border-right: 0;
         border-bottom: 1px solid #e6eaf2;
+    }
+
+    .page-count-sidebar {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .tool-grid {
@@ -2376,6 +2690,22 @@ body.tool-page {
     .twofa-code {
         font-size: 36px;
         letter-spacing: 4px;
+    }
+
+    .page-count-dropzone,
+    .page-count-settings,
+    .page-count-summary,
+    .page-count-offline {
+        padding: 18px;
+    }
+
+    .page-count-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .page-count-results-heading {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     .hero-panel h1,
