@@ -51,7 +51,15 @@
                             <h2 id="page-count-results-title">统计结果</h2>
                             <p id="page-count-progress">等待添加文件。</p>
                         </div>
-                        <button id="page-count-clear" class="secondary" type="button" disabled>清空列表</button>
+                        <div class="page-count-result-actions">
+                            <label for="page-count-sort">排序</label>
+                            <select id="page-count-sort">
+                                <option value="added">默认顺序</option>
+                                <option value="pages-desc">页数从高到低</option>
+                                <option value="pages-asc">页数从低到高</option>
+                            </select>
+                            <button id="page-count-clear" class="secondary" type="button" disabled>清空列表</button>
+                        </div>
                     </div>
                     <div class="page-count-table-wrap">
                         <table class="page-count-table">

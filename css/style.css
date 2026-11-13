@@ -1697,11 +1697,32 @@ body.tool-page {
     font-size: 13px;
 }
 
+.page-count-result-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-count-result-actions label {
+    color: #667085;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.page-count-result-actions select,
 .page-count-results-heading button {
     width: auto;
-    min-width: 84px;
+    min-height: 36px;
     padding: 9px 11px;
+    border: 1px solid #cbd5e1;
     border-radius: 7px;
+    color: #344054;
+    background: #fff;
+    font-size: 13px;
+}
+
+.page-count-results-heading button {
+    min-width: 84px;
 }
 
 .page-count-table-wrap {
@@ -2706,6 +2727,10 @@ body.tool-page {
     .page-count-results-heading {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .page-count-result-actions {
+        flex-wrap: wrap;
     }
 
     .hero-panel h1,

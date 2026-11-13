@@ -7,6 +7,7 @@ const dropzone = document.getElementById('page-count-dropzone');
 const list = document.getElementById('page-count-list');
 const progress = document.getElementById('page-count-progress');
 const clearButton = document.getElementById('page-count-clear');
+const sortInput = document.getElementById('page-count-sort');
 const paperInput = document.getElementById('page-count-paper');
 const marginInput = document.getElementById('page-count-margin');
 const fontSizeInput = document.getElementById('page-count-font-size');
@@ -178,6 +179,24 @@ function badge(result) {
     return badge;
 }
 
+function sortedResults() {
+    if (sortInput.value === 'added') return results;
+    const direction = sortInput.value === 'pages-asc' ? 1 : -1;
+    return results
+        .map((result, index) => ({ result, index }))
+        .sort((left, right) => {
+            const leftHasPages = Number.isFinite(left.result.pages);
+            const rightHasPages = Number.isFinite(right.result.pages);
+            if (!leftHasPages || !rightHasPages) {
+                if (leftHasPages === rightHasPages) return left.index - right.index;
+                return leftHasPages ? -1 : 1;
+            }
+            const pageDifference = (left.result.pages - right.result.pages) * direction;
+            return pageDifference || left.index - right.index;
+        })
+        .map(({ result }) => result);
+}
+
 function render() {
     list.replaceChildren();
     if (!results.length) {
@@ -189,7 +208,7 @@ function render() {
         row.append(cell);
         list.append(row);
     } else {
-        for (const result of results) {
+        for (const result of sortedResults()) {
             const row = document.createElement('tr');
             const name = document.createElement('td');
             name.textContent = result.file.name;
@@ -257,4 +276,5 @@ clearButton.addEventListener('click', () => {
 });
 [paperInput, marginInput, fontSizeInput].forEach((element) => element.addEventListener('input', updateEstimates));
 thresholdInputs.forEach((element) => element.addEventListener('input', render));
+sortInput.addEventListener('change', render);
 render();
